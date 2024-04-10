@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use App\Traits\BitrixTrait;
+use App\Traits\PoizonTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use HasFactory, BitrixTrait;
+    use HasFactory, BitrixTrait, PoizonTrait;
 
     /**
      * The attributes that are mass assignable.
