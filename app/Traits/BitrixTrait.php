@@ -75,6 +75,9 @@ trait BitrixTrait
      * @var array
      */
     private array $propertiesIds = [
+        'externalId' => [
+            'id' => 120,
+        ],
         'size' => [
             'id' => 114,
         ],
@@ -193,13 +196,13 @@ trait BitrixTrait
      */
     public function listPricesBitrix(int $productId = null): array
     {
-        $fields = [
+        $filter = $productId ? [
             'filter' => [
                 'productID' => $productId,
             ],
-        ];
+        ] : [];
 
-        $response = \Illuminate\Support\Facades\Http::post($this->bitrixUrl . $this->listPriceMethodBitrix, $fields);
+        $response = \Illuminate\Support\Facades\Http::post($this->bitrixUrl . $this->listPriceMethodBitrix, $filter);
 
         return $response->json()['result']['prices'];
     }
@@ -215,7 +218,7 @@ trait BitrixTrait
     {
         $fields = [
             'fields' => [
-                'catalogGroupId' => 1,
+                'catalogGroupId' => 2,
                 'currency' => "RUB",
                 'price' => $price,
                 'productId' => $productId
@@ -224,7 +227,7 @@ trait BitrixTrait
 
         $response = \Illuminate\Support\Facades\Http::post($this->bitrixUrl . $this->createPriceMethodBitrix, $fields);
 
-        return $response->json()['result'];
+        return $response->json();
     }
 
     /**
@@ -266,11 +269,10 @@ trait BitrixTrait
      * Add the product to Bitrix24.
      *
      * @param array $product
-     * @param int|null $parentId
      * @param bool $isOnlineType
      * @return array
      */
-    public function addProductToBitrix(array $product, int $parentId = null, bool $isOnlineType = true): array
+    public function addProductToBitrix(array $product, bool $isOnlineType = true): array
     {
         $fields = [
             'fields' => [
@@ -280,13 +282,9 @@ trait BitrixTrait
                 "iblockId" => $this->parentsBlockId,
                 "name" => $product['name'],
                 ("property" . $this->propertiesIds['isOnline']['id']) => ['value' => $isOnlineType ? $this->propertiesIds['isOnline']['value'] : 0],
+                ("property" . $this->propertiesIds['externalId']['id']) => $product['id'],
             ],
         ];
-        if ($parentId) {
-            $fields['fields']['property' . $this->propertiesIds['parentId']['id']] = $parentId;
-            $fields['fields']['parentId'] = $parentId;
-            $fields['fields']["iblockId"] = $this->variationsBlockId;
-        }
         if ($product['price'] ?? false) {
             $fields['fields']['property' . $this->propertiesIds['price']['id']] = $product['price'];
             $fields['fields']['price'] = $product['price'];
@@ -301,27 +299,12 @@ trait BitrixTrait
             $fields['fields']['property' . $this->propertiesIds['size']['id']] = $product['size'];
         }
 
-        $method = $parentId ? $this->createProductVariationMethodBitrix : $this->createProductMethodBitrix;
+        $method = $this->createProductMethodBitrix;
 
         $parent = \Illuminate\Support\Facades\Http::post($this->bitrixUrl . $method, $fields);
-        $parent = $parent->json();
 
-        if ($product['variations'] ?? false) {
-            $parent = $parent['result']['element'];
-            $localParentId = $parent['id'];
-            $parent['variations'] = [];
-            foreach ($product['variations'] as $variation) {
-                $variationModel = $this->addProductToBitrix($variation, $localParentId)['result']['offer'];
-                if($variation['price'] ?? false) {
-                    try {
-                        $price = $this->updateOrCreateProductPriceBitrix($variationModel['id'], $variation['price']);
-                        $variationModel['price'] = $price;
-                    } catch (\Exception $e) {}
-                }
-                $parent['variations'][] = $variationModel;
-            }
-        }
+        if($product['price']) $price = $this->createProductPriceBitrix($parent['result']['service']['id'], $product['price']);
 
-        return $parent;
+        return $parent->json();
     }
 }
