@@ -40,6 +40,6 @@ trait PoizonTrait
             'spuId' => $productId,
         ]);
 
-        return $response->json();
+        return $response->json()['data'];
     }
 }

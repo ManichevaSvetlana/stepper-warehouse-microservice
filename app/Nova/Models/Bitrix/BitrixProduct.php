@@ -3,7 +3,9 @@
 namespace App\Nova\Models\Bitrix;
 
 use App\Nova\Resource;
+use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class BitrixProduct extends Resource
@@ -28,7 +30,7 @@ class BitrixProduct extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'sku', 'system_id'
     ];
 
     /**
@@ -41,6 +43,9 @@ class BitrixProduct extends Resource
     {
         return [
             ID::make()->sortable(),
+            Slug::make('External ID', 'system_id')->required(),
+            Slug::make('SKU', 'sku')->required(),
+            Code::make('Data', 'data')->json(),
         ];
     }
 

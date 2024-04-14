@@ -197,7 +197,6 @@ trait BitrixTrait
                 'property44', // Картинки галереи
                 'property48', // Картинки галереи
                 'property120', // External ID
-                'property120', // External ID
                 'property122', // Brand
             ],
             "filter" => [
@@ -294,7 +293,7 @@ trait BitrixTrait
      * @param bool $isOnlineType
      * @return array
      */
-    public function addProductToBitrix(array $product, bool $isOnlineType = true): array
+    public function addProductToBitrix(array $product, $isUpdate = false, bool $isOnlineType = true): array
     {
         $fields = [
             'fields' => [
@@ -304,7 +303,12 @@ trait BitrixTrait
                 "iblockId" => $this->parentsBlockId,
                 "name" => $product['name'],
                 ("property" . $this->propertiesIds['isOnline']['id']) => ['value' => $isOnlineType ? $this->propertiesIds['isOnline']['value'] : 0],
-                ("property" . $this->propertiesIds['externalId']['id']) => $product['id'],
+
+                'property44' => $product['images'] ?? [], // Картинки галереи
+                'property48' => $product['images'] ?? [], // Картинки галереи
+                'property120' => $product['sku'], // External ID
+                'property122' => $product['brand'], // Brand
+
             ],
         ];
         if ($product['price'] ?? false) {
@@ -321,7 +325,11 @@ trait BitrixTrait
             $fields['fields']['property' . $this->propertiesIds['size']['id']] = $product['size'];
         }
 
-        $method = $this->createProductMethodBitrix;
+        $method = $isUpdate ? 'catalog.product.update' : $this->createProductMethodBitrix;
+
+        if($isUpdate) {
+            $fields['id'] = $product['id'];
+        }
 
         $parent = \Illuminate\Support\Facades\Http::post($this->bitrixUrl . $method, $fields);
 

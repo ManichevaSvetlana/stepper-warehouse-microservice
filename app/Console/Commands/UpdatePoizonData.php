@@ -31,7 +31,12 @@ class UpdatePoizonData extends Command
         $poizon = new PoizonProduct();
         foreach (TrackProduct::all() as $track) {
             echo "SKU track product - : {$track->sku}\n";
-            $data = $poizon->getPoizonProductData($track->sku);
+
+            $existingProduct = PoizonProduct::where('sku', $track->sku)->first();
+
+            if($existingProduct) $data = $existingProduct->data;
+            else $data = $poizon->getPoizonProductData($track->sku);
+
             $prices = $poizon->getPoizonPricesForProduct($track->sku);
             echo "Product was received SKU: {$track->sku}\n";
             PoizonProduct::updateOrCreate(
