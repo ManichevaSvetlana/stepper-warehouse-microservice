@@ -3,24 +3,16 @@
 namespace App\Traits;
 
 use Illuminate\Support\Facades\Http;
-use JetBrains\PhpStorm\NoReturn;
 
 trait PoizonTrait
 {
-    /**
-     * The list catalogs method for Bitrix24.
-     *
-     * @var string
-     */
-    private string $listCatalogsMethodBitrix = 'catalog.catalog.list';
-
     /**
      * Poizon: get prices for a product.
      *
      * @return array
      * @var string $productId
      */
-    public function getPricesForProduct(string $productId): array
+    public function getPoizonPricesForProduct(string $productId): array
     {
         $response = Http::withHeaders([
             'accept' => 'application/json',
@@ -39,7 +31,7 @@ trait PoizonTrait
      * @return array
      * @var string $productId
      */
-    public function getProductData(string $productId): array
+    public function getPoizonProductData(string $productId): array
     {
         $response = Http::withHeaders([
             'accept' => 'application/json',
