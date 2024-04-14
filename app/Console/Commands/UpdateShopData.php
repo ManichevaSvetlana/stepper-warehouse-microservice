@@ -39,7 +39,7 @@ class UpdateShopData extends Command
         $feature->updateListOfLocalShopStickers();
 
         echo 'Updating shop products' . "\n";
-        $product = new \App\Models\Product();
+        $product = new \App\Models\Shop\ShopProduct();
         $product->setShopAuth();
 
         $page = 1;

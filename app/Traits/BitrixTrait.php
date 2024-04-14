@@ -176,7 +176,10 @@ trait BitrixTrait
                 'id',
                 'quantity',
                 'xmlId',
-                'type'
+                'type',
+                'property' . $this->propertiesIds['size']['id'],
+                'property' . $this->propertiesIds['parentId']['id'],
+                'property' . $this->propertiesIds['isOnline']['id'],
             ],
             "filter" => [
                 "iblockId" => $this->parentsBlockId

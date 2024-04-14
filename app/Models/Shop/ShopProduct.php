@@ -2,12 +2,13 @@
 
 namespace App\Models\Shop;
 
+use App\Traits\ShopTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ShopProduct extends Model
 {
-    use HasFactory;
+    use HasFactory, ShopTrait;
 
     /**
      * The attributes that are mass assignable.

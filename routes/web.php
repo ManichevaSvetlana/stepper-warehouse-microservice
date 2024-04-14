@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/test', function () {
     $product = new App\Models\Product();
-    $product->setShopAuth();
+    dd($product->getPoizonProductData('8089481'));
+
+
+    //$product->setShopAuth();
     /*$feauture = new App\Models\Feature();
     $feauture->setShopAuth();
     $feauture->updateListOfLocalShopCategories();
@@ -317,7 +320,7 @@ Route::get('/', function () {
 	]*/
 
 
-    $products = $product->createShopProducts([
+    /*$products = $product->createShopProducts([
         [
             "title" => [
                 "ru" => "Название варианта товара на русском",
@@ -552,5 +555,11 @@ Route::get('/', function () {
     ]);
 
 
-    dd($products);
+    dd($products);*/
 });
+
+Route::get('/', function () {
+    return ['Laravel' => app()->version()];
+});
+
+require __DIR__.'/auth.php';
