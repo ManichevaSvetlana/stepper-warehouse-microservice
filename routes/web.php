@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/test', function () {
     $product = new App\Models\Product();
-    dd($product->getPoizonProductData('8089481'));
+    dd($product->listBitrixParentProducts());
 
 
     //$product->setShopAuth();

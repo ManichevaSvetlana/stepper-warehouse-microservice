@@ -88,8 +88,8 @@ trait BitrixTrait
             'id' => 118,
         ],
         'isOnline' => [
-            'id' => 108,
-            'value' => 102,
+            'id' => 124,
+            'value' => 104,
         ],
     ];
 
@@ -126,6 +126,20 @@ trait BitrixTrait
         $catalogData = $response->json();
 
         return $catalogData['result']['catalogs'];
+    }
+
+    /**
+     * Get the properties from Bitrix24.
+     *
+     * @return array
+     */
+    public function listBitrixProperties(): array
+    {
+        $response = \Illuminate\Support\Facades\Http::get($this->bitrixUrl . 'catalog.productProperty.list');
+
+        $catalogData = $response->json();
+
+        return $catalogData['result']['productProperties'];
     }
 
 
@@ -178,8 +192,13 @@ trait BitrixTrait
                 'xmlId',
                 'type',
                 'property' . $this->propertiesIds['size']['id'],
-                'property' . $this->propertiesIds['parentId']['id'],
                 'property' . $this->propertiesIds['isOnline']['id'],
+                'property' . $this->propertiesIds['price']['id'], //
+                'property44', // Картинки галереи
+                'property48', // Картинки галереи
+                'property120', // External ID
+                'property120', // External ID
+                'property122', // Brand
             ],
             "filter" => [
                 "iblockId" => $this->parentsBlockId

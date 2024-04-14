@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('shop_products', function (Blueprint $table) {
+        Schema::create('bitrix_products', function (Blueprint $table) {
             $table->id();
-            $table->string('system_id');
-            $table->string('sku')->nullable();
-            $table->string('parent_sku')->nullable();
+            $table->string('system_id')->unique();
             $table->json('data');
+            $table->string('sku')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('shop_products');
+        Schema::dropIfExists('bitrix_products');
     }
 };

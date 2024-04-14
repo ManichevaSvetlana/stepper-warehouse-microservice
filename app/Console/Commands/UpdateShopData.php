@@ -49,7 +49,7 @@ class UpdateShopData extends Command
                 echo 'Update / create product: #' . $productModel['id'] . "\n";
                 ShopProduct::updateOrCreate(
                     ['system_id' => $productModel['id']],
-                    ['data' => $productModel]
+                    ['data' => $productModel, 'sku' => $productModel['sku'], 'parent_sku' => $productModel['parent_sku']]
                 );
             }
             $page++;

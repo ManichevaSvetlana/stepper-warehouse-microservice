@@ -15,7 +15,7 @@ class ShopProduct extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['system_id', 'data'];
+    protected $fillable = ['system_id', 'data', 'sku', 'parent_sku'];
 
     /**
      * The attributes that should be cast.
