@@ -52,9 +52,10 @@ class SyncSystemsProducts extends Command
             'price' => $product['price'] / 100,
             'size' => $product['size'],
             'brand' => $product['brand'],
+            'articleNumber' => $product['articleNumber'],
             'images' => [
                 'value' => [
-                    'url' => 'https://cdn.poizon.com/pro-img/origin-img/20240104/fa123948ad144465b461829a673fa8ed.jpg'
+                    'url' => $product['images'][0]
                 ]
             ]
         ];
@@ -88,6 +89,7 @@ class SyncSystemsProducts extends Command
             'images' => collect($poizonProduct->data['image']['spuImage']['images'])->pluck('url')->toArray(),
             'brand' => $poizonProduct->data['brandRootInfo']['brandItemList'][0]['brandName'],
             'category' => $poizonProduct->data['detail']['categoryId'],
+            'articleNumber' => $poizonProduct->data['detail']['articleNumber'],
         ];
 
         return $syncedProduct;

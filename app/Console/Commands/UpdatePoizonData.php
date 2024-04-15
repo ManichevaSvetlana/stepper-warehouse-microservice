@@ -29,23 +29,26 @@ class UpdatePoizonData extends Command
     {
         echo "Poizon: update local poizon products data.\n";
         $poizon = new PoizonProduct();
-        foreach (TrackProduct::all() as $track) {
-            echo "SKU track product - : {$track->sku}\n";
+        $trackSkus = TrackProduct::all()->pluck('sku')->toArray();
+        foreach ($trackSkus as $track) {
+            echo "SKU track product - : {$track}\n";
 
-            $existingProduct = PoizonProduct::where('sku', $track->sku)->first();
+            $existingProduct = PoizonProduct::where('sku', $track)->first();
 
             if($existingProduct) $data = $existingProduct->data;
-            else $data = $poizon->getPoizonProductData($track->sku);
+            else $data = $poizon->getPoizonProductData($track);
 
-            $prices = $poizon->getPoizonPricesForProduct($track->sku);
-            echo "Product was received SKU: {$track->sku}\n";
+            $prices = $poizon->getPoizonPricesForProduct($track);
+            echo "Product was received SKU: {$track}\n";
             PoizonProduct::updateOrCreate(
-                ['sku' => $track->sku],
+                ['sku' => $track],
                 [
                     'data' => $data,
                     'prices' => $prices,
                 ]
             );
         }
+
+        PoizonProduct::whereNotIn('sku', $trackSkus)->delete();
     }
 }

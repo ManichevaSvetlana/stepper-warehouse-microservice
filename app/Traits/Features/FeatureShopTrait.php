@@ -114,7 +114,9 @@ trait FeatureShopTrait
     {
         $categories = $this->listShopCategories();
 
+        $ids = [];
         foreach ($categories as $category) {
+            $ids[] = $category['id'];
             self::updateOrCreate([
                 'system_id' => $category['id'],
             ], [
@@ -123,6 +125,10 @@ trait FeatureShopTrait
                 'system' => 'shop',
             ]);
         }
+
+        self::where('system', 'shop')->where('type', 'category')
+            ->whereNotIn('system_id', $ids)
+            ->delete();
     }
 
     /**
@@ -134,7 +140,9 @@ trait FeatureShopTrait
     {
         $stickers = $this->listShopStickers();
 
+        $ids = [];
         foreach ($stickers as $sticker) {
+            $ids[] = $sticker['id'];
             self::updateOrCreate([
                 'system_id' => $sticker['id'],
             ], [
@@ -143,6 +151,10 @@ trait FeatureShopTrait
                 'system' => 'shop',
             ]);
         }
+
+        self::where('system', 'shop')->where('type', 'sticker')
+            ->whereNotIn('system_id', $ids)
+            ->delete();
     }
 
     /**
@@ -154,7 +166,9 @@ trait FeatureShopTrait
     {
         $characteristics = $this->listShopCharacteristics();
 
+        $ids = [];
         foreach ($characteristics as $characteristic) {
+            $ids[] = $characteristic['id'];
             self::updateOrCreate([
                 'system_id' => $characteristic['id'],
             ], [
@@ -163,6 +177,10 @@ trait FeatureShopTrait
                 'system' => 'shop',
             ]);
         }
+
+        self::where('system', 'shop')->where('type', 'characteristic')
+            ->whereNotIn('system_id', $ids)
+            ->delete();
     }
 
     /**
@@ -174,7 +192,9 @@ trait FeatureShopTrait
     {
         $brands = $this->listShopBrands();
 
+        $ids = [];
         foreach ($brands as $brand) {
+            $ids[] = $brand['id'];
             self::updateOrCreate([
                 'system_id' => $brand['id'],
             ], [
@@ -183,5 +203,9 @@ trait FeatureShopTrait
                 'system' => 'shop',
             ]);
         }
+
+        self::where('system', 'shop')->where('type', 'brand')
+            ->whereNotIn('system_id', $ids)
+            ->delete();
     }
 }

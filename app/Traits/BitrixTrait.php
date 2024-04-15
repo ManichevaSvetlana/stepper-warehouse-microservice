@@ -198,6 +198,7 @@ trait BitrixTrait
                 'property48', // Картинки галереи
                 'property120', // External ID
                 'property122', // Brand
+                'property126', // Артикул
             ],
             "filter" => [
                 "iblockId" => $this->parentsBlockId
@@ -308,6 +309,7 @@ trait BitrixTrait
                 'property48' => $product['images'] ?? [], // Картинки галереи
                 'property120' => $product['sku'], // External ID
                 'property122' => $product['brand'], // Brand
+                'property126' => $product['articleNumber'], // Brand
 
             ],
         ];

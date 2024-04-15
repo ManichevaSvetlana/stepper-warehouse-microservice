@@ -42,17 +42,21 @@ class UpdateShopData extends Command
         $product = new \App\Models\Shop\ShopProduct();
         $product->setShopAuth();
 
+        $ids = [];
         $page = 1;
         do {
             $products = $product->listShopProducts(50, $page);
             foreach ($products as $productModel) {
+                $ids[] = $productModel['id'];
                 echo 'Update / create product: #' . $productModel['id'] . "\n";
                 ShopProduct::updateOrCreate(
                     ['system_id' => $productModel['id']],
-                    ['data' => $productModel, 'sku' => $productModel['sku'], 'parent_sku' => $productModel['parent_sku']]
+                    ['data' => $productModel, 'sku' => $productModel['sku']]
                 );
             }
             $page++;
         } while (!empty($products));
+
+        ShopProduct::whereNotIn('system_id', $ids)->delete();
     }
 }

@@ -29,8 +29,10 @@ class UpdateBitrixData extends Command
     {
         $bitrix = new BitrixProduct();
 
+        $ids = [];
         $bitrixFeatures = $bitrix->listBitrixProperties();
         foreach ($bitrixFeatures as $bitrixFeature) {
+            $ids[] = $bitrixFeature['id'];
             Feature::updateOrCreate([
                 'system_id' => $bitrixFeature['id'],
             ], [
@@ -39,9 +41,14 @@ class UpdateBitrixData extends Command
                 'system' => 'bitrix',
             ]);
         }
+        Feature::where('system', 'bitrix')
+            ->whereNotIn('system_id', $ids)
+            ->delete();
 
+        $ids = [];
         $bitrixProducts = $bitrix->listBitrixParentProducts();
         foreach ($bitrixProducts as $bitrixProduct) {
+            $ids[] = $bitrixProduct['id'];
             BitrixProduct::updateOrCreate(
                 ['system_id' => $bitrixProduct['id']],
                 [
@@ -50,5 +57,7 @@ class UpdateBitrixData extends Command
                 ]
             );
         }
+        BitrixProduct::whereNotIn('system_id', $ids)
+            ->delete();
     }
 }
