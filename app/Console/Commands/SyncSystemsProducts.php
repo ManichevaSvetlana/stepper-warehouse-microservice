@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use App\Models\Bitrix\BitrixProduct;
 use App\Models\Poizon\PoizonProduct;
+use App\Models\Shop\ShopProduct;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Console\Command;
 
 class SyncSystemsProducts extends Command
@@ -24,6 +26,7 @@ class SyncSystemsProducts extends Command
 
     /**
      * Execute the console command.
+     * @throws GuzzleException
      */
     public function handle()
     {
@@ -34,44 +37,72 @@ class SyncSystemsProducts extends Command
             echo "Product: {$poizonProduct->data['detail']['title']}\n";
             $sizesPropertiesList = collect($poizonProduct->data['saleProperties']['list']);
             $skus = collect($poizonProduct->data['skus']);
+            $shop = new ShopProduct();
+            $shop->setShopAuth();
+            $syncedProductsForShop = [];
             foreach ($poizonProduct->prices as $sku => $priceModel) {
                 $syncedProduct = $this->prepareProduct($skus, $sku, $sizesPropertiesList, $priceModel, $poizonProduct);
+                $syncedProductsForShop[] = $syncedProduct;
                 $this->createOrUpdateProductInBitrix($syncedProduct);
             }
         }
     }
 
-    private function createOrUpdateProductInBitrix($product) {
+    private function createOrUpdateInShop(ShopProduct $shop, array $products): void
+    {
+
+    }
+
+
+    /**
+     * Create or update product in Bitrix.
+     *
+     * @param array $product
+     * @return void
+     *
+     * @throws GuzzleException
+     */
+    private function createOrUpdateProductInBitrix(array $product): void
+    {
         $bitrix = new BitrixProduct();
 
         $cleanTitle = preg_replace('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{20000}-\x{2A6DF}]+/u', '', $product['name']);
         $data = [
             'sku' => $product['sku'],
             'name' => $cleanTitle,
-            'quantity' => 9999,
             'price' => $product['price'] / 100,
             'size' => $product['size'],
             'brand' => $product['brand'],
             'articleNumber' => $product['articleNumber'],
+            'productSku' => $product['productSku'],
             'images' => [
-                'value' => [
-                    'url' => $product['images'][0]
-                ]
+                $product['images'][0]
             ]
         ];
 
         if(BitrixProduct::where('sku', $product['sku'])->exists()) {
             echo "Update product in Bitrix\n";
-            $existingProductId = BitrixProduct::where('sku', $product['sku'])->first()->id;
+            $existingProductId = BitrixProduct::where('sku', $product['sku'])->where('product_sku', $product['productSku'])->first()->system_id;
             $data['id'] = $existingProductId;
-            $bitrix->addProductToBitrix($data);
+            $bitrix->addProductToBitrix($data, true);
         } else {
             echo "Create product in Bitrix\n";
             $bitrix->addProductToBitrix($data);
         }
     }
 
-    private function prepareProduct($skus, $sku, $sizesPropertiesList, $priceModel, $poizonProduct) {
+    /**
+     * Prepare product data for sync.
+     *
+     * @param $skus
+     * @param $sku
+     * @param $sizesPropertiesList
+     * @param $priceModel
+     * @param $poizonProduct
+     * @return array
+     */
+    private function prepareProduct($skus, $sku, $sizesPropertiesList, $priceModel, $poizonProduct): array
+    {
         echo "SKU: {$sku}\n";
         $neededSku = $skus->firstWhere('skuId', $sku);
         $propertyValueId = collect($neededSku['properties'])->sortByDesc('level')->first()['propertyValueId'];
@@ -83,6 +114,7 @@ class SyncSystemsProducts extends Command
 
         $syncedProduct = [
             'sku' => $poizonProduct->sku,
+            'productSku' => $sku,
             'name' => $poizonProduct->data['detail']['title'],
             'size' => $value,
             'price' => $price,
@@ -95,7 +127,14 @@ class SyncSystemsProducts extends Command
         return $syncedProduct;
     }
 
-    private function parseFraction($str) {
+    /**
+     * Parse fraction from string.
+     *
+     * @param string $str
+     * @return float
+     */
+    private function parseFraction(string $str): float
+    {
         // Замена распространенных дробей на их десятичные эквиваленты
         $fractions = [
             '½' => 0.5,

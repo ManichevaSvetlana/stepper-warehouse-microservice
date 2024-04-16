@@ -15,7 +15,7 @@ class BitrixProduct extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['system_id', 'data', 'sku'];
+    protected $fillable = ['system_id', 'data', 'sku', 'product_sku'];
 
     /**
      * The attributes that should be cast.

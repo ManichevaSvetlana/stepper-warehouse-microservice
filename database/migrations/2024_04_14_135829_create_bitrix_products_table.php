@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('system_id')->unique();
             $table->json('data');
             $table->string('sku')->nullable();
+            $table->string('parent_sku')->nullable();
             $table->timestamps();
         });
     }

@@ -33,20 +33,28 @@ class UpdatePoizonData extends Command
         foreach ($trackSkus as $track) {
             echo "SKU track product - : {$track}\n";
 
-            $existingProduct = PoizonProduct::where('sku', $track)->first();
+            try {
+                $existingProduct = PoizonProduct::where('sku', $track)->first();
 
-            if($existingProduct) $data = $existingProduct->data;
-            else $data = $poizon->getPoizonProductData($track);
+                if($existingProduct) $data = $existingProduct->data;
+                else $data = $poizon->getPoizonProductData($track);
 
-            $prices = $poizon->getPoizonPricesForProduct($track);
-            echo "Product was received SKU: {$track}\n";
-            PoizonProduct::updateOrCreate(
-                ['sku' => $track],
-                [
-                    'data' => $data,
-                    'prices' => $prices,
-                ]
-            );
+                $prices = $poizon->getPoizonPricesForProduct($track);
+                echo "Product was received SKU: {$track}\n";
+                if(!$data || !$prices || !count($prices)) {
+                    echo "Product was not received SKU: {$track}\n";
+                    continue;
+                }
+                PoizonProduct::updateOrCreate(
+                    ['sku' => $track],
+                    [
+                        'data' => $data,
+                        'prices' => $prices,
+                    ]
+                );
+            } catch (\Exception $e) {
+                echo "Product was not received SKU: {$track}\n";
+            }
         }
 
         PoizonProduct::whereNotIn('sku', $trackSkus)->delete();

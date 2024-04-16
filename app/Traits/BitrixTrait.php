@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use JetBrains\PhpStorm\NoReturn;
 
 trait BitrixTrait
@@ -199,6 +201,7 @@ trait BitrixTrait
                 'property120', // External ID
                 'property122', // Brand
                 'property126', // Артикул
+                'property128', // Product SKU in Poizon
             ],
             "filter" => [
                 "iblockId" => $this->parentsBlockId
@@ -288,46 +291,123 @@ trait BitrixTrait
     }
 
     /**
+     * Add the product photo to Bitrix24.
+     *
+     * @param string $productId
+     * @param string $fileBase64
+     * @param string $fileName
+     * @return array
+     */
+    public function addProductPhotoBitrix(string $productId, string $fileBase64, string $fileName): array
+    {
+        $fields = [
+            'fields' => [
+                'productId' => $productId,
+                'type' => 'MORE_PHOTO',
+            ],
+            'fileContent' => [
+                $fileName,
+                $fileBase64
+            ]
+        ];
+
+        $response = \Illuminate\Support\Facades\Http::post($this->bitrixUrl . 'catalog.productImage.add', $fields);
+        return $response->json();
+    }
+
+    /**
+     * Get the filename from the URL.
+     *
+     * @param string $url
+     * @return string
+     */
+    private function getFilenameFromUrl(string $url): string
+    {
+        $url = strtok($url, '?'); // Удаляем параметры запроса, если они есть
+        $parsedUrl = parse_url($url); // Разбиваем URL на компоненты
+        $path = $parsedUrl['path']; // Получаем путь к файлу
+        $filename = basename($path); // Извлекаем имя файла
+
+        // Проверяем расширение файла и заменяем 'jpg' на 'jpeg'
+        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        if (strtolower($extension) === 'jpg') {
+            $filename = str_replace('.jpg', '.jpeg', $filename);
+        }
+
+        return $filename;
+    }
+
+    /**
+     * Convert image to base64.
+     *
+     * @param string $url
+     * @return string
+     * @throws GuzzleException
+     */
+    private function convertImageToBase64(string $url) : string {
+        $client = new Client();
+        $response = $client->get($url);
+        $imageData = $response->getBody()->getContents();
+        return base64_encode($imageData);
+    }
+
+
+    /**
      * Add the product to Bitrix24.
      *
      * @param array $product
+     * @param bool $isUpdate
      * @param bool $isOnlineType
      * @return array
+     * @throws GuzzleException
      */
-    public function addProductToBitrix(array $product, $isUpdate = false, bool $isOnlineType = true): array
+    public function addProductToBitrix(array $product, bool $isUpdate = false, bool $isOnlineType = true): array
     {
         $fields = [
             'fields' => [
                 "canBuyZero" => "Y",
                 "active" => "Y",
+                "available" => "Y",
                 "type" => 7,
                 "iblockId" => $this->parentsBlockId,
                 "name" => $product['name'],
+                'measure' => '9',
                 ("property" . $this->propertiesIds['isOnline']['id']) => ['value' => $isOnlineType ? $this->propertiesIds['isOnline']['value'] : 0],
 
-                'property44' => $product['images'] ?? [], // Картинки галереи
-                'property48' => $product['images'] ?? [], // Картинки галереи
-                'property120' => $product['sku'], // External ID
-                'property122' => $product['brand'], // Brand
-                'property126' => $product['articleNumber'], // Brand
+                'property120' => [
+                    'value' => $product['sku']
+                ], // External ID
+                'property122' => [
+                    'value' => $product['brand']
+                ], // Brand
+                'property126' => [
+                    'value' => $product['articleNumber']
+                ], // Brand
+                'property128' => [
+                    'value' => $product['productSku']
+                ], // Brand
 
             ],
         ];
         if ($product['price'] ?? false) {
-            $fields['fields']['property' . $this->propertiesIds['price']['id']] = $product['price'];
+            $fields['fields']['property' . $this->propertiesIds['price']['id']] = [
+                'value' => $product['price']
+            ];
             $fields['fields']['price'] = $product['price'];
             $fields['fields']['purchasingPrice'] = $product['price'];
             $fields['fields']['purchasingCurrency'] = 'RUB';
         }
-        if ($product['quantity'] ?? false) {
+        /*if ($product['quantity'] ?? false) {
             $fields['fields']['quantity'] = $product['quantity'];
             $fields['fields']['measure'] = '9';
-        }
+        }*/
         if ($product['size'] ?? false) {
-            $fields['fields']['property' . $this->propertiesIds['size']['id']] = $product['size'];
+            $fields['fields']['property' . $this->propertiesIds['size']['id']] = [
+                'value' => $product['size']
+            ];
         }
 
-        $method = $isUpdate ? 'catalog.product.update' : $this->createProductMethodBitrix;
+        $method = $isUpdate ? 'catalog.product.service.update' : $this->createProductMethodBitrix;
 
         if($isUpdate) {
             $fields['id'] = $product['id'];
@@ -335,7 +415,20 @@ trait BitrixTrait
 
         $parent = \Illuminate\Support\Facades\Http::post($this->bitrixUrl . $method, $fields);
 
-        if($product['price']) $price = $this->createProductPriceBitrix($parent['result']['service']['id'], $product['price']);
+        if($product['price']) {
+            $productId = $isUpdate ? $product['id'] : $parent['result']['service']['id'];
+            $productPrice = $product['price'];
+            $price = $isUpdate ? $this->updateOrCreateProductPriceBitrix($productId, $productPrice) : $this->createProductPriceBitrix($productId, $productPrice);
+        }
+
+        if($product['images'] && count($product['images'])) {
+            $file = $product['images'][0];
+            echo "Add photo to product: $file \n";
+            $fileBase64 = $this->convertImageToBase64($file);
+            $fileName = $this->getFilenameFromUrl($file);
+            $productId = $isUpdate ? $product['id'] : $parent['result']['service']['id'];
+            $productPhoto = $this->addProductPhotoBitrix($productId, $fileBase64, $fileName);
+        }
 
         return $parent->json();
     }

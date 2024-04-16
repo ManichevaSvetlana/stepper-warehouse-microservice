@@ -5,6 +5,8 @@ namespace App\Console\Commands;
 use App\Models\Bitrix\BitrixProduct;
 use App\Models\Feature;
 use Illuminate\Console\Command;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class UpdateBitrixData extends Command
 {
@@ -54,6 +56,7 @@ class UpdateBitrixData extends Command
                 [
                     'data' => $bitrixProduct,
                     'sku' => $bitrixProduct['property120']['value'] ?? null,
+                    'product_sku' => $bitrixProduct['property128']['value'] ?? null,
                 ]
             );
         }
