@@ -1,0 +1,761 @@
+array:16 [
+  0 => array:7 [
+    "title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "sku" => "online-7096058"
+    "presence" => "false"
+    "images" => array:1 [
+      "links" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20231108/b4eab90f98ac4fefb90931927394ddc5.jpg"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20231108/74e074d21740456093f118145f181c49.jpg"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20231108/d2f15aa60f164eaa9fccfe432e197011.jpeg"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20240413/a4c7a52ff6c24a37a9747ef6e89a6d7f.jpg"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20240413/01be32e73f4341dbb0edc8b2c2f4cbb2.jpg"
+      ]
+    ]
+    "availability" => "Unpublish"
+    "parent" => array:1 [
+      "ID_487155" => array:2 [
+        "value" => "Catalog"
+        "id" => 487155
+      ]
+    ]
+    "brand" => array:2 [
+      "value" => "Puma"
+      "id" => "301366"
+    ]
+  ]
+  1 => array:11 [
+    "title" => array:1 [
+      "en" => "37.5"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280017"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 22200
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224058
+        "value" => "37.5"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  2 => array:11 [
+    "title" => array:1 [
+      "en" => "38"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280018"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 81900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224046
+        "value" => "38"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  3 => array:11 [
+    "title" => array:1 [
+      "en" => "38.5"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280019"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 87900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224047
+        "value" => "38.5"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  4 => array:11 [
+    "title" => array:1 [
+      "en" => "39"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280020"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 48900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224048
+        "value" => "39"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  5 => array:11 [
+    "title" => array:1 [
+      "en" => "40"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280021"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 49900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224049
+        "value" => "40"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  6 => array:11 [
+    "title" => array:1 [
+      "en" => "40.5"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280022"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 49900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224050
+        "value" => "40.5"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  7 => array:11 [
+    "title" => array:1 [
+      "en" => "41"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280023"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 43900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224051
+        "value" => "41"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  8 => array:11 [
+    "title" => array:1 [
+      "en" => "42"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280024"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 48900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224052
+        "value" => "42"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  9 => array:11 [
+    "title" => array:1 [
+      "en" => "42.5"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280025"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 49900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224053
+        "value" => "42.5"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  10 => array:11 [
+    "title" => array:1 [
+      "en" => "43"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280026"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 48900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224054
+        "value" => "43"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  11 => array:11 [
+    "title" => array:1 [
+      "en" => "44"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280027"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 54900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224055
+        "value" => "44"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  12 => array:11 [
+    "title" => array:1 [
+      "en" => "44.5"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-639280028"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 74900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224056
+        "value" => "44.5"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  13 => array:11 [
+    "title" => array:1 [
+      "en" => "35.5"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-644543026"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 74900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4552291
+        "value" => "35.5"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  14 => array:11 [
+    "title" => array:1 [
+      "en" => "36"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-644543027"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 47900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224043
+        "value" => "36"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+  15 => array:11 [
+    "title" => array:1 [
+      "en" => "37"
+    ]
+    "parent_title" => array:1 [
+      "en" => "PUMA 180 Sneakers     "
+    ]
+    "characteristics_mode" => "Reset"
+    "sku" => "online-644543028"
+    "parent_sku" => "online-7096058"
+    "currency" => "GEL"
+    "price" => 47900
+    "presence" => "false"
+    "force_alias_update" => "1"
+    "characteristics" => array:2 [
+      "ID_629285" => array:2 [
+        "id" => 4224045
+        "value" => "37"
+      ]
+      "ID_563598" => array:2 [
+        "id" => 4224036 // 4419749
+        "value" => "brown"
+      ]
+    ]
+    "modification" => array:2 [
+      "id" => 58481
+      "value" => array:1 [
+        "en" => "Catalog"
+      ]
+    ]
+  ]
+]
+
+
+Response:
+
+array:2 [
+  "status" => "OK"
+  "response" => array:1 [
+    "log" => array:16 [
+      0 => array:3 [
+        "sku" => "online-7096058"
+        "external_id" => null
+        "info" => array:10 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 2
+            "message" => "Product with online-7096058 not exist."
+          ]
+          2 => array:2 [
+            "code" => 19
+            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20231108/b4eab90f98ac4fefb90931927394ddc5.jpg"
+          ]
+          3 => array:2 [
+            "code" => 19
+            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20231108/74e074d21740456093f118145f181c49.jpg"
+          ]
+          4 => array:2 [
+            "code" => 19
+            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20231108/d2f15aa60f164eaa9fccfe432e197011.jpeg"
+          ]
+          5 => array:2 [
+            "code" => 19
+            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20240413/a4c7a52ff6c24a37a9747ef6e89a6d7f.jpg"
+          ]
+          6 => array:2 [
+            "code" => 19
+            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20240413/01be32e73f4341dbb0edc8b2c2f4cbb2.jpg"
+          ]
+          7 => array:2 [
+            "code" => 23
+            "message" => "Successfully set main image"
+          ]
+          8 => array:2 [
+            "code" => 23
+            "message" => "Successfully set additional image"
+          ]
+          9 => array:2 [
+            "code" => 23
+            "message" => "Successfully added 3 images to product gallery"
+          ]
+        ]
+      ]
+      1 => array:3 [
+        "sku" => "online-639280017"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      2 => array:3 [
+        "sku" => "online-639280018"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      3 => array:3 [
+        "sku" => "online-639280019"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      4 => array:3 [
+        "sku" => "online-639280020"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      5 => array:3 [
+        "sku" => "online-639280021"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      6 => array:3 [
+        "sku" => "online-639280022"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      7 => array:3 [
+        "sku" => "online-639280023"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      8 => array:3 [
+        "sku" => "online-639280024"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      9 => array:3 [
+        "sku" => "online-639280025"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      10 => array:3 [
+        "sku" => "online-639280026"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      11 => array:3 [
+        "sku" => "online-639280027"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      12 => array:3 [
+        "sku" => "online-639280028"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      13 => array:3 [
+        "sku" => "online-644543026"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      14 => array:3 [
+        "sku" => "online-644543027"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+      15 => array:3 [
+        "sku" => "online-644543028"
+        "external_id" => null
+        "info" => array:2 [
+          0 => array:2 [
+            "code" => 0
+            "message" => "Success update/add product."
+          ]
+          1 => array:2 [
+            "code" => 12
+            "message" => "Update modification."
+          ]
+        ]
+      ]
+    ]
+  ]
+]

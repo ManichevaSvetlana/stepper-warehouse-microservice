@@ -1,0 +1,302 @@
+{
+    "id": 58481,
+    "external_id": null,
+    "display_in_showcase": 1,
+    "type": "Buttons",
+    "title": {
+        "en": "Catalog"
+    },
+    "characteristics": [
+        {
+            "id": 563598,
+            "external_id": null,
+            "slug": "color",
+            "display_in_showcase": 1,
+            "color": 1,
+            "slider": 0,
+            "required": 0,
+            "use_in_filter": 1,
+            "multiselect": 0,
+            "sort_direction": "Ascending",
+            "title": {
+                "en": "Color"
+            },
+            "short_description": {
+                "en": null
+            },
+            "values": [
+                {
+                    "id": 4224033,
+                    "external_id": null,
+                    "title": {
+                        "en": "White"
+                    }
+                },
+                {
+                    "id": 4224034,
+                    "external_id": null,
+                    "title": {
+                        "en": "Black"
+                    }
+                },
+                {
+                    "id": 4224035,
+                    "external_id": null,
+                    "title": {
+                        "en": "Gray"
+                    }
+                },
+                {
+                    "id": 4224036,
+                    "external_id": null,
+                    "title": {
+                        "en": "Brown"
+                    }
+                },
+                {
+                    "id": 4224037,
+                    "external_id": null,
+                    "title": {
+                        "en": "Blue"
+                    }
+                },
+                {
+                    "id": 4224038,
+                    "external_id": null,
+                    "title": {
+                        "en": "Green"
+                    }
+                },
+                {
+                    "id": 4224039,
+                    "external_id": null,
+                    "title": {
+                        "en": "Yellow"
+                    }
+                },
+                {
+                    "id": 4224040,
+                    "external_id": null,
+                    "title": {
+                        "en": "Red"
+                    }
+                },
+                {
+                    "id": 4224041,
+                    "external_id": null,
+                    "title": {
+                        "en": "Purple "
+                    }
+                },
+                {
+                    "id": 4224042,
+                    "external_id": null,
+                    "title": {
+                        "en": "Pink"
+                    }
+                },
+                {
+                    "id": 4419749,
+                    "external_id": null,
+                    "title": {
+                        "en": "Brown "
+                    }
+                },
+                {
+                    "id": 4419750,
+                    "external_id": null,
+                    "title": {
+                        "en": "Grey"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 563599,
+            "external_id": null,
+            "slug": "stock",
+            "display_in_showcase": 1,
+            "color": 0,
+            "slider": 0,
+            "required": 0,
+            "use_in_filter": 1,
+            "multiselect": 0,
+            "sort_direction": "Default",
+            "title": {
+                "en": "Stock"
+            },
+            "short_description": {
+                "en": null
+            },
+            "values": [
+                {
+                    "id": 4054579,
+                    "external_id": null,
+                    "title": {
+                        "en": "Delivery from 7 days"
+                    }
+                },
+                {
+                    "id": 4054580,
+                    "external_id": null,
+                    "title": {
+                        "en": "Delivery in 2 hours"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 629285,
+            "external_id": null,
+            "slug": "size-1",
+            "display_in_showcase": 1,
+            "color": 0,
+            "slider": 0,
+            "required": 0,
+            "use_in_filter": 1,
+            "multiselect": 0,
+            "sort_direction": "Default",
+            "title": {
+                "en": "Size"
+            },
+            "short_description": {
+                "en": null
+            },
+            "values": [
+                {
+                    "id": 4224043,
+                    "external_id": null,
+                    "title": {
+                        "en": "36"
+                    }
+                },
+                {
+                    "id": 4224044,
+                    "external_id": null,
+                    "title": {
+                        "en": "36.5"
+                    }
+                },
+                {
+                    "id": 4224045,
+                    "external_id": null,
+                    "title": {
+                        "en": "37"
+                    }
+                },
+                {
+                    "id": 4224046,
+                    "external_id": null,
+                    "title": {
+                        "en": "38"
+                    }
+                },
+                {
+                    "id": 4224047,
+                    "external_id": null,
+                    "title": {
+                        "en": "38.5"
+                    }
+                },
+                {
+                    "id": 4224048,
+                    "external_id": null,
+                    "title": {
+                        "en": "39"
+                    }
+                },
+                {
+                    "id": 4224049,
+                    "external_id": null,
+                    "title": {
+                        "en": "40"
+                    }
+                },
+                {
+                    "id": 4224050,
+                    "external_id": null,
+                    "title": {
+                        "en": "40.5"
+                    }
+                },
+                {
+                    "id": 4224051,
+                    "external_id": null,
+                    "title": {
+                        "en": "41"
+                    }
+                },
+                {
+                    "id": 4224052,
+                    "external_id": null,
+                    "title": {
+                        "en": "42"
+                    }
+                },
+                {
+                    "id": 4224053,
+                    "external_id": null,
+                    "title": {
+                        "en": "42.5"
+                    }
+                },
+                {
+                    "id": 4224054,
+                    "external_id": null,
+                    "title": {
+                        "en": "43"
+                    }
+                },
+                {
+                    "id": 4224055,
+                    "external_id": null,
+                    "title": {
+                        "en": "44"
+                    }
+                },
+                {
+                    "id": 4224056,
+                    "external_id": null,
+                    "title": {
+                        "en": "44.5"
+                    }
+                },
+                {
+                    "id": 4224057,
+                    "external_id": null,
+                    "title": {
+                        "en": "45"
+                    }
+                },
+                {
+                    "id": 4224058,
+                    "external_id": null,
+                    "title": {
+                        "en": "37.5"
+                    }
+                },
+                {
+                    "id": 4224059,
+                    "external_id": null,
+                    "title": {
+                        "en": "41.5"
+                    }
+                },
+                {
+                    "id": 4224060,
+                    "external_id": null,
+                    "title": {
+                        "en": "39.5"
+                    }
+                },
+                {
+                    "id": 4552291,
+                    "external_id": null,
+                    "title": {
+                        "en": "35.5"
+                    }
+                }
+            ]
+        }
+    ]
+}

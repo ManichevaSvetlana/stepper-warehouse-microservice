@@ -386,6 +386,15 @@ trait BitrixTrait
                 'property128' => [
                     'value' => $product['productSku']
                 ], // Brand
+                'property130' => [
+                    'value' => $product['originalPriceInLari'] ?? 0
+                ], // Original price in GEL
+                'property132' => [
+                    'value' => $product['originalPriceWithExpenses'] ?? 0
+                ], // Original price in GEL with expenses
+                'property134' => [
+                    'value' => $product['income'] ?? 0
+                ], // Original price in GEL with expenses
 
             ],
         ];
@@ -421,7 +430,7 @@ trait BitrixTrait
             $price = $isUpdate ? $this->updateOrCreateProductPriceBitrix($productId, $productPrice) : $this->createProductPriceBitrix($productId, $productPrice);
         }
 
-        if($product['images'] && count($product['images'])) {
+        if($product['images'] && count($product['images']) && !$isUpdate) {
             $file = $product['images'][0];
             echo "Add photo to product: $file \n";
             $fileBase64 = $this->convertImageToBase64($file);

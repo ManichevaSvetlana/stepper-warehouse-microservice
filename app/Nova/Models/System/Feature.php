@@ -32,7 +32,7 @@ class Feature extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'system_id', 'type', 'system'
+        'id', 'system_id', 'type', 'system', 'data'
     ];
 
     /**
