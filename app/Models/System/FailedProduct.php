@@ -1,21 +1,20 @@
 <?php
 
-namespace App\Models\Poizon;
+namespace App\Models\System;
 
-use App\Traits\PoizonTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PoizonProduct extends Model
+class FailedProduct extends Model
 {
-    use HasFactory, PoizonTrait;
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = ['data', 'sku', 'type', 'prices', 'updated_at', 'created_at'];
+    protected $fillable = ['sku', 'type', 'message', 'data'];
 
     /**
      * The attributes that should be cast.
@@ -24,6 +23,5 @@ class PoizonProduct extends Model
      */
     protected $casts = [
         'data' => 'array',
-        'prices' => 'array',
     ];
 }

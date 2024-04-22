@@ -6,9 +6,9 @@ use App\Models\Bitrix\BitrixProduct;
 use App\Models\Feature;
 use App\Models\Poizon\PoizonProduct;
 use App\Models\Shop\ShopProduct;
+use App\Models\System\FailedProduct;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
 
 class SyncSystemsProducts extends Command
 {
@@ -17,7 +17,7 @@ class SyncSystemsProducts extends Command
      *
      * @var string
      */
-    protected $signature = 'sync:systems-products';
+    protected $signature = 'sync:systems-products {--section=all}';
 
     /**
      * The console command description.
@@ -32,13 +32,10 @@ class SyncSystemsProducts extends Command
      */
     public function handle()
     {
-        Artisan::call('shop:update-shop-data');
-        Artisan::call('bitrix:update-bitrix-data');
-        //Artisan::call('poizon:update-poizon-data');
-
-
-
+        $section = $this->option('section');
         $poizonProducts = PoizonProduct::all();
+        $failedProductsShop = [];
+        $failedProductsBitrix = [];
 
         foreach ($poizonProducts as $poizonProduct) {
             echo "Product: {$poizonProduct->sku}\n";
@@ -49,13 +46,47 @@ class SyncSystemsProducts extends Command
             $shop->setShopAuth();
             $syncedProductsForShop = [];
             foreach ($poizonProduct->prices as $sku => $priceModel) {
-                $syncedProduct = $this->prepareProduct($skus, $sku, $sizesPropertiesList, $priceModel, $poizonProduct);
-                $syncedProductsForShop[] = $syncedProduct;
-                $this->createOrUpdateProductInBitrix($syncedProduct);
+                try {
+                    $syncedProduct = $this->prepareProduct($skus, $sku, $sizesPropertiesList, $priceModel, $poizonProduct);
+                    $syncedProductsForShop[] = $syncedProduct;
+                    if ($section === 'all' || $section === 'bitrix') $this->createOrUpdateProductInBitrix($syncedProduct);
+                } catch (\Exception $e) {
+                    echo "Error while preparing and storing bitrix: {$e->getMessage()}\n";
+                    $failedProductsBitrix[$sku] = $e->getMessage();
+                    $failedProductsShop[$sku] = $e->getMessage();
+                    if ($section === 'all' || $section === 'bitrix') FailedProduct::create([
+                        'sku' => $sku,
+                        'type' => 'bitrix',
+                        'message' => $e->getMessage(),
+                        'data' => $e->getTrace()
+                    ]);
+                    if ($section === 'all' || $section === 'shop') FailedProduct::create([
+                        'sku' => $sku,
+                        'type' => 'shop',
+                        'message' => $e->getMessage(),
+                        'data' => $e->getTrace()
+                    ]);
+                }
             }
 
-            $this->createOrUpdateInShop($shop, $syncedProductsForShop);
+            if ($section === 'all' || $section === 'shop') {
+                try {
+                    $this->createOrUpdateInShop($shop, $syncedProductsForShop);
+                } catch (\Exception $e) {
+                    echo "Error while storing shop: {$e->getMessage()}\n";
+                    $failedProductsShop[$sku] = $e->getMessage();
+                    FailedProduct::create([
+                        'sku' => $sku,
+                        'type' => 'shop',
+                        'message' => $e->getMessage(),
+                        'data' => $e->getTrace()
+                    ]);
+                }
+            }
         }
+
+        $count = count($failedProductsShop);
+        echo "Failed products for shop: $count \n";
     }
 
     /**
@@ -82,16 +113,24 @@ class SyncSystemsProducts extends Command
             '黑色' => 'black',    // Черный
             '白色' => 'white',    // Белый
             '红色' => 'red',      // Красный
+            '白色,红色' => 'red',      // Красный
             '蓝色' => 'blue',     // Синий
             '绿色' => 'green',    // Зеленый
             '黄色' => 'yellow',   // Желтый
             '橙色' => 'orange',   // Оранжевый
             '紫色' => 'purple',   // Фиолетовый
             '褐色' => 'brown',    // Коричневый
+            '米色,棕色' => 'brown',    // Коричневый
+            '棕色' => 'brown',    // Коричневый
             '灰色' => 'gray',     // Серый
+            '黑色,灰色' => 'black',     // Серый
+            '灰色,蓝色' => 'gray',     // Серый
+            '白色,灰色' => 'gray',     // Серый
             '粉红色' => 'pink',   // Розовый
             '青色' => 'cyan',     // Голубой
-            '银色' => 'silver'    // Серебряный
+            '银色' => 'silver',   // Серебряный
+            '米色' => 'beige',   // Серебряный
+            '粉色' => 'pink'    // Серебряный
         ];
 
         $groupedBySku = collect($products)->groupBy('sku');
@@ -120,7 +159,7 @@ class SyncSystemsProducts extends Command
                         [
                             "id" => 4054579,
                             "value" => [
-                                "en" => "Delivery from 7 days"
+                                "en" => "Delivery from 10 days"
                             ],
                         ]
                     ],
@@ -134,18 +173,22 @@ class SyncSystemsProducts extends Command
                     ],
                 ];
                 if ($colors) {
-                    $colorId = collect($colors)->first(function ($item) use ($product, $colorsChinese) {
-                        return $item['title']['en'] === ucfirst($colorsChinese[$product['colorName']]);
-                    });
-                    if ($colorId) {
-                        $characteristics["ID_{$color['id']}"] = [
-                            [
-                                "id" => $colorId['id'],
-                                "value" => [
-                                    "en" => $colorsChinese[$product['colorName']]
+                    try {
+                        $colorId = collect($colors)->first(function ($item) use ($product, $colorsChinese) {
+                            return $item['title']['en'] === ucfirst($colorsChinese[$product['colorName']]);
+                        });
+                        if ($colorId) {
+                            $characteristics["ID_{$color['id']}"] = [
+                                [
+                                    "id" => $colorId['id'],
+                                    "value" => [
+                                        "en" => $colorsChinese[$product['colorName']]
+                                    ]
                                 ]
-                            ]
-                        ];
+                            ];
+                        }
+                    } catch (\Exception $e) {
+                        echo "Color {$product['colorName']} not found\n";
                     }
                 }
 
@@ -154,10 +197,10 @@ class SyncSystemsProducts extends Command
 
             $brandId = $brand?->system_id;
             $title = $group[0]['name'];
-            $parentsIds = [487155, 487157, 487168];
+            $parentsIds = [487155, 607325, 607326, 607327];
 
             $productsData = [
-               ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images),
+                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images),
                 ...$preparedProducts,
             ];
             echo 'Creating product with variations in shop: ' . $title . PHP_EOL;
@@ -177,7 +220,7 @@ class SyncSystemsProducts extends Command
      * @param array $characteristics
      * @return array
      * */
-    private function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = []) : array
+    private function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = []): array
     {
         return [
             "title" => $title,
@@ -188,9 +231,9 @@ class SyncSystemsProducts extends Command
             "barcode" => $parentSku,
             "currency" => "GEL",
             "price" => $price,
-            "presence" => "false",
+            "presence" => $price > 999 ? 0 : 9999,
             "force_alias_update" => "1",
-            "availability" => "Unpublish",
+            "availability" => "Publish",
             "characteristics" => $characteristics,
             "modification" => [
                 "id" => 58481,
@@ -213,7 +256,7 @@ class SyncSystemsProducts extends Command
      * @param array $stickerIds
      * @return array
      */
-    private function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = []) : array
+    private function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = []): array
     {
         $parents = [];
         foreach ($parentIds as $parentId) {
@@ -231,14 +274,14 @@ class SyncSystemsProducts extends Command
             [
                 "title" => $title,
                 "sku" => $articleNumber,
-                "presence" => "false",
+                "presence" => "true",
                 "images" => [
                     "links" => [
                         ...$images
                     ]
                 ],
                 "barcode" => $sku,
-                "availability" => "Unpublish",
+                "availability" => "Publish",
                 "parent" => $parents,
                 "brand" => [
                     "id" => $brandId
@@ -287,8 +330,9 @@ class SyncSystemsProducts extends Command
 
         $data = [
             'sku' => $product['sku'],
-            'name' => $product['name'],
+            'name' => $product['name'] . '-' . $product['size'],
             'price' => $product['price'],
+            'originalPriceInCNY' => $product['originalPriceInCNY'],
             'originalPriceInLari' => $product['originalPriceInLari'],
             'originalPriceWithExpenses' => $product['originalPriceWithExpenses'],
             'income' => $product['income'],
@@ -333,6 +377,10 @@ class SyncSystemsProducts extends Command
         echo "SKU: {$sku} - Size: {$value} - Price: {$price['price']}\n";
 
         $color = collect($poizonProduct->data['basicParam']['basicList'])->firstWhere('key', '主色');
+        $brand = $poizonProduct->data['brandRootInfo']['brandItemList'][0]['brandName'];
+        if($brand === 'adidas originals') {
+            $brand = 'adidas';
+        }
 
 
         $syncedProduct = [
@@ -342,10 +390,11 @@ class SyncSystemsProducts extends Command
             'size' => $value,
             'price' => $price['price'],
             'originalPriceInLari' => $price['originalPriceInLari'],
+            'originalPriceInCNY' => $price['originalPriceInCNY'],
             'originalPriceWithExpenses' => $price['originalPriceWithExpenses'],
             'income' => $price['income'],
             'images' => collect($poizonProduct->data['image']['spuImage']['images'])->pluck('url')->toArray(),
-            'brand' => $poizonProduct->data['brandRootInfo']['brandItemList'][0]['brandName'],
+            'brand' => $brand,
             'category' => $poizonProduct->data['detail']['categoryId'],
             'articleNumber' => $poizonProduct->data['detail']['articleNumber'],
             'colorName' => $color['value'] ?? null,
@@ -386,50 +435,56 @@ class SyncSystemsProducts extends Command
      * @param $initialPrice
      * @return array
      */
-    private function calculatePrice($initialPrice) : array
+    private function calculatePrice($initialPrice): array
     {
         $lari = 0.37;
         $shipment = 32;
         $terminalCommission = 1.02;
         $vat = 1.19;
 
-        $upTo50 = 1.9;
-        $upTo100 = 1.8;
-        $upTo200 = 1.6;
-        $upTo300 = 1.5;
-        $upTo400 = 1.45;
-        $upTo500 = 1.4;
-        $upTo600 = 1.35;
-        $after600 = 1.25;
-
-        $originalPriceInLari = ($initialPrice / 100) * $lari; // price in lari
+        $originalPriceInCNY = $initialPrice / 100; // original price
+        $originalPriceInLari = $originalPriceInCNY * $lari; // price in lari
         $price = $originalPriceInLari + $shipment; // price with shipment
-        if($price <= 50)
-            $price *= $upTo50;
-        elseif($price <= 100)
-            $price *= $upTo100;
-        elseif($price <= 200)
-            $price *= $upTo200;
-        elseif($price <= 300)
-            $price *= $upTo300;
-        elseif($price <= 400)
-            $price *= $upTo400;
-        elseif($price <= 500)
-            $price *= $upTo500;
-        elseif($price <= 600)
-            $price *= $upTo600;
-        else
-            $price *= $after600;
+        $price = $this->calculateCoefficient($price) * $price; // price with coefficient
+
 
         $price = $this->roundToNearest5or9(($price * $terminalCommission) * $vat); // price with commissions
         $income = $price + ($price * (1 - $vat)) + ($price * (1 - $terminalCommission)) + ($originalPriceInLari * (1 - $vat - 0.01)) - $originalPriceInLari;
 
         return [
             "price" => $price,
+            "originalPriceInCNY" => $originalPriceInCNY,
             "originalPriceInLari" => $originalPriceInLari,
             "originalPriceWithExpenses" => ($originalPriceInLari) * ($vat - 0.01) + $shipment,
             "income" => $income
         ];
+    }
+
+    /**
+     * Calculate coefficient.
+     *
+     * @param float $price
+     * @return float
+     */
+    private function calculateCoefficient(float $price): float
+    {
+        $min_price = 50;
+        $max_price = 600;
+        $min_coefficient = 1.5;
+        $max_coefficient = 1.1;
+
+        if ($price < $min_price) {
+            return $min_coefficient;
+        }
+
+        if ($price > $max_price) {
+            return $max_coefficient;
+        }
+
+        // Используем линейную интерполяцию для плавного изменения коэффициента
+        $coefficient = $min_coefficient + (($price - $min_price) / ($max_price - $min_price)) * ($max_coefficient - $min_coefficient);
+
+        return $coefficient;
     }
 
     /**
@@ -438,7 +493,8 @@ class SyncSystemsProducts extends Command
      * @param $number
      * @return int
      */
-    private function roundToNearest5or9($number) : int {
+    private function roundToNearest5or9($number): int
+    {
         // Округляем число в большую сторону
         $rounded = ceil($number);
 

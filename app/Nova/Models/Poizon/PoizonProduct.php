@@ -5,6 +5,7 @@ namespace App\Nova\Models\Poizon;
 use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -31,7 +32,7 @@ class PoizonProduct extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'sku'
+        'id', 'sku', 'data'
     ];
 
     /**
@@ -47,6 +48,8 @@ class PoizonProduct extends Resource
             Slug::make('SKU', 'sku')->required(),
             Code::make('Data', 'data')->json(),
             Code::make('Prices', 'prices')->json(),
+            DateTime::make('Created At')->exceptOnForms(),
+            DateTime::make('Updated At')->exceptOnForms(),
         ];
     }
 

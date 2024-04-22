@@ -42,4 +42,22 @@ trait PoizonTrait
 
         return $response->json()['data'];
     }
+
+    /**
+     * Poizon: convert link to sku.
+     *
+     * @return array
+     * @var string $link
+     */
+    public function convertPoizonLinkToSKU(string $link) : mixed
+    {
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+            'apiKey' => env('DEMO_POIZON_API_KEY'),
+        ])->get('https://poison-api.com/Dewu/convertLinkToSpuId', [
+            'link' => $link,
+        ]);
+
+        return $response->json()['skuId'];
+    }
 }

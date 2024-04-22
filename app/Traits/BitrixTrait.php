@@ -181,7 +181,7 @@ trait BitrixTrait
      *
      * @return array
      */
-    public function listBitrixParentProducts(): array
+    public function listBitrixParentProducts($page = 1): array
     {
         $response = \Illuminate\Support\Facades\Http::get($this->bitrixUrl . $this->listMethodBitrix, [
             "select" => [
@@ -202,10 +202,18 @@ trait BitrixTrait
                 'property122', // Brand
                 'property126', // Артикул
                 'property128', // Product SKU in Poizon
+                'property136', // Shop ID
+                'property138', // Quantity
+                'property140', // Original price in CNY
+                'property130', // Original price in GEL
+                'property132', // Original price in GEL with expenses
+                'property134', // Income
             ],
             "filter" => [
                 "iblockId" => $this->parentsBlockId
             ],
+            'start' => $page * 50 - 50,
+            'order' => ['ID' => 'ASC'],
         ]);
 
         $productData = $response->json();
@@ -395,6 +403,9 @@ trait BitrixTrait
                 'property134' => [
                     'value' => $product['income'] ?? 0
                 ], // Original price in GEL with expenses
+                'property140' => [
+                    'value' => $product['originalPriceInCNY'] ?? 0
+                ], // Original price in CNY with expenses
 
             ],
         ];
@@ -406,17 +417,28 @@ trait BitrixTrait
             $fields['fields']['purchasingPrice'] = $product['price'];
             $fields['fields']['purchasingCurrency'] = 'RUB';
         }
-        /*if ($product['quantity'] ?? false) {
-            $fields['fields']['quantity'] = $product['quantity'];
-            $fields['fields']['measure'] = '9';
-        }*/
         if ($product['size'] ?? false) {
             $fields['fields']['property' . $this->propertiesIds['size']['id']] = [
                 'value' => $product['size']
             ];
         }
 
-        $method = $isUpdate ? 'catalog.product.service.update' : $this->createProductMethodBitrix;
+        if(!$isOnlineType) {
+            $property = 'element';
+            $method = $isUpdate ? 'catalog.product.update' : 'catalog.product.add';
+            $fields['fields']['property136'] = $product['shopId'] ?? '';
+            if ($product['quantity'] ?? false) {
+                $fields['fields']['quantity'] = $product['quantity'];
+                $fields['fields']['property138'] = $product['quantity'];
+                $fields['fields']['measure'] = '9';
+            }
+        }
+        else {
+            $property = 'service';
+            $method = $isUpdate ? 'catalog.product.service.update' : $this->createProductMethodBitrix;
+            $fields['fields']['quantity'] = 999999;
+            $fields['fields']['measure'] = '9';
+        }
 
         if($isUpdate) {
             $fields['id'] = $product['id'];
@@ -425,7 +447,7 @@ trait BitrixTrait
         $parent = \Illuminate\Support\Facades\Http::post($this->bitrixUrl . $method, $fields);
 
         if($product['price']) {
-            $productId = $isUpdate ? $product['id'] : $parent['result']['service']['id'];
+            $productId = $isUpdate ? $product['id'] : $parent['result'][$property]['id'];
             $productPrice = $product['price'];
             $price = $isUpdate ? $this->updateOrCreateProductPriceBitrix($productId, $productPrice) : $this->createProductPriceBitrix($productId, $productPrice);
         }
@@ -435,7 +457,7 @@ trait BitrixTrait
             echo "Add photo to product: $file \n";
             $fileBase64 = $this->convertImageToBase64($file);
             $fileName = $this->getFilenameFromUrl($file);
-            $productId = $isUpdate ? $product['id'] : $parent['result']['service']['id'];
+            $productId = $isUpdate ? $product['id'] : $parent['result'][$property]['id'];
             $productPhoto = $this->addProductPhotoBitrix($productId, $fileBase64, $fileName);
         }
 

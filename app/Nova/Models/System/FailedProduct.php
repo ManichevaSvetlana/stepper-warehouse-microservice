@@ -3,22 +3,21 @@
 namespace App\Nova\Models\System;
 
 use App\Nova\Resource;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Feature extends Resource
+class FailedProduct extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Feature>
+     * @var class-string<\App\Models\System\FailedProduct>
      */
-    public static $model = \App\Models\Feature::class;
+    public static $model = \App\Models\System\FailedProduct::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -33,7 +32,7 @@ class Feature extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'system_id', 'type', 'system', 'data'
+        'id',
     ];
 
     /**
@@ -46,10 +45,10 @@ class Feature extends Resource
     {
         return [
             ID::make()->sortable(),
-            Slug::make('External ID', 'system_id')->required(),
-            Code::make('Data', 'data')->json(),
-            Text::make('Type', 'type'),
-            Text::make('System', 'system'),
+            Text::make('Sku'),
+            Text::make('Type'),
+            Textarea::make('Message'),
+            Code::make('Data')->json(),
             DateTime::make('Created At')->exceptOnForms(),
             DateTime::make('Updated At')->exceptOnForms(),
         ];

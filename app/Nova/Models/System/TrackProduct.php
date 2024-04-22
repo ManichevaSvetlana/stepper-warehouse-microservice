@@ -4,6 +4,7 @@ namespace App\Nova\Models\System;
 
 use App\Nova\Resource;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -44,6 +45,8 @@ class TrackProduct extends Resource
         return [
             ID::make()->sortable(),
             Slug::make('SKU', 'sku')->required(),
+            DateTime::make('Created At')->exceptOnForms(),
+            DateTime::make('Updated At')->exceptOnForms(),
         ];
     }
 

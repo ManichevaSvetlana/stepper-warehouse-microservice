@@ -12,7 +12,7 @@ class UpdateShopData extends Command
      *
      * @var string
      */
-    protected $signature = 'shop:update-shop-data';
+    protected $signature = 'shop:update-shop-data {--section=all}';
 
     /**
      * The console command description.
@@ -26,37 +26,54 @@ class UpdateShopData extends Command
      */
     public function handle()
     {
+        $section = $this->option('section');
+
         $feature = new \App\Models\Feature();
         echo 'Setting shop auth' . "\n";
         $feature->setShopAuth();
-        echo 'Updating shop brands' . "\n";
-        $feature->updateListOfLocalShopBrands();
-        echo 'Updating shop categories' . "\n";
-        $feature->updateListOfLocalShopCategories();
-        echo 'Updating shop characteristics' . "\n";
-        $feature->updateListOfLocalShopCharacteristics();
-        echo 'Updating shop stickers' . "\n";
-        $feature->updateListOfLocalShopStickers();
+        if ($section === 'all' || $section === 'brands' || $section === 'features') {
+            echo 'Updating shop brands' . "\n";
+            $feature->updateListOfLocalShopBrands();
+        }
+        // Обновление категорий
+        if ($section === 'all' || $section === 'categories' || $section === 'features') {
+            echo 'Updating shop categories' . "\n";
+            $feature->updateListOfLocalShopCategories();
+        }
 
-        echo 'Updating shop products' . "\n";
-        $product = new \App\Models\Shop\ShopProduct();
-        $product->setShopAuth();
+        // Обновление характеристик
+        if ($section === 'all' || $section === 'characteristics' || $section === 'features') {
+            echo 'Updating shop characteristics' . "\n";
+            $feature->updateListOfLocalShopCharacteristics();
+        }
 
-        $ids = [];
-        $page = 1;
-        do {
-            $products = $product->listShopProducts(50, $page);
-            foreach ($products as $productModel) {
-                $ids[] = $productModel['id'];
-                echo 'Update / create product: #' . $productModel['id'] . "\n";
-                ShopProduct::updateOrCreate(
-                    ['system_id' => $productModel['id']],
-                    ['data' => $productModel, 'sku' => $productModel['sku']]
-                );
-            }
-            $page++;
-        } while (!empty($products));
+        // Обновление наклеек
+        if ($section === 'all' || $section === 'stickers' || $section === 'features') {
+            echo 'Updating shop stickers' . "\n";
+            $feature->updateListOfLocalShopStickers();
+        }
 
-        ShopProduct::whereNotIn('system_id', $ids)->delete();
+        if ($section === 'all' || $section === 'products') {
+            echo 'Updating shop products' . "\n";
+            $product = new \App\Models\Shop\ShopProduct();
+            $product->setShopAuth();
+
+            $ids = [];
+            $page = 1;
+            do {
+                $products = $product->listShopProducts(50, $page);
+                foreach ($products as $productModel) {
+                    $ids[] = $productModel['id'];
+                    echo 'Update / create product: #' . $productModel['id'] . "\n";
+                    ShopProduct::updateOrCreate(
+                        ['system_id' => $productModel['id']],
+                        ['data' => $productModel, 'sku' => $productModel['sku']]
+                    );
+                }
+                $page++;
+            } while (!empty($products));
+
+            ShopProduct::whereNotIn('system_id', $ids)->delete();
+        }
     }
 }

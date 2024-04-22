@@ -32,7 +32,7 @@ class ShopProduct extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'system_id'
+        'id', 'system_id', 'data'
     ];
 
     /**
