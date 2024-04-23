@@ -11,7 +11,7 @@ Route::get('/test', function () {
     $sku = 608677824;
     $skus = collect($poizonProduct->data['skus']);
     $neededSku = $skus->firstWhere('skuId', $sku);
-    $propertyValueId = collect($neededSku['properties'])->sortByDesc('level')->first()['propertyValueId'];
+    $propertyValueId = collect($neededSku['properties'])->last()['propertyValueId'];
     $property = $sizesPropertiesList->firstWhere('propertyValueId', $propertyValueId);
     $value = $property['value'];
     dd($value);
@@ -96,6 +96,49 @@ Route::get('/test1', function () {
 
 Route::get('/test4', function () {
 
+    function roundToNearest5or9($number): int
+    {
+        // Округляем число в большую сторону
+        $rounded = ceil($number);
+
+        // Получаем последнюю цифру округленного числа
+        $lastDigit = $rounded % 10;
+
+        // Определяем, до какой цифры округлять
+        if ($lastDigit < 5) {
+            $newLastDigit = 5;
+        } else {
+            $newLastDigit = 9;
+        }
+
+        // Вычисляем, на сколько нужно изменить последнюю цифру
+        $difference = $newLastDigit - $lastDigit;
+
+        // Возвращаем число, округленное до ближайшего 5 или 9
+        return $rounded + $difference;
+    }
+
+    function calculateCoefficient(float $price): float
+    {
+        $min_price = 50;
+        $max_price = 600;
+        $min_coefficient = 1.5;
+        $max_coefficient = 1.1;
+
+        if ($price < $min_price) {
+            return $min_coefficient;
+        }
+
+        if ($price > $max_price) {
+            return $max_coefficient;
+        }
+
+        // Используем линейную интерполяцию для плавного изменения коэффициента
+        $coefficient = $min_coefficient + (($price - $min_price) / ($max_price - $min_price)) * ($max_coefficient - $min_coefficient);
+
+        return $coefficient;
+    }
+
     function calculatePrice($initialPrice): array
     {
         $lari = 0.37;
@@ -104,24 +147,25 @@ Route::get('/test4', function () {
         $vat = 1.19;
 
         $originalPriceInCNY = $initialPrice / 100; // original price
-        $originalPriceInLari = $originalPriceInCNY * $lari; // price in lari - 1900
-        $price = $originalPriceInLari + $shipment; // price with shipment - 1900 + 32 = 1932
-        $price = 1.3 * $price; // price with coefficient = 1932 * 1.1 = 2125.2
+        $originalPriceInLari = $originalPriceInCNY * $lari; // price in lari
+        $priceWithShipment = $originalPriceInLari + $shipment; // price with shipment
+        $price = calculateCoefficient($priceWithShipment) * $priceWithShipment; // price with coefficient
 
 
-        $price = ($price * $terminalCommission) * $vat - ($originalPriceInLari * abs(1 - $vat - 0.01)) ; // price with commissions 2575
-        $income = $price - ($price * abs(1 - $vat)) - ($price * abs(1 - $terminalCommission)) + ($originalPriceInLari * abs(1 - $vat - 0.01)) - $originalPriceInLari;
+        $price = roundToNearest5or9((($price * $terminalCommission) * $vat)); // price with commissions
+        $priceAfterTerminalCommission = $price - $price * $terminalCommission;
+        $income = $price - ($priceAfterTerminalCommission * abs(1 - $vat)) + ($priceWithShipment * (1 - $vat - 0.01)) - ($originalPriceInLari + $shipment);
 
         return [
             "price" => $price,
             "originalPriceInCNY" => $originalPriceInCNY,
             "originalPriceInLari" => $originalPriceInLari,
-            "originalPriceWithExpenses" => ($originalPriceInLari) * ($vat - 0.01) + $shipment,
+            "originalPriceWithExpenses" => $priceWithShipment * ($vat - 0.01),
             "income" => $income
         ];
     }
 
-    dd(calculatePrice(60000));
+    dd(calculatePrice(19800));
 });
 
 Route::get('/test2', function () {

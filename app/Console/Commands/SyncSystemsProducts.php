@@ -111,14 +111,21 @@ class SyncSystemsProducts extends Command
 
         $colorsChinese = [
             '黑色' => 'black',    // Черный
+            '黑色,紫色' => 'black',    // Черный
+            '黑色,白色' => 'black',    // Черный
             '白色' => 'white',    // Белый
             '红色' => 'red',      // Красный
             '白色,红色' => 'red',      // Красный
             '蓝色' => 'blue',     // Синий
+            '白色,蓝色' => 'blue',     // Синий
             '绿色' => 'green',    // Зеленый
+            '黑色,绿色' => 'green',    // Зеленый
             '黄色' => 'yellow',   // Желтый
+            '白色,黄色' => 'yellow',   // Желтый
             '橙色' => 'orange',   // Оранжевый
+            '白色,橙色' => 'orange',   // Оранжевый
             '紫色' => 'purple',   // Фиолетовый
+            '白色,紫色' => 'purple',   // Фиолетовый
             '褐色' => 'brown',    // Коричневый
             '米色,棕色' => 'brown',    // Коричневый
             '棕色' => 'brown',    // Коричневый
@@ -126,11 +133,14 @@ class SyncSystemsProducts extends Command
             '黑色,灰色' => 'black',     // Серый
             '灰色,蓝色' => 'gray',     // Серый
             '白色,灰色' => 'gray',     // Серый
+            '蓝色,灰' => 'gray',     // Серый
             '粉红色' => 'pink',   // Розовый
             '青色' => 'cyan',     // Голубой
             '银色' => 'silver',   // Серебряный
             '米色' => 'beige',   // Серебряный
-            '粉色' => 'pink'    // Серебряный
+            '灰色,米色' => 'beige',   // Серебряный
+            '粉色' => 'pink',    // Серебряный
+            '粉色,褐色' => 'pink',    // Серебряный
         ];
 
         $groupedBySku = collect($products)->groupBy('sku');
@@ -370,7 +380,7 @@ class SyncSystemsProducts extends Command
     {
         echo "SKU: {$sku}\n";
         $neededSku = $skus->firstWhere('skuId', $sku);
-        $propertyValueId = collect($neededSku['properties'])->sortByDesc('level')->first()['propertyValueId'];
+        $propertyValueId = collect($neededSku['properties'])->last()['propertyValueId'];
         $property = $sizesPropertiesList->firstWhere('propertyValueId', $propertyValueId);
         $value = $this->parseFraction($property['value']);
         $price = $this->calculatePrice($priceModel['prices'][0]['price']);
@@ -444,18 +454,19 @@ class SyncSystemsProducts extends Command
 
         $originalPriceInCNY = $initialPrice / 100; // original price
         $originalPriceInLari = $originalPriceInCNY * $lari; // price in lari
-        $price = $originalPriceInLari + $shipment; // price with shipment
-        $price = $this->calculateCoefficient($price) * $price; // price with coefficient
+        $priceWithShipment = $originalPriceInLari + $shipment; // price with shipment
+        $price = $this->calculateCoefficient($priceWithShipment) * $priceWithShipment; // price with coefficient
 
 
-        $price = $this->roundToNearest5or9(($price * $terminalCommission) * $vat); // price with commissions
-        $income = $price + ($price * (1 - $vat)) + ($price * (1 - $terminalCommission)) + ($originalPriceInLari * (1 - $vat - 0.01)) - $originalPriceInLari;
+        $price = $this->roundToNearest5or9((($price * $terminalCommission) * $vat)); // price with commissions
+        $priceAfterTerminalCommission = $price - $price * $terminalCommission;
+        $income = $price - ($priceAfterTerminalCommission * abs(1 - $vat)) + ($priceWithShipment * (1 - $vat - 0.01)) - ($originalPriceInLari + $shipment);
 
         return [
             "price" => $price,
             "originalPriceInCNY" => $originalPriceInCNY,
             "originalPriceInLari" => $originalPriceInLari,
-            "originalPriceWithExpenses" => ($originalPriceInLari) * ($vat - 0.01) + $shipment,
+            "originalPriceWithExpenses" => $priceWithShipment * ($vat - 0.01),
             "income" => $income
         ];
     }
@@ -470,7 +481,7 @@ class SyncSystemsProducts extends Command
     {
         $min_price = 50;
         $max_price = 600;
-        $min_coefficient = 1.5;
+        $min_coefficient = 1.4;
         $max_coefficient = 1.1;
 
         if ($price < $min_price) {

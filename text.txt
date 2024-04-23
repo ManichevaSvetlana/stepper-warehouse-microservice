@@ -1,761 +1,1768 @@
-array:16 [
-  0 => array:7 [
-    "title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "sku" => "online-7096058"
-    "presence" => "false"
-    "images" => array:1 [
-      "links" => array:5 [
-        0 => "https://cdn.poizon.com/pro-img/origin-img/20231108/b4eab90f98ac4fefb90931927394ddc5.jpg"
-        1 => "https://cdn.poizon.com/pro-img/origin-img/20231108/74e074d21740456093f118145f181c49.jpg"
-        2 => "https://cdn.poizon.com/pro-img/origin-img/20231108/d2f15aa60f164eaa9fccfe432e197011.jpeg"
-        3 => "https://cdn.poizon.com/pro-img/origin-img/20240413/a4c7a52ff6c24a37a9747ef6e89a6d7f.jpg"
-        4 => "https://cdn.poizon.com/pro-img/origin-img/20240413/01be32e73f4341dbb0edc8b2c2f4cbb2.jpg"
-      ]
-    ]
-    "availability" => "Unpublish"
-    "parent" => array:1 [
-      "ID_487155" => array:2 [
-        "value" => "Catalog"
-        "id" => 487155
-      ]
-    ]
-    "brand" => array:2 [
-      "value" => "Puma"
-      "id" => "301366"
-    ]
-  ]
-  1 => array:11 [
-    "title" => array:1 [
-      "en" => "37.5"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280017"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 22200
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224058
-        "value" => "37.5"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  2 => array:11 [
-    "title" => array:1 [
-      "en" => "38"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280018"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 81900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224046
-        "value" => "38"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  3 => array:11 [
-    "title" => array:1 [
-      "en" => "38.5"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280019"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 87900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224047
-        "value" => "38.5"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  4 => array:11 [
-    "title" => array:1 [
-      "en" => "39"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280020"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 48900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224048
-        "value" => "39"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  5 => array:11 [
-    "title" => array:1 [
-      "en" => "40"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280021"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 49900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224049
-        "value" => "40"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  6 => array:11 [
-    "title" => array:1 [
-      "en" => "40.5"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280022"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 49900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224050
-        "value" => "40.5"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  7 => array:11 [
-    "title" => array:1 [
-      "en" => "41"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280023"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 43900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224051
-        "value" => "41"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  8 => array:11 [
-    "title" => array:1 [
-      "en" => "42"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280024"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 48900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224052
-        "value" => "42"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  9 => array:11 [
-    "title" => array:1 [
-      "en" => "42.5"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280025"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 49900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224053
-        "value" => "42.5"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  10 => array:11 [
-    "title" => array:1 [
-      "en" => "43"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280026"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 48900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224054
-        "value" => "43"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  11 => array:11 [
-    "title" => array:1 [
-      "en" => "44"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280027"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 54900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224055
-        "value" => "44"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  12 => array:11 [
-    "title" => array:1 [
-      "en" => "44.5"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-639280028"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 74900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224056
-        "value" => "44.5"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  13 => array:11 [
-    "title" => array:1 [
-      "en" => "35.5"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-644543026"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 74900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4552291
-        "value" => "35.5"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  14 => array:11 [
-    "title" => array:1 [
-      "en" => "36"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-644543027"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 47900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224043
-        "value" => "36"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  15 => array:11 [
-    "title" => array:1 [
-      "en" => "37"
-    ]
-    "parent_title" => array:1 [
-      "en" => "PUMA 180 Sneakers     "
-    ]
-    "characteristics_mode" => "Reset"
-    "sku" => "online-644543028"
-    "parent_sku" => "online-7096058"
-    "currency" => "GEL"
-    "price" => 47900
-    "presence" => "false"
-    "force_alias_update" => "1"
-    "characteristics" => array:2 [
-      "ID_629285" => array:2 [
-        "id" => 4224045
-        "value" => "37"
-      ]
-      "ID_563598" => array:2 [
-        "id" => 4224036 // 4419749
-        "value" => "brown"
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 58481
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-]
+https://dw4.co/t/A/23rF414r
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=4377132&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=624035954",
+  "spuId": 4377132,
+  "skuId": 624035954
+}
+
+https://dw4.co/t/A/23rJNibi
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=2881130&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=611798626",
+  "spuId": 2881130,
+  "skuId": 611798626
+}
 
 
-Response:
+https://dw4.co/t/A/23rJVXCB
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=2861707&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=611664738",
+  "spuId": 2861707,
+  "skuId": 611664738
+}
 
-array:2 [
-  "status" => "OK"
-  "response" => array:1 [
-    "log" => array:16 [
-      0 => array:3 [
-        "sku" => "online-7096058"
-        "external_id" => null
-        "info" => array:10 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 2
-            "message" => "Product with online-7096058 not exist."
-          ]
-          2 => array:2 [
-            "code" => 19
-            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20231108/b4eab90f98ac4fefb90931927394ddc5.jpg"
-          ]
-          3 => array:2 [
-            "code" => 19
-            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20231108/74e074d21740456093f118145f181c49.jpg"
-          ]
-          4 => array:2 [
-            "code" => 19
-            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20231108/d2f15aa60f164eaa9fccfe432e197011.jpeg"
-          ]
-          5 => array:2 [
-            "code" => 19
-            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20240413/a4c7a52ff6c24a37a9747ef6e89a6d7f.jpg"
-          ]
-          6 => array:2 [
-            "code" => 19
-            "message" => "Image success download from https://cdn.poizon.com/pro-img/origin-img/20240413/01be32e73f4341dbb0edc8b2c2f4cbb2.jpg"
-          ]
-          7 => array:2 [
-            "code" => 23
-            "message" => "Successfully set main image"
-          ]
-          8 => array:2 [
-            "code" => 23
-            "message" => "Successfully set additional image"
-          ]
-          9 => array:2 [
-            "code" => 23
-            "message" => "Successfully added 3 images to product gallery"
-          ]
+https://dw4.co/t/A/23rJenyJ
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=2856613&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=611632523",
+  "spuId": 2856613,
+  "skuId": 611632523
+}
+
+https://dw4.co/t/A/23rJnrfJ
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=4483965&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=621519881",
+  "spuId": 4483965,
+  "skuId": 621519881
+}
+https://dw4.co/t/A/23rJvlJH
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=2563501&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=612669709",
+  "spuId": 2563501,
+  "skuId": 612669709
+}
+
+
+https://dw4.co/t/A/23rFzMLQ
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=2794268&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=611228254",
+  "spuId": 2794268,
+  "skuId": 611228254
+}
+
+https://dw4.co/t/A/23rG8UOP
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=4576353&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=622118411",
+  "spuId": 4576353,
+  "skuId": 622118411
+}
+
+https://dw4.co/t/A/23rKOcUJ
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=2806542&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=611309395",
+  "spuId": 2806542,
+  "skuId": 611309395
+}
+
+https://dw4.co/t/A/23rGTW93
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=7492105&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=642389003",
+  "spuId": 7492105,
+  "skuId": 642389003
+}
+
+https://dw4.co/t/A/23rKnFfE
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=5078683&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=625036266",
+  "spuId": 5078683,
+  "skuId": 625036266
+}
+
+https://dw4.co/t/A/23rGnKix
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=8823861&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=652811101",
+  "spuId": 8823861,
+  "skuId": 652811101
+}
+
+https://dw4.co/t/A/23rL5e4s
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=5086022&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=625068839",
+  "spuId": 5086022,
+  "skuId": 625068839
+}
+
+https://dw4.co/t/A/23rLGUBY
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=8411662&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=650297334",
+  "spuId": 8411662,
+  "skuId": 650297334
+}
+
+https://dw4.co/t/A/23rLP95D
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=4502051&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=621644228",
+  "spuId": 4502051,
+  "skuId": 621644228
+}
+
+https://dw4.co/t/A/23rHOL4n
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=2996955&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=612501950",
+  "spuId": 2996955,
+  "skuId": 612501950
+}
+
+https://dw4.co/t/A/23rHUt3s
+{
+  "url": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=3036798&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f56e0484a5de51a80d31b&skuId=612743556",
+  "spuId": 3036798,
+  "skuId": 612743556
+}
+https://dw4.co/t/A/23rHbl3f
+"url" => "
+https://cdn-m.dewu.com/router/product/ProductDetail?spuId=10873485&sourceName=shareDetail&outside_channel_type=0&share_platform_title=7&fromUserId=f707c845754f5
+ ▶
+"
+  "spuId" => 10873485
+  "skuId" => 668168608
+
+
+https://dw4.co/t/A/23rlOlx1
+https://dw4.co/t/A/23rlVhET
+https://dw4.co/t/A/23rlc6MG
+https://dw4.co/t/A/23rPvsTk
+https://dw4.co/t/A/23rlq0wS
+https://dw4.co/t/A/23rm3atU
+https://dw4.co/t/A/23rmJFz2
+https://dw4.co/t/A/23rmYBVs
+https://dw4.co/t/A/23rQqt5Z
+https://dw4.co/t/A/23rQwvO9
+https://dw4.co/t/A/23rR1NeE
+https://dw4.co/t/A/23rmueul
+https://dw4.co/t/A/23rRCPdC
+https://dw4.co/t/A/23rn9TYR
+https://dw4.co/t/A/23rRweZF
+https://dw4.co/t/A/23rS5J2Q
+https://dw4.co/t/A/23rSEIVS
+https://dw4.co/t/A/23ro8UTc
+https://dw4.co/t/A/23rSYnFb
+https://dw4.co/t/A/23roScYP
+https://dw4.co/t/A/23rocv9J
+https://dw4.co/t/A/23rTeyYF
+https://dw4.co/t/A/23rqO793
+https://dw4.co/t/A/23rqm12J
+https://dw4.co/t/A/23rr0ZkR
+https://dw4.co/t/A/23rrNR8T
+https://dw4.co/t/A/23rW2BiX
+https://dw4.co/t/A/23rWBQty
+https://dw4.co/t/A/23rsovtQ
+https://dw4.co/t/A/23rsvufT
+https://dw4.co/t/A/23rXuVt1
+https://dw4.co/t/A/23ru3ExZ
+https://dw4.co/t/A/23rYULrM
+
+
+
+
+{
+    "price": {
+        "item": {
+            "saleInventoryNo": "SN102645720186PS31",
+            "price": 45900,
+            "type": 1,
+            "maxPrice": 89300,
+            "tradeType": 2,
+            "skuId": 632089020,
+            "floorPrice": 45900,
+            "upperPrice": 0,
+            "intentPrice": 0,
+            "originalPrice": 45900,
+            "nonGlobalOriginalPrice": 45900,
+            "activityPrice": 0
+        }
+    },
+    "detail": {
+        "spuId": 6078955,
+        "isSelf": 0,
+        "isShow": 1,
+        "fitId": 1,
+        "defaultSkuId": 0,
+        "goodsType": 0,
+        "status": 1,
+        "bizType": 0,
+        "levelPvSize": 3,
+        "categoryId": 33,
+        "categoryName": "跑步鞋",
+        "level1CategoryId": 29,
+        "level2CategoryId": 30,
+        "brandId": 4,
+        "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg",
+        "soldCountText": "15人付款",
+        "title": "New Balance NB 997R 舒适 耐磨防滑 低帮 跑步鞋 男女同款 黄色 日版",
+        "subTitle": "",
+        "originalTitle": "New Balance NB 997R舒适耐磨低帮跑步鞋 男女同款 黄色 日版",
+        "structureTitle": "New Balance NB 997R 舒适 耐磨防滑 低帮 跑步鞋 男女同款 黄色 日版",
+        "desc": "",
+        "sourceName": "default",
+        "articleNumber": "U997RCB",
+        "sellDate": "2023.09",
+        "authPrice": 772
+    },
+    "lastSold": {
+        "avatar": "https:\/\/cdn.poizon.com\/du_app\/2020\/image\/185422597_modelVOG-AL00model_byte107649byte_aee86c8842fbf043928056f98b9785ee_du_android_w1080_h1080.png",
+        "lastSoldText": "爱*2天前购买了黄色 D宽 39.5",
+        "contentText": "15人付款",
+        "tinySoldNumText": "15人付款",
+        "lastSoldWeakenText": "2天前购买"
+    },
+    "image": {
+        "spuImage": {
+            "threeDimension": {
+                "spu3dShowType": 0,
+                "propertyValueId": 0,
+                "moreMaterialFlag": 0,
+                "spu3dModelFormat": 0
+            },
+            "video": [],
+            "images": [
+                {
+                    "propertyValueId": 288605953,
+                    "url": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg",
+                    "imgType": 0,
+                    "desc": ""
+                },
+                {
+                    "propertyValueId": 288605953,
+                    "url": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/45eec538a3184e9bbfd2f616d6c55794.jpg",
+                    "imgType": 0,
+                    "desc": ""
+                },
+                {
+                    "propertyValueId": 288605953,
+                    "url": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/aaa5c97586fc43818ff37631141029ac.jpg",
+                    "imgType": 0,
+                    "desc": ""
+                },
+                {
+                    "propertyValueId": 288605953,
+                    "url": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/000f9e04177647a0b8dc23ccb7348483.jpg",
+                    "imgType": 0,
+                    "desc": ""
+                },
+                {
+                    "propertyValueId": 288605953,
+                    "url": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/9837895076214f47bdddde32e501e5b5.jpg",
+                    "imgType": 0,
+                    "desc": ""
+                }
+            ],
+            "supportPanorama": 0,
+            "supportColorBlock": 0,
+            "arSkuIdRelation": [
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316144,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316145,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316146,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316147,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316148,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316149,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316150,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316151,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316152,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316153,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316154,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316155,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631316156,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985133,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985134,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985135,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985136,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985137,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985138,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985139,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985140,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985141,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985142,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985143,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985144,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985145,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985146,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631985147,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631988426,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631988427,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631989369,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 631989370,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 632089019,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                },
+                {
+                    "spuId": 6078955,
+                    "skuId": 632089020,
+                    "propertyValueId": 288605953,
+                    "supportFlag": false
+                }
+            ],
+            "moreMaterialFlag": 0
+        },
+        "imageLayoutType": 0,
+        "isOnlyShowHitCspu": true
+    },
+    "imageAndTextMap": {
+        "spuShowSpread": [
+            {
+                "type": "image",
+                "contentType": "SHOW",
+                "contentName": "商品展示",
+                "images": [
+                    {
+                        "url": "https:\/\/cdn.poizon.com\/%E5%90%88%E6%88%90%E5%9B%BE%E7%89%871693532411436.png",
+                        "width": 1000,
+                        "height": 2500
+                    }
+                ],
+                "imageGap": true
+            }
         ]
-      ]
-      1 => array:3 [
-        "sku" => "online-639280017"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
+    },
+    "spuGroupList": {
+        "list": [
+            {
+                "spuId": 6078955,
+                "title": "New Balance NB 997R 舒适 耐磨防滑 低帮 跑步鞋 男女同款 黄色 日版",
+                "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg",
+                "goodsType": 0,
+                "propertyValueId": 288605953
+            },
+            {
+                "spuId": 5203038,
+                "title": "New Balance NB 997R 减震防滑 低帮 跑步鞋 男女同款 红",
+                "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230620\/38873893a6314961ba1154bfd6a50903.jpg",
+                "goodsType": 0,
+                "propertyValueId": 0
+            },
+            {
+                "spuId": 5223274,
+                "title": "New Balance NB 997R 复古百搭 低帮 跑步鞋 男女同款 暗影灰",
+                "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230624\/d0f3f907f2d146b0a08c1dcc36e6542a.jpg",
+                "goodsType": 0,
+                "propertyValueId": 266284849
+            },
+            {
+                "spuId": 5181530,
+                "title": "New Balance NB 997R 减震防滑 低帮 跑步鞋 男女同款 蓝银",
+                "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230617\/19590b836b124356b1ac4b90a04ecb6c.jpg",
+                "goodsType": 0,
+                "propertyValueId": 0
+            },
+            {
+                "spuId": 5215063,
+                "title": "New Balance NB 997R 潮流舒适复古 减震耐磨 低帮 跑步鞋 男女同款 黑白",
+                "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20231221\/72950a37ff0b4224a537e4b29054786b.jpg",
+                "goodsType": 0,
+                "propertyValueId": 0
+            }
         ]
-      ]
-      2 => array:3 [
-        "sku" => "online-639280018"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
+    },
+    "skus": [
+        {
+            "skuId": 631316144,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605955
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316145,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605956
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316146,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605957
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316147,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605958
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316148,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605959
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316149,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605960
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316150,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605961
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316151,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605962
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316152,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605963
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316153,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605964
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316154,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605965
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316155,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605966
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631316156,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605967
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985133,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 290695499
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985134,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605955
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985135,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605956
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985136,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605957
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985137,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605958
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985138,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605959
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985139,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605960
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985140,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605961
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985141,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605962
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985142,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605963
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985143,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605964
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985144,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605965
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985145,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605966
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985146,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 288605967
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631985147,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 290695499
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631988426,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 290704232
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631988427,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 290704232
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631989369,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 290708196
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 631989370,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 290708196
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 632089019,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 288605954
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 291056093
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        },
+        {
+            "skuId": 632089020,
+            "spuId": 6078955,
+            "authPrice": 77200,
+            "status": 1,
+            "properties": [
+                {
+                    "level": 1,
+                    "propertyValueId": 288605953
+                },
+                {
+                    "level": 2,
+                    "propertyValueId": 290695498
+                },
+                {
+                    "level": 3,
+                    "propertyValueId": 291056093
+                }
+            ],
+            "logoUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+        }
+    ],
+    "saleProperties": {
+        "list": [
+            {
+                "propertyId": 4366,
+                "propertyValueId": 288605953,
+                "name": "颜色",
+                "value": "黄色",
+                "customValue": "黄色",
+                "level": 1,
+                "showValue": 0,
+                "sort": 1,
+                "definitionId": 1,
+                "fontProperty": false,
+                "levelImageUrl": "https:\/\/cdn.poizon.com\/pro-img\/origin-img\/20230901\/6a02056eb083497ab8ec920f29b39049.jpg"
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 290695499,
+                "name": "尺码",
+                "value": "36",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 1,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 4664,
+                "propertyValueId": 288605954,
+                "name": "版本",
+                "value": "W宽",
+                "customValue": "",
+                "level": 2,
+                "showValue": 1,
+                "sort": 2,
+                "definitionId": 12,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 290704232,
+                "name": "尺码",
+                "value": "37",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 2,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 4664,
+                "propertyValueId": 290695498,
+                "name": "版本",
+                "value": "D宽",
+                "customValue": "",
+                "level": 2,
+                "showValue": 1,
+                "sort": 3,
+                "definitionId": 12,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 290708196,
+                "name": "尺码",
+                "value": "37.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 3,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 291056093,
+                "name": "尺码",
+                "value": "38",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 4,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605955,
+                "name": "尺码",
+                "value": "38.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 5,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605956,
+                "name": "尺码",
+                "value": "39.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 6,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605957,
+                "name": "尺码",
+                "value": "40",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 7,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605958,
+                "name": "尺码",
+                "value": "40.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 8,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605959,
+                "name": "尺码",
+                "value": "41.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 9,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605960,
+                "name": "尺码",
+                "value": "42",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 10,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605961,
+                "name": "尺码",
+                "value": "42.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 11,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605962,
+                "name": "尺码",
+                "value": "43",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 12,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605963,
+                "name": "尺码",
+                "value": "44",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 13,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605964,
+                "name": "尺码",
+                "value": "44.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 14,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605965,
+                "name": "尺码",
+                "value": "45",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 15,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605966,
+                "name": "尺码",
+                "value": "45.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 16,
+                "definitionId": 6,
+                "fontProperty": false
+            },
+            {
+                "propertyId": 3424,
+                "propertyValueId": 288605967,
+                "name": "尺码",
+                "value": "46.5",
+                "customValue": "",
+                "level": 3,
+                "showValue": 1,
+                "sort": 17,
+                "definitionId": 6,
+                "fontProperty": false
+            }
         ]
-      ]
-      3 => array:3 [
-        "sku" => "online-639280019"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      4 => array:3 [
-        "sku" => "online-639280020"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      5 => array:3 [
-        "sku" => "online-639280021"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      6 => array:3 [
-        "sku" => "online-639280022"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      7 => array:3 [
-        "sku" => "online-639280023"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      8 => array:3 [
-        "sku" => "online-639280024"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      9 => array:3 [
-        "sku" => "online-639280025"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      10 => array:3 [
-        "sku" => "online-639280026"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      11 => array:3 [
-        "sku" => "online-639280027"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      12 => array:3 [
-        "sku" => "online-639280028"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      13 => array:3 [
-        "sku" => "online-644543026"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      14 => array:3 [
-        "sku" => "online-644543027"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-      15 => array:3 [
-        "sku" => "online-644543028"
-        "external_id" => null
-        "info" => array:2 [
-          0 => array:2 [
-            "code" => 0
-            "message" => "Success update/add product."
-          ]
-          1 => array:2 [
-            "code" => 12
-            "message" => "Update modification."
-          ]
-        ]
-      ]
-    ]
-  ]
-]
+    },
+    "frontLabelSummaryDTO": {
+        "afterTitle": {
+            "sortRule": [
+                {
+                    "labelType": "LABEL_DE_WU_EXCLUSIVE",
+                    "sorted": 10,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_EXCLUSIVE_LAUNCH",
+                    "sorted": 20,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_FIRST_SELL",
+                    "sorted": 30,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_FIRST_BUY",
+                    "sorted": 31,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_BRAND_ONLY_4_BRAND_OFFICIAL",
+                    "sorted": 40,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_BRAND_ONLY_4_BRAND_ONLY",
+                    "sorted": 41,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_GLOBAL_BUY",
+                    "sorted": 50,
+                    "sourceType": "SPU"
+                }
+            ],
+            "item": []
+        },
+        "belowTitle": {
+            "sortRule": [
+                {
+                    "labelType": "LABEL_PAGE_LANDING_RANK",
+                    "sorted": 10,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_PAGE_LANDING_SERIES",
+                    "sorted": 20,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_PAGE_LANDING_IP",
+                    "sorted": 30,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_PAGE_LANDING_THEME",
+                    "sorted": 40,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_PAGE_LANDING_RELATED",
+                    "sorted": 70,
+                    "sourceType": "SPU"
+                },
+                {
+                    "labelType": "LABEL_PAGE_MORE_SIMILAR_STYLE",
+                    "sorted": 80,
+                    "sourceType": "SPU"
+                }
+            ],
+            "item": []
+        },
+        "belowPrice": []
+    },
+    "basicParam": {
+        "basicList": [
+            {
+                "key": "主货号",
+                "value": "U997RCB",
+                "propertyValueId": 0,
+                "valueType": 0,
+                "definitionId": 0
+            },
+            {
+                "key": "发售价格",
+                "value": "¥772",
+                "propertyValueId": 0,
+                "valueType": 0,
+                "definitionId": 0
+            },
+            {
+                "key": "主色",
+                "value": "黄色",
+                "propertyValueId": 288605947,
+                "valueType": 0,
+                "definitionId": 0
+            },
+            {
+                "key": "发售日期",
+                "value": "2023.09",
+                "propertyValueId": 0,
+                "valueType": 0,
+                "definitionId": 0
+            },
+            {
+                "key": "鞋头款式",
+                "value": "圆头",
+                "propertyValueId": 288605951,
+                "valueType": 0,
+                "definitionId": 0
+            }
+        ],
+        "windowsList": [
+            {
+                "key": "主货号",
+                "value": "U997RCB",
+                "propertyValueId": 0,
+                "valueType": 0,
+                "definitionId": -1
+            },
+            {
+                "key": "发售价格",
+                "value": "¥772",
+                "propertyValueId": 0,
+                "valueType": 0,
+                "definitionId": -3
+            },
+            {
+                "key": "主色",
+                "value": "黄色",
+                "propertyValueId": 288605947,
+                "valueType": 0,
+                "definitionId": 2643
+            },
+            {
+                "key": "发售日期",
+                "value": "2023.09",
+                "propertyValueId": 0,
+                "valueType": 0,
+                "definitionId": -4
+            },
+            {
+                "key": "鞋头款式",
+                "value": "圆头",
+                "propertyValueId": 288605951,
+                "valueType": 0,
+                "definitionId": 434
+            },
+            {
+                "key": "鞋跟类型",
+                "value": "平跟",
+                "propertyValueId": 288605949,
+                "valueType": 0,
+                "definitionId": 437
+            },
+            {
+                "key": "闭合方式",
+                "value": "系带",
+                "propertyValueId": 288832725,
+                "valueType": 0,
+                "definitionId": 427
+            },
+            {
+                "key": "鞋帮高度",
+                "value": "低帮",
+                "propertyValueId": 288605950,
+                "valueType": 0,
+                "definitionId": 435
+            },
+            {
+                "key": "功能性",
+                "value": "防滑,耐磨",
+                "propertyValueId": 288605952,
+                "valueType": 0,
+                "definitionId": 169
+            },
+            {
+                "key": "适用季节",
+                "value": "春,夏,秋,冬",
+                "propertyValueId": 288605948,
+                "valueType": 0,
+                "definitionId": 1451
+            }
+        ],
+        "windowTitle": "商品参数",
+        "windowSubTitle": "纠错"
+    },
+    "favoriteData": {
+        "hasFavorite": false,
+        "hasMyOwn": false,
+        "favoriteCount": {
+            "count": 249,
+            "content": "249人想要",
+            "tinyContent": "249"
+        },
+        "myOwnCount": {
+            "count": 15,
+            "content": "15",
+            "tinyContent": "15"
+        }
+    },
+    "brandRootInfo": {
+        "title": "品牌",
+        "multiRelationText": "",
+        "brandItemList": [
+            {
+                "mainBrand": 0,
+                "brandType": 0,
+                "brandId": 4,
+                "artistId": 0,
+                "brandLogo": "https:\/\/cdn.poizon.com\/pro-img\/cut-img\/20240319\/ac8c7ed3d5c14735b382159681941b2e.jpg",
+                "brandName": "New Balance",
+                "coverUrl": "https:\/\/cdn.poizon.com\/node-common\/7032dfccf297789d05f47b1465be9f3c.jpg",
+                "brandTextList": [
+                    {
+                        "type": 6,
+                        "showText": "3.9万+款好物"
+                    },
+                    {
+                        "type": 4,
+                        "showText": "130万+人订阅"
+                    },
+                    {
+                        "type": 2,
+                        "showText": "摩登复古致敬经典"
+                    }
+                ]
+            }
+        ],
+        "brandLayer": 1,
+        "brandItemShowSize": 1
+    },
+    "sizeDto": {
+        "sizeInfo": {
+            "sizeTemplate": {
+                "title": "尺码对照表",
+                "tips": "",
+                "name": "",
+                "list": [
+                    {
+                        "sizeKey": "欧码EU",
+                        "sizeValue": "35,35.5,36,36.5,37,37.5,38,38.5,39,39.5,40,40.5,41.5,42,42.5,43,44,44.5,45,45.5,46.5,47,47.5,49,50,51"
+                    },
+                    {
+                        "sizeKey": "US美码",
+                        "sizeValue": "\/,3.5,4,\/,4.5,5,5.5,6,\/,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13,14,15,\/"
+                    },
+                    {
+                        "sizeKey": "UK英码",
+                        "sizeValue": "\/,3,3.5,\/,4,4.5,5,5.5,\/,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13.5,14.5,\/"
+                    }
+                ],
+                "brandLogoUrl": "https:\/\/cdn.poizon.com\/pro-img\/cut-img\/20240319\/ac8c7ed3d5c14735b382159681941b2e.jpg",
+                "hasSizeTable": true,
+                "hasFold": true,
+                "hasSelected": false,
+                "hitRowNum": 1,
+                "hitColNum": 0,
+                "defaultRowNum": 1,
+                "offsetCodeType": 0,
+                "type": 1,
+                "isShow": 1
+            }
+        },
+        "sizeFlag": 3,
+        "sizeInfoRecommendText": "查看尺码表",
+        "comparedRecommendRow": 1,
+        "foldShowRowNum": 0,
+        "downFoldShowRowNum": 4
+    },
+    "shareInfo": {
+        "threeDLinkUrl": "https:\/\/cdn-m.dewu.com\/router\/product\/ProductDetail?spuId=6078955&sourceName=shareDetail&shareSource=productDetail",
+        "shareLinkUrl": "https:\/\/cdn-m.dewu.com\/router\/product\/ProductDetail?spuId=6078955&sourceName=shareDetail"
+    }
+}
+
+
