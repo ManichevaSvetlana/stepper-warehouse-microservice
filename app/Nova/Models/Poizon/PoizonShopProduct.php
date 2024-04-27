@@ -1,24 +1,23 @@
 <?php
 
-namespace App\Nova\Models\System;
+namespace App\Nova\Models\Poizon;
 
 use App\Nova\Resource;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Slug;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class TrackProduct extends Resource
+class PoizonShopProduct extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\System\TrackProduct>
+     * @var class-string<\App\Models\Poizon\PoizonProduct>
      */
-    public static $model = \App\Models\System\TrackProduct::class;
+    public static $model = \App\Models\Poizon\PoizonProduct::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -33,7 +32,7 @@ class TrackProduct extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'sku'
+        'id', 'sku', 'data'
     ];
 
     /**
@@ -47,10 +46,8 @@ class TrackProduct extends Resource
         return [
             ID::make()->sortable(),
             Slug::make('SKU', 'sku')->required(),
-            Select::make('System', 'system')->options([
-                'poizon' => 'Poizon',
-                'poizon-shop' => 'Poizon Shop',
-            ])->displayUsingLabels()->required(),
+            Code::make('Data', 'data')->json(),
+            Code::make('Prices', 'prices')->json(),
             DateTime::make('Created At')->exceptOnForms(),
             DateTime::make('Updated At')->exceptOnForms(),
         ];

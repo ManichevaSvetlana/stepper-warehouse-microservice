@@ -58,6 +58,8 @@ trait PoizonTrait
             'link' => $link,
         ]);
 
+        dd($response->json());
+
         return $response->json()['skuId'];
     }
 }

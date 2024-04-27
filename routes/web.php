@@ -2,16 +2,24 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/test2', function () {
+    $poizonShop = new \App\Models\Poizon\PoizonShopProduct();
+    $trackProduct = \App\Models\System\TrackProduct::where('system', 'poizon-shop')->first();
+    $product = $poizonShop->getPoizonShopProductData($trackProduct->sku);
+
+    dd($product);
+});
+
 Route::get('/test1', function () {
     $links = [
-        'https://dw4.co/t/A/23rLxLHa',
-        'https://dw4.co/t/A/23rHtuwS',
-        'https://dw4.co/t/A/23rMBvQv',
-        'https://dw4.co/t/A/23rMKayX',
-        'https://dw4.co/t/A/23rIFjYD',
-        'https://dw4.co/t/A/23rILxBn',
-        'https://dw4.co/t/A/23rMhH2s',
-        'https://dw4.co/t/A/23rIcvy4',
+        5085994,
+        8411671,
+        5254480,
+        1488865,
+        48251,
+        4553660,
+        3017040,
+        /*'https://dw4.co/t/A/23rIcvy4',
         'https://dw4.co/t/A/23rIipwC',
         'https://dw4.co/t/A/23rIokvx',
         'https://dw4.co/t/A/23rN7mJU',
@@ -66,13 +74,14 @@ Route::get('/test1', function () {
         'https://dw4.co/t/A/23rsvufT',
         'https://dw4.co/t/A/23rXuVt1',
         'https://dw4.co/t/A/23ru3ExZ',
-        'https://dw4.co/t/A/23rYULrM'];
+        'https://dw4.co/t/A/23rYULrM'*/];
     $skus = [];
-    $poizon = new PoizonProduct();
+    $poizon = new \App\Models\Poizon\PoizonProduct();
 
     foreach ($links as $link) {
-        $sku = $poizon->convertPoizonLinkToSKU($link);
-        TrackProduct::updateOrCreate(['sku' => $sku], ['type' => 'shoes']);
+        $sku = $link;
+        echo $sku . '<br>';
+        \App\Models\System\TrackProduct::updateOrCreate(['sku' => $sku, 'system' => 'poizon-shop'], ['type' => 'shoes']);
         $skus[] = $sku;
     }
 

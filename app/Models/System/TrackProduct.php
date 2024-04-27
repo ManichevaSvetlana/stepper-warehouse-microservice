@@ -14,5 +14,5 @@ class TrackProduct extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['sku', 'type'];
+    protected $fillable = ['sku', 'system', 'type'];
 }
