@@ -17,7 +17,7 @@ class SyncSystemsProducts extends Command
      *
      * @var string
      */
-    protected $signature = 'sync:systems-products {--section=all}';
+    protected $signature = 'sync:systems-products {--section=all} {--sku=}';
 
     /**
      * The console command description.
@@ -33,11 +33,23 @@ class SyncSystemsProducts extends Command
     public function handle()
     {
         $section = $this->option('section');
+        $startSku = $this->option('sku');
+
         $poizonProducts = PoizonProduct::all();
         $failedProductsShop = [];
         $failedProductsBitrix = [];
+        $startProcessing = false;
 
         foreach ($poizonProducts as $poizonProduct) {
+
+            if ($startSku) {
+                if (!$startProcessing && $poizonProduct->sku !== $startSku) {
+                    continue;
+                }
+
+                $startProcessing = true;
+            }
+
             echo "Product: {$poizonProduct->sku}\n";
             echo "Product: {$poizonProduct->data['detail']['title']}\n";
             $sizesPropertiesList = collect($poizonProduct->data['saleProperties']['list']);
