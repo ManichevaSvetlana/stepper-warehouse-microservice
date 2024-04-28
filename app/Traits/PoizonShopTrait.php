@@ -7,6 +7,25 @@ use Illuminate\Support\Facades\Http;
 trait PoizonShopTrait
 {
     /**
+     * Poizon Shop: get popular products.
+     *
+     * @param int $page
+     * @return array
+     */
+    public function getPoizonShopPopularProducts(int $page, string $category = 'sneakers'): array
+    {
+        if($category === 'slides') $url = 'https://poizonshop.ru/api/catalog/product?sort=by-relevance&categorySlug=footwear%2Fslippers&perPage=40&page=' . $page;
+        else $url = 'https://poizonshop.ru/api/catalog/product?category=sneakers&sort=by-relevance&perPage=40&page=' . $page;
+
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+        ])->get($url);
+
+
+        return $response->json()['items'];
+    }
+
+    /**
      * Poizon Shpop: get product data.
      *
      * @return array
@@ -16,7 +35,6 @@ trait PoizonShopTrait
     {
         $response = Http::withHeaders([
             'accept' => 'application/json',
-            'apiKey' => env('POIZON_API_KEY'),
         ])->get('https://poizonshop.ru/api/catalog/product/' . $productId);
 
 

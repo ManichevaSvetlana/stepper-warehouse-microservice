@@ -2,12 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/test2', function () {
-    $poizonShop = new \App\Models\Poizon\PoizonShopProduct();
-    $trackProduct = \App\Models\System\TrackProduct::where('system', 'poizon-shop')->first();
-    $product = $poizonShop->getPoizonShopProductData($trackProduct->sku);
+Route::get('/test333', function () {
 
-    dd($product);
 });
 
 Route::get('/test1', function () {

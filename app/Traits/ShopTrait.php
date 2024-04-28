@@ -15,12 +15,20 @@ trait ShopTrait
     private string $shopAuthToken;
 
     /**
+     * The Shop API URL.
+     *
+     * @var string
+     */
+    private string $apiUrl = '';
+
+    /**
      * Shop: set auth token.
      *
      * @return void
      */
     public function setShopAuth(): void
     {
+        $this->apiUrl = env('SHOP_API_URL');
         $this->shopAuthToken = $this->getShopAuthToken();
     }
 
@@ -36,7 +44,7 @@ trait ShopTrait
             'password' => env('SHOP_PASSWORD'),
         ];
 
-        $response = Http::post('https://steppershop.ge/api/auth', [
+        $response = Http::post("{$this->apiUrl}/auth", [
             'login' => $loginDetails['login'],
             'password' => $loginDetails['password'],
         ]);
@@ -57,7 +65,7 @@ trait ShopTrait
      */
     public function listShopProducts(int $limit = 200, int $page = 1): array
     {
-        $response = Http::post('https://steppershop.ge/api/catalog/export', [
+        $response = Http::post("{$this->apiUrl}/catalog/export", [
             'token' => $this->shopAuthToken,
             'limit' => $limit,
             'offset' => $page * $limit - $limit,
@@ -74,7 +82,7 @@ trait ShopTrait
      */
     public function createShopProducts(array $products): array
     {
-        $response = Http::post('https://steppershop.ge/api/catalog/import', [
+        $response = Http::post("{$this->apiUrl}/catalog/import", [
             'token' => $this->shopAuthToken,
             'products' => $products
         ]);

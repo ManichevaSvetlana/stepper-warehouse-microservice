@@ -15,9 +15,9 @@ class PoizonShopProduct extends Resource
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Poizon\PoizonProduct>
+     * @var class-string<\App\Models\Poizon\PoizonShopProduct>
      */
-    public static $model = \App\Models\Poizon\PoizonProduct::class;
+    public static $model = \App\Models\Poizon\PoizonShopProduct::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
