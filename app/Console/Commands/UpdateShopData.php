@@ -56,6 +56,7 @@ class UpdateShopData extends Command
         if ($section === 'all' || $section === 'products') {
             echo 'Updating shop products' . "\n";
             $product = new \App\Models\Shop\ShopProduct();
+            $product->whereNotNull('id')->delete();
             $product->setShopAuth();
 
             $ids = [];

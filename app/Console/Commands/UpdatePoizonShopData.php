@@ -53,23 +53,18 @@ class UpdatePoizonShopData extends Command
 
         $trackCount = count($sortedTrackSkus);
         echo "Track products count: $trackCount.\n";
+
         foreach ($sortedTrackSkus as $track) {
             echo "SKU track product - : {$track->sku}\n";
 
             try {
-                $existingProduct = PoizonShopProduct::where('sku', $track->sku)->first();
-
-                if($existingProduct) $data = $existingProduct->data;
-                else {
-                    $data = $poizon->getPoizonShopProductData($track->sku);
-                    if($data) $runRequests++;
-                }
-                echo "Product was received SKU: {$track->sku}\n";
+                $data = $poizon->getPoizonShopProductData($track->sku);
+                if($data) $runRequests++;
 
                 if(!$data) {
                     echo "Product was not received SKU: {$track->sku}\n";
                     continue;
-                }
+                } else echo "Product was received SKU: {$track->sku}\n";
 
                 PoizonShopProduct::updateOrCreate(
                     ['sku' => $track->sku],

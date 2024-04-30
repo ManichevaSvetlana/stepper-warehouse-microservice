@@ -14,12 +14,20 @@ trait FeatureShopTrait
     private string $shopAuthToken;
 
     /**
+     * The Shop API URL.
+     *
+     * @var string
+     */
+    private string $apiUrl = '';
+
+    /**
      * Shop: set auth token.
      *
      * @return void
      */
     public function setShopAuth(): void
     {
+        $this->apiUrl = env('SHOP_API_URL');
         $this->shopAuthToken = $this->getShopAuthToken();
     }
 
@@ -35,7 +43,7 @@ trait FeatureShopTrait
             'password' => env('SHOP_PASSWORD'),
         ];
 
-        $response = Http::post('https://steppershop.ge/api/auth', [
+        $response = Http::post("{$this->apiUrl}/auth", [
             'login' => $loginDetails['login'],
             'password' => $loginDetails['password'],
         ]);
@@ -54,7 +62,7 @@ trait FeatureShopTrait
      */
     public function listShopCategories(): array
     {
-        $response = Http::post('https://steppershop.ge/api/categories/export', [
+        $response = Http::post("{$this->apiUrl}/categories/export", [
             'token' => $this->shopAuthToken,
         ]);
 
@@ -68,7 +76,7 @@ trait FeatureShopTrait
      */
     public function listShopStickers(): array
     {
-        $response = Http::post('https://steppershop.ge/api/stickers/export', [
+        $response = Http::post("{$this->apiUrl}/stickers/export", [
             'token' => $this->shopAuthToken,
         ]);
 
@@ -82,7 +90,7 @@ trait FeatureShopTrait
      */
     public function listShopCharacteristics(): array
     {
-        $response = Http::post('https://steppershop.ge/api/characteristics/export', [
+        $response = Http::post("{$this->apiUrl}/characteristics/export", [
             'token' => $this->shopAuthToken,
         ]);
 
@@ -98,7 +106,7 @@ trait FeatureShopTrait
     {
         $this->shopAuthToken = $this->getShopAuthToken();
 
-        $response = Http::post('https://steppershop.ge/api/brands/export', [
+        $response = Http::post("{$this->apiUrl}/brands/export", [
             'token' => $this->shopAuthToken,
         ]);
 

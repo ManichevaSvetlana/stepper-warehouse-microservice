@@ -18,7 +18,7 @@ class SyncSystemsProducts extends Command
      *
      * @var string // sync:systems-products --system=poizon-shop --section=shop
      */
-    protected $signature = 'sync:systems-products {--system=poizon} {--section=all} {--sku=} {--withoutImages=false}';
+    protected $signature = 'sync:systems-products {--system=poizon} {--section=all} {--sku=} {--images=1}';
 
     /**
      * The console command description.
@@ -33,15 +33,108 @@ class SyncSystemsProducts extends Command
      * @var array
      */
     protected array $categoriesMapping = [
-        'canvas' => 615748,
+        /*'canvas' => 615748,
         'vintage_basketball' => 615749,
         'sport' => 615750,
         'daddy' => 615751,
         'sneakers' => 615752,
         'slippers' => 615753,
         'women' => 607326,
-        'men' => 607327,
+        'men' => 607327,*/
+
+        'canvas' => 615761,
+        'vintage_basketball' => 615764,
+        'running' => 615760,
+        'sport' => 615760,
+        'daddy' => 615762,
+        'sneakers' => 615763,
+        'slippers' => 615758,
+        'women' => 615756,
+        'men' => 615757,
+        'unisex' => 616001,
+
+        'parentSneakers' => 615759
     ];
+
+    /**
+     * Categories mapping.
+     *
+     * @var array
+     */
+    protected array $categoriesFilterMapping = [
+        'canvas' => 4646923,
+        'vintage_basketball' => 4646922,
+        'running' => 4646929,
+        'sport' => 4646929,
+        'daddy' => 4646926,
+        'sneakers' => 4646928,
+        'slippers' => 4646927,
+        'women' => 4646925,
+        'men' => 4646924,
+    ];
+
+    /**
+     * Categories mapping.
+     *
+     * @var array
+     */
+    private array $deliveryDays = [
+        /*"ID_563599" => [
+            [
+                "id" => 4054579,
+                "value" => [
+                    "en" => "Delivery from 10 days"
+                ],
+            ]
+        ]*/
+        "ID_759629" => [
+            [
+                "id" => 4644055,
+                "value" => [
+                    "en" => "Delivery 10 - 20 days"
+                ],
+            ]
+        ],
+        "ID_759681" => [
+            [
+                "id" => 4644232,
+                "value" => [
+                    "en" => "Split payment: 50% now & 50% when you get your sneakers",
+                ]
+            ]
+        ]
+    ];
+
+    /**
+     * Catalog ID.
+     *
+     * @var int
+     */
+    //private int $catalogId = 487155;
+    private int $catalogId = 0;
+
+    /**
+     * Category filter ID.
+     *
+     * @var int
+     */
+    private int $categoryFilterId = 760721;
+
+    /**
+     * Delivery ID.
+     *
+     * @var int
+     */
+    //private int $deliveryId = 607325;
+    private int $deliveryId = 615677;
+
+    /**
+     * Catalog modification ID.
+     *
+     * @var int
+     */
+    //private int $catalogModificationId = 58481;
+    private int $catalogModificationId = 87201;
 
     /**
      * Execute the console command.
@@ -52,7 +145,7 @@ class SyncSystemsProducts extends Command
         $section = $this->option('section');
         $startSku = $this->option('sku');
         $systemName = $this->option('system');
-        $withoutImages = $this->option('withoutImages');
+        $withoutImages = !$this->option('images');
 
         $poizonProducts = $systemName === 'poizon-shop' ? PoizonShopProduct::all() : PoizonProduct::all();
         $failedProductsShop = [];
@@ -168,6 +261,44 @@ class SyncSystemsProducts extends Command
         return $syncedProductsForShop;
     }
 
+    private function removeColumn($html, $columnName) {
+        // Парсинг HTML
+        $dom = new \DOMDocument();
+        $dom->loadHTML($html);
+
+        // Найти индекс столбца, который нужно удалить
+        $headers = $dom->getElementsByTagName('th');
+        $columnIndex = -1;
+
+        foreach ($headers as $index => $header) {
+            if ($header->nodeValue == $columnName) {
+                $columnIndex = $index;
+                break;
+            }
+        }
+
+        if ($columnIndex == -1) {
+            return $html; // Если столбец не найден, вернуть оригинальный HTML
+        }
+
+        // Удалить заголовок столбца
+        $headerRow = $headers->item(0)->parentNode;
+        $headerRow->removeChild($headerRow->getElementsByTagName('th')->item($columnIndex));
+
+        // Удалить ячейки из всех строк
+        $rows = $dom->getElementsByTagName('tr');
+        foreach ($rows as $row) {
+            if ($row->getElementsByTagName('td')->length > $columnIndex) {
+                $row->removeChild($row->getElementsByTagName('td')->item($columnIndex));
+            }
+        }
+
+        // Вернуть обновленный HTML
+        return $dom->saveHTML();
+    }
+
+
+
     /**
      * Create or update product in Shop.
      *
@@ -179,8 +310,8 @@ class SyncSystemsProducts extends Command
     {
         $catalog = Feature::where('type', 'characteristic')->where('system', 'shop')->whereRaw("json_extract(data, '$.title.en') = 'Catalog'")->first();
         $characteristicsData = collect($catalog->data['characteristics']);
-        $size = $characteristicsData->firstWhere('slug', 'size-1');
-        $color = $characteristicsData->firstWhere('slug', 'color');
+        $size = $characteristicsData->firstWhere('slug', 'size');
+        $color = $characteristicsData->firstWhere('slug', 'color-1');
         if (!$size) {
             echo "Size feature not found\n";
             return;
@@ -200,6 +331,7 @@ class SyncSystemsProducts extends Command
             '蓝色' => 'blue',     // Синий
             '白色,蓝色' => 'blue',     // Синий
             '绿色' => 'green',    // Зеленый
+            '白色,绿色' => 'green',    // Зеленый
             '黑色,绿色' => 'green',    // Зеленый
             '黄色' => 'yellow',   // Желтый
             '白色,黄色' => 'yellow',   // Желтый
@@ -211,6 +343,7 @@ class SyncSystemsProducts extends Command
             '米色,棕色' => 'brown',    // Коричневый
             '棕色' => 'brown',    // Коричневый
             '灰色' => 'gray',     // Серый
+            '灰色,银色' => 'gray',     // Серый
             '黑色,灰色' => 'black',     // Серый
             '灰色,蓝色' => 'gray',     // Серый
             '白色,灰色' => 'gray',     // Серый
@@ -244,7 +377,19 @@ class SyncSystemsProducts extends Command
             echo count($images) ? "Creating product with images\n" : "Updating product without images\n";
 
             $article = 'online-' . $group[0]['articleNumber'];
-            $firstProductInGroup = $group[0];
+
+            $parentsFilterIds = [];
+            if ($group[0]['categoryFiltersIds']) {
+                foreach ($group[0]['categoryFiltersIds'] as $catFilter) {
+                    $parentsFilterIds [] = [
+                        "id" => $catFilter,
+                        "value" => [
+                            "en" => ''
+                        ],
+                    ];
+                }
+            }
+
             foreach ($group as $key => $product) {
                 $sizeValue = $this->formatNumber($product['size']);
                 $sizeId = collect($sizes)->first(function ($item) use ($sizeValue) {
@@ -255,14 +400,7 @@ class SyncSystemsProducts extends Command
                     continue;
                 }
                 $characteristics = [
-                    "ID_563599" => [
-                        [
-                            "id" => 4054579,
-                            "value" => [
-                                "en" => "Delivery from 10 days"
-                            ],
-                        ]
-                    ],
+                    ...$this->deliveryDays,
                     "ID_{$size['id']}" => [
                         [
                             "id" => $sizeId['id'] ?? null,
@@ -272,6 +410,12 @@ class SyncSystemsProducts extends Command
                         ]
                     ],
                 ];
+
+                if(count($parentsFilterIds)) {
+                    $characteristics["ID_{$this->categoryFilterId}"] = $parentsFilterIds;
+                }
+
+
                 if ($colors) {
                     try {
                         $colorId = collect($colors)->first(function ($item) use ($product, $colorsChinese) {
@@ -297,14 +441,28 @@ class SyncSystemsProducts extends Command
 
             $brandId = $brand?->system_id;
             $title = $group[0]['name'];
-            $parentsIds = [487155, 607325];
+            $parentsIds = [];
+            if($this->catalogId) $parentsIds[] = $this->catalogId;
+            $parentsIds[] = $this->deliveryId;
 
-            if($group[0]['categoryIds']) {
+            if ($group[0]['categoryIds']) {
                 $parentsIds = array_merge($parentsIds, $group[0]['categoryIds']);
             }
 
+            $sizesTable = null;
+            $sizesTableValue = $group[0]['sizesTable'];
+            if ($sizesTableValue && is_array($sizesTableValue)) {
+                $sizesTable = $this->createSizeTableForShop($sizesTableValue);
+            } else if (is_string($sizesTableValue)) {
+                $sizesTable = $sizesTableValue;
+            }
+
+            if ($sizesTable) {
+                $sizesTable = $this->removeColumn($sizesTable, 'RU');
+            }
+
             $productsData = [
-                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images),
+                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images, [], $sizesTable),
                 ...$preparedProducts,
             ];
             echo 'Creating product with variations in shop: ' . $title . PHP_EOL;
@@ -345,7 +503,7 @@ class SyncSystemsProducts extends Command
             "availability" => "Publish",
             "characteristics" => $characteristics,
             "modification" => [
-                "id" => 58481,
+                "id" => $this->catalogModificationId,
                 "value" => [
                     "en" => "Catalog"
                 ],
@@ -363,9 +521,10 @@ class SyncSystemsProducts extends Command
      * @param string $articleNumber
      * @param array $images
      * @param array $stickerIds
+     * @param string|null $sizesTable
      * @return array
      */
-    private function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = []): array
+    private function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = [], string $sizesTable = null): array
     {
         $parents = [];
         foreach ($parentIds as $parentId) {
@@ -396,6 +555,9 @@ class SyncSystemsProducts extends Command
                     "id" => $brandId
                 ],
                 "stickers" => $stickers,
+                "description" => [
+                    "en" => $sizesTable ?? ''
+                ],
             ]
         ];
     }
@@ -517,20 +679,33 @@ class SyncSystemsProducts extends Command
      * Map with shop categories.
      *
      * @param $category
-     * @return mixed|null
+     * @return array
      */
-    private function mapWithShopCategories($category): mixed
+    private function mapWithShopCategories($category): array
     {
         $categoryPath = explode('/', $category["category3"]);
         $lastCategory = end($categoryPath);
+        $mappedValue = [];
+        $mappedFilterValue = [];
+        $response = [];
 
-        if (stripos($lastCategory, 'slippers') !== false) {
-            $mappedValue = $this->categoriesMapping['slippers'];
+        if (stripos($category["category3"], 'slippers') !== false) {
+            $mappedValue[] = $this->categoriesMapping['slippers'];
+            $mappedFilterValue[] = $this->categoriesFilterMapping['slippers'];
         } else {
-            $mappedValue = $this->categoriesMapping[$lastCategory] ?? null;
+            $val = $this->categoriesMapping[$lastCategory] ?? null;
+            if($val) $mappedValue[] = $val;
+
+            $val = $this->categoriesFilterMapping[$lastCategory] ?? null;
+            if($val) $mappedFilterValue[] = $val;
+
+            $mappedValue[] = $this->categoriesMapping['parentSneakers'];
         }
 
-        return $mappedValue;
+        $response['categories'] = $mappedValue;
+        $response['categoriesFilters'] = $mappedFilterValue;
+
+        return $response;
     }
 
     /**
@@ -556,24 +731,40 @@ class SyncSystemsProducts extends Command
         }
 
         $findCategoryIds = [];
+        $findCategoryFilterIds = [];
         $poizonProductCategories = $poizonProduct->data['category'];
-        if($poizonProductCategories && $poizonProductCategories['category3'] ?? false) {
+        if ($poizonProductCategories && $poizonProductCategories['category3'] ?? false) {
             $mappedValue = $this->mapWithShopCategories($poizonProductCategories);
-            if ($mappedValue) {
-                $findCategoryIds[] = $mappedValue;
+
+            $mappedValueCategories = $mappedValue['categories'];
+            if (count($mappedValueCategories)) {
+                $findCategoryIds = [...$mappedValueCategories];
+            }
+
+            $mappedValueCategoriesFilters = $mappedValue['categoriesFilters'];
+            if (count($mappedValueCategoriesFilters)) {
+                $findCategoryFilterIds = [...$mappedValueCategoriesFilters];
             }
             $fit = $poizonProduct->data['fit'];
-            if($fit) {
-               if($fit === "FEMALE") {
-                   $findCategoryIds[] = $this->categoriesMapping['women'];
-               }
-               else if($fit === "MALE") {
-                   $findCategoryIds[] = $this->categoriesMapping['men'];
-               } else {
+            if ($fit) {
+                if ($fit === "FEMALE") {
                     $findCategoryIds[] = $this->categoriesMapping['women'];
+                    $findCategoryFilterIds[] = $this->categoriesFilterMapping['women'];
+                } else if ($fit === "MALE") {
                     $findCategoryIds[] = $this->categoriesMapping['men'];
+                    $findCategoryFilterIds[] = $this->categoriesFilterMapping['men'];
+                } else {
+                    $findCategoryIds[] = $this->categoriesMapping['women'];
+                    $findCategoryFilterIds[] = $this->categoriesFilterMapping['women'];
+                    $findCategoryIds[] = $this->categoriesMapping['men'];
+                    $findCategoryFilterIds[] = $this->categoriesFilterMapping['men'];
+                    $findCategoryIds[] = $this->categoriesMapping['unisex'];
                 }
             }
+        }
+        $sizesTable = null;
+        if ($poizonProduct->data['sizeTable'] ?? false) {
+            $sizesTable = $this->createSizeTableForShop($poizonProduct->data['sizeTable'] ?? []);
         }
 
         $syncedProduct = [
@@ -593,6 +784,8 @@ class SyncSystemsProducts extends Command
             'colorName' => $poizonProduct->data['color']['main'] ?? null,
             'colorId' => $poizonProduct->data['colorTheme'] ?? null,
             'categoryIds' => $findCategoryIds,
+            'categoryFiltersIds' => $findCategoryFilterIds,
+            'sizesTable' => $sizesTable,
         ];
 
         return $syncedProduct;
@@ -601,10 +794,10 @@ class SyncSystemsProducts extends Command
     /**
      * Create size table for shop.
      *
-     * @param $sizeTable
+     * @param array $sizeTable
      * @return string
      */
-    private function createSizeTableForShop($sizeTable): string
+    private function createSizeTableForShop(array $sizeTable): string
     {
         // Начинаем собирать HTML-код таблицы
         $html = "<table border='1'>";
