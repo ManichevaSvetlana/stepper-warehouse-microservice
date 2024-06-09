@@ -16,9 +16,9 @@ class SyncSystemsProducts extends Command
     /**
      * The name and signature of the console command.
      *
-     * @var string // sync:systems-products --system=poizon-shop --section=shop
+     * @var string // sync:systems-products --system=poizon-shop --section=shop --images=0
      */
-    protected $signature = 'sync:systems-products {--system=poizon} {--section=all} {--sku=} {--images=1}';
+    protected $signature = 'sync:systems-products {--system=poizon} {--section=all} {--sku=} {--images=1} {--count=200} {--mode=create}';
 
     /**
      * The console command description.
@@ -33,27 +33,28 @@ class SyncSystemsProducts extends Command
      * @var array
      */
     protected array $categoriesMapping = [
-        /*'canvas' => 615748,
-        'vintage_basketball' => 615749,
-        'sport' => 615750,
-        'daddy' => 615751,
-        'sneakers' => 615752,
-        'slippers' => 615753,
-        'women' => 607326,
-        'men' => 607327,*/
+        'casual' => 636307,
+        'casual/sneakers' => 636308,
+        'casual/vintage_basketball' => 636309,
+        'casual/sport' => 636310,
+        'casual/daddy' => 636311,
+        'casual/canvas' => 636312,
 
-        'canvas' => 615761,
-        'vintage_basketball' => 615764,
-        'running' => 615760,
-        'sport' => 615760,
-        'daddy' => 615762,
-        'sneakers' => 615763,
-        'slippers' => 615758,
-        'women' => 615756,
-        'men' => 615757,
-        'unisex' => 616001,
+        'sport' => 636313,
+        'sport/running' => 636314,
+        'sport/basketball' => 636315,
+        'sport/football' => 636316,
+        'sport/training' => 636317,
+        'sport/badminton' => 636318,
+        'sport/tennis' => 636319,
+        'sport/golf' => 636320,
+        'sport/cycling' => 636321,
 
-        'parentSneakers' => 615759
+        'slippers' => 636322,
+        'slippers/bautou' => 636323,
+        'slippers/flip_flops' => 636324,
+        'slippers/sport_sandals' => 636325,
+        'slippers/sport' => 636326,
     ];
 
     /**
@@ -62,15 +63,9 @@ class SyncSystemsProducts extends Command
      * @var array
      */
     protected array $categoriesFilterMapping = [
-        'canvas' => 4646923,
-        'vintage_basketball' => 4646922,
-        'running' => 4646929,
-        'sport' => 4646929,
-        'daddy' => 4646926,
-        'sneakers' => 4646928,
-        'slippers' => 4646927,
         'women' => 4646925,
         'men' => 4646924,
+        'unisex' => 4806893,
     ];
 
     /**
@@ -79,14 +74,6 @@ class SyncSystemsProducts extends Command
      * @var array
      */
     private array $deliveryDays = [
-        /*"ID_563599" => [
-            [
-                "id" => 4054579,
-                "value" => [
-                    "en" => "Delivery from 10 days"
-                ],
-            ]
-        ]*/
         "ID_759629" => [
             [
                 "id" => 4644055,
@@ -137,6 +124,13 @@ class SyncSystemsProducts extends Command
     private int $catalogModificationId = 87201;
 
     /**
+     * Categories and run products count.
+     *
+     * @var array
+     */
+    private array $categoriesAndRunProductsCount = [];
+
+    /**
      * Execute the console command.
      * @throws GuzzleException
      */
@@ -146,42 +140,65 @@ class SyncSystemsProducts extends Command
         $startSku = $this->option('sku');
         $systemName = $this->option('system');
         $withoutImages = !$this->option('images');
+        $pzCount = $this->option('count');
+        $pzMode = $this->option('mode');
 
-        $poizonProducts = $systemName === 'poizon-shop' ? PoizonShopProduct::all() : PoizonProduct::all();
+        $modelProducts = $systemName === 'poizon-shop' ? PoizonShopProduct::orderBy('popularity', 'asc') : PoizonProduct::orderBy('id', 'asc');
         $failedProductsShop = [];
         $startProcessing = false;
 
-        foreach ($poizonProducts as $poizonProduct) {
+        $modelProducts->chunk(100, function ($poizonProducts) use (&$failedProductsShop, &$startProcessing, $startSku, $systemName, $section, $withoutImages, $pzCount, $pzMode) {
+            foreach ($poizonProducts as $poizonProduct) {
 
-            if ($startSku) {
-                if (!$startProcessing && $poizonProduct->sku !== $startSku) {
-                    continue;
+                $visibilityPz = true;
+                $categoriesPZ = $poizonProduct->data['category'];
+                $lastCategoryPZ = end($categoriesPZ);
+
+                if (!isset($this->categoriesAndRunProductsCount[$lastCategoryPZ])) {
+                    $this->categoriesAndRunProductsCount[$lastCategoryPZ] = 0;
+                }
+                $this->categoriesAndRunProductsCount[$lastCategoryPZ]++;
+
+                echo 'Product popularity: ' . $poizonProduct->popularity . '. In category: ' . $lastCategoryPZ . '. Current product index: ' . $this->categoriesAndRunProductsCount[$lastCategoryPZ] . "\n";
+
+                if ($startSku) {
+                    if (!$startProcessing && $poizonProduct->sku !== $startSku) {
+                        echo 'Skip product: ' . $poizonProduct->sku . "\n";
+                        continue;
+                    }
+
+                    $startProcessing = true;
                 }
 
-                $startProcessing = true;
-            }
+                $productCountInCategoryPZ = PoizonShopProduct::whereJsonContains('data->category->category3', $lastCategoryPZ)->count();
+                if ($this->categoriesAndRunProductsCount[$lastCategoryPZ] < ($productCountInCategoryPZ - $pzCount) && $poizonProduct->popularity < 5000) {
+                    $visibilityPz = false;
+                }
+                echo 'Total products in category: ' . $productCountInCategoryPZ . "\n";
 
 
-            $syncedProductsForShop = $this->syncProductsForBitrix($systemName, $poizonProduct, $section);
+                $syncedProductsForShop = $this->syncProductsForBitrix($systemName, $poizonProduct, $section, $withoutImages);
 
-            if ($section === 'all' || $section === 'shop') {
-                $shop = new ShopProduct();
-                $shop->setShopAuth();
+                if ($section === 'all' || $section === 'shop') {
+                    $shop = new ShopProduct();
+                    $shop->setShopAuth();
 
-                try {
-                    $this->createOrUpdateInShop($shop, $syncedProductsForShop, $withoutImages);
-                } catch (\Exception $e) {
-                    echo "Error while storing shop: {$e->getMessage()}\n";
-                    $failedProductsShop[$poizonProduct->sku] = $e->getMessage();
-                    FailedProduct::create([
-                        'sku' => $poizonProduct->sku,
-                        'type' => 'shop',
-                        'message' => $e->getMessage(),
-                        'data' => $e->getTrace()
-                    ]);
+                    try {
+                        if($pzMode === 'create' && !$visibilityPz) echo '!!!!! You are in create mode an pz visibility is false so far for this product!!!! \n';
+                        else $this->createOrUpdateInShop($shop, $syncedProductsForShop, $withoutImages, $visibilityPz);
+                    } catch (\Exception $e) {
+                        echo "Error while storing shop: {$e->getMessage()}\n";
+                        $failedProductsShop[$poizonProduct->sku] = $e->getMessage();
+                        FailedProduct::create([
+                            'sku' => $poizonProduct->sku,
+                            'type' => 'shop',
+                            'message' => $e->getMessage(),
+                            'data' => $e->getTrace()
+                        ]);
+                    }
                 }
             }
-        }
+        });
 
         $count = count($failedProductsShop);
         echo "Failed products for shop: $count \n";
@@ -196,7 +213,7 @@ class SyncSystemsProducts extends Command
      * @return array
      * @throws GuzzleException
      */
-    private function syncProductsForBitrix(string $systemName, mixed $poizonProduct, string $section): array
+    private function syncProductsForBitrix(string $systemName, mixed $poizonProduct, string $section, bool $withoutImages = false): array
     {
         if ($systemName !== 'poizon-shop') {
             echo "Product Poizon: {$poizonProduct->sku}\n";
@@ -206,11 +223,15 @@ class SyncSystemsProducts extends Command
             $skus = collect($poizonProduct->data['skus']);
 
             $syncedProductsForShop = [];
+            $k = 0;
             foreach ($poizonProduct->prices as $sku => $priceModel) {
                 try {
                     $syncedProduct = $this->prepareProduct($skus, $sku, $sizesPropertiesList, $priceModel, $poizonProduct);
                     $syncedProductsForShop[] = $syncedProduct;
-                    if ($section === 'all' || $section === 'bitrix') $this->createOrUpdateProductInBitrix($syncedProduct);
+                    if ($section === 'all' || $section === 'bitrix') {
+                        $k++;
+                        $this->createOrUpdateProductInBitrix($syncedProduct, $k, $withoutImages);
+                    }
                 } catch (\Exception $e) {
                     echo "Error while preparing and storing bitrix: {$e->getMessage()}\n";
                     if ($section === 'all' || $section === 'bitrix') FailedProduct::create([
@@ -232,13 +253,17 @@ class SyncSystemsProducts extends Command
             echo "Product Poizon Shop: {$poizonProduct->data['name']}\n";
             $syncedProductsForShop = [];
             $prices = $poizonProduct->data['skus'];
-
+            $k = 0;
             foreach ($prices as $priceModel) {
                 if ($priceModel['cnyPrice'] < 5 || !($priceModel['size']['primary'] ?? false)) continue;
                 try {
                     $syncedProduct = $this->prepareProductFromPoizonShop($poizonProduct, $priceModel);
                     $syncedProductsForShop[] = $syncedProduct;
-                    if ($section === 'all' || $section === 'bitrix') $this->createOrUpdateProductInBitrix($syncedProduct);
+
+                    if ($section === 'all' || $section === 'bitrix') {
+                        $k++;
+                        $this->createOrUpdateProductInBitrix($syncedProduct, $k, $withoutImages);
+                    }
                 } catch (\Exception $e) {
                     echo "Error while preparing and storing bitrix: {$e->getMessage()}\n";
                     if ($section === 'all' || $section === 'bitrix') FailedProduct::create([
@@ -298,15 +323,15 @@ class SyncSystemsProducts extends Command
     }
 
 
-
     /**
      * Create or update product in Shop.
      *
      * @param ShopProduct $shop
      * @param array $products
      * @param bool $withoutImages
+     * @param bool $visibilityPz
      */
-    private function createOrUpdateInShop(ShopProduct $shop, array $products, bool $withoutImages = false): void
+    private function createOrUpdateInShop(ShopProduct $shop, array $products, bool $withoutImages = false, bool $visibilityPz = true): void
     {
         $catalog = Feature::where('type', 'characteristic')->where('system', 'shop')->whereRaw("json_extract(data, '$.title.en') = 'Catalog'")->first();
         $characteristicsData = collect($catalog->data['characteristics']);
@@ -326,11 +351,13 @@ class SyncSystemsProducts extends Command
             '黑色,白色' => 'black',    // Черный
             '白色' => 'white',    // Белый
             '红色' => 'red',      // Красный
+            '黑色,红色' => 'red',      // Красный
             '红色,黄色' => 'red',      // Красный
             '白色,红色' => 'red',      // Красный
             '蓝色' => 'blue',     // Синий
             '白色,蓝色' => 'blue',     // Синий
             '绿色' => 'green',    // Зеленый
+            '米色,绿色' => 'green',    // Зеленый
             '白色,绿色' => 'green',    // Зеленый
             '黑色,绿色' => 'green',    // Зеленый
             '黄色' => 'yellow',   // Желтый
@@ -360,6 +387,7 @@ class SyncSystemsProducts extends Command
         $groupedBySku = collect($products)->groupBy('sku');
 
         foreach ($groupedBySku as $group) {
+            $noImages = false;
             $preparedProducts = [];
             $productBrand = ucwords(strtolower($group[0]['brand']));
             $brand = Feature::where('type', 'brand')->where('system', 'shop')->whereRaw("json_extract(data, '$.title.en') = '$productBrand'")->first();
@@ -390,7 +418,21 @@ class SyncSystemsProducts extends Command
                 }
             }
 
+
+            $minPriceProductInGroup = $group->sortBy('price')->first();
+
+            $filteredProductsInGroup = $group->reject(function ($functionProduct) use ($minPriceProductInGroup) {
+                return $functionProduct['size'] === $minPriceProductInGroup['size'];
+            });
+
+            $sortedProductsInGroup = $filteredProductsInGroup->sortBy('size');
+
+            $sortedProductsInGroup->prepend($minPriceProductInGroup);
+
+            $group = $sortedProductsInGroup;
+
             foreach ($group as $key => $product) {
+                if($product['no_images']) $noImages = true;
                 $sizeValue = $this->formatNumber($product['size']);
                 $sizeId = collect($sizes)->first(function ($item) use ($sizeValue) {
                     return $item['title']['en'] === $sizeValue;
@@ -436,7 +478,7 @@ class SyncSystemsProducts extends Command
                     }
                 }
 
-                $preparedProducts[] = $this->getVariationProductForShop($sizeValue, $product['name'], $article, $product['sku'], $product['productSku'], $product['price'], $characteristics);
+                $preparedProducts[] = $this->getVariationProductForShop($sizeValue, $product['name'], $product['sku'], $article, $product['productSku'], $product['price'], $characteristics, $visibilityPz);
             }
 
             $brandId = $brand?->system_id;
@@ -462,9 +504,11 @@ class SyncSystemsProducts extends Command
             }
 
             $productsData = [
-                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images, [], $sizesTable),
+                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images, [], $sizesTable, $visibilityPz),
                 ...$preparedProducts,
             ];
+            if($withoutImages) $productsData = $preparedProducts;
+
             echo 'Creating product with variations in shop: ' . $title . PHP_EOL;
             if (count($preparedProducts)) $response = $shop->createShopProducts($productsData);
             else {
@@ -487,20 +531,20 @@ class SyncSystemsProducts extends Command
      * @param array $characteristics
      * @return array
      * */
-    private function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = []): array
+    private function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = [], bool $visisbility = true): array
     {
         return [
             "title" => $title,
             "parent_title" => $parentTitle,
             "characteristics_mode" => "Reset",
             "sku" => $sku,
-            "parent_sku" => $articleNumber,
+            "parent_sku" => $parentSku,
             "barcode" => $parentSku,
             "currency" => "GEL",
             "price" => $price,
-            "presence" => $price > 999 ? 0 : 9999,
+            "presence" => ($price > 999 || !$visisbility) ? 0 : 9999,
             "force_alias_update" => "1",
-            "availability" => "Publish",
+            "availability" => $visisbility ? "Publish" : "Unpublish",
             "characteristics" => $characteristics,
             "modification" => [
                 "id" => $this->catalogModificationId,
@@ -509,6 +553,11 @@ class SyncSystemsProducts extends Command
                 ],
             ]
         ];
+    }
+
+    private function setSalePrice()
+    {
+
     }
 
     /**
@@ -524,7 +573,7 @@ class SyncSystemsProducts extends Command
      * @param string|null $sizesTable
      * @return array
      */
-    private function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = [], string $sizesTable = null): array
+    private function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = [], string $sizesTable = null, bool $visibility = true): array
     {
         $parents = [];
         foreach ($parentIds as $parentId) {
@@ -542,14 +591,14 @@ class SyncSystemsProducts extends Command
             [
                 "title" => $title,
                 "sku" => $articleNumber,
-                "presence" => "true",
+                "presence" => $visibility ? "true" : "false",
                 "images" => [
                     "links" => [
                         ...$images
                     ]
                 ],
                 "barcode" => $sku,
-                "availability" => "Publish",
+                "availability" => $visibility ? "Publish" : "Unpublish",
                 "parent" => $parents,
                 "brand" => [
                     "id" => $brandId
@@ -591,11 +640,13 @@ class SyncSystemsProducts extends Command
      * Create or update product in Bitrix.
      *
      * @param array $product
+     * @param int $k
+     * @param bool $withoutImages
      * @return void
      *
      * @throws GuzzleException
      */
-    private function createOrUpdateProductInBitrix(array $product): void
+    private function createOrUpdateProductInBitrix(array $product, int $k, bool $withoutImages = false): void
     {
         $bitrix = new BitrixProduct();
 
@@ -611,9 +662,9 @@ class SyncSystemsProducts extends Command
             'brand' => $product['brand'],
             'articleNumber' => $product['articleNumber'],
             'productSku' => $product['productSku'],
-            'images' => [
+            'images' => $withoutImages && $k === 1 || !$withoutImages ? [
                 $product['images'][0]
-            ]
+            ] : []
         ];
 
         if (BitrixProduct::where('sku', $product['sku'])->where('product_sku', $product['productSku'])->exists()) {
@@ -683,24 +734,16 @@ class SyncSystemsProducts extends Command
      */
     private function mapWithShopCategories($category): array
     {
-        $categoryPath = explode('/', $category["category3"]);
-        $lastCategory = end($categoryPath);
+        if(!$category || !($category["category3"] ?? false)) return [];
+
         $mappedValue = [];
         $mappedFilterValue = [];
         $response = [];
 
-        if (stripos($category["category3"], 'slippers') !== false) {
-            $mappedValue[] = $this->categoriesMapping['slippers'];
-            $mappedFilterValue[] = $this->categoriesFilterMapping['slippers'];
-        } else {
-            $val = $this->categoriesMapping[$lastCategory] ?? null;
-            if($val) $mappedValue[] = $val;
-
-            $val = $this->categoriesFilterMapping[$lastCategory] ?? null;
-            if($val) $mappedFilterValue[] = $val;
-
-            $mappedValue[] = $this->categoriesMapping['parentSneakers'];
-        }
+        $childCategory = str_replace('footwear/', '', $category["category3"]);
+        $mainCategory = explode('/', $childCategory)[0];
+        $mappedValue[] = $this->categoriesMapping[$mainCategory] ?? null;
+        $mappedValue[] = $this->categoriesMapping[$childCategory] ?? null;
 
         $response['categories'] = $mappedValue;
         $response['categoriesFilters'] = $mappedFilterValue;
@@ -732,8 +775,8 @@ class SyncSystemsProducts extends Command
 
         $findCategoryIds = [];
         $findCategoryFilterIds = [];
-        $poizonProductCategories = $poizonProduct->data['category'];
-        if ($poizonProductCategories && $poizonProductCategories['category3'] ?? false) {
+        $poizonProductCategories = $poizonProduct->data['category'] ?? [];
+        if ($poizonProductCategories && key_exists('category3', $poizonProductCategories)) {
             $mappedValue = $this->mapWithShopCategories($poizonProductCategories);
 
             $mappedValueCategories = $mappedValue['categories'];
@@ -748,17 +791,11 @@ class SyncSystemsProducts extends Command
             $fit = $poizonProduct->data['fit'];
             if ($fit) {
                 if ($fit === "FEMALE") {
-                    $findCategoryIds[] = $this->categoriesMapping['women'];
                     $findCategoryFilterIds[] = $this->categoriesFilterMapping['women'];
                 } else if ($fit === "MALE") {
-                    $findCategoryIds[] = $this->categoriesMapping['men'];
                     $findCategoryFilterIds[] = $this->categoriesFilterMapping['men'];
                 } else {
-                    $findCategoryIds[] = $this->categoriesMapping['women'];
-                    $findCategoryFilterIds[] = $this->categoriesFilterMapping['women'];
-                    $findCategoryIds[] = $this->categoriesMapping['men'];
-                    $findCategoryFilterIds[] = $this->categoriesFilterMapping['men'];
-                    $findCategoryIds[] = $this->categoriesMapping['unisex'];
+                    $findCategoryFilterIds[] = $this->categoriesFilterMapping['unisex'];
                 }
             }
         }
@@ -778,6 +815,7 @@ class SyncSystemsProducts extends Command
             'originalPriceWithExpenses' => $price['originalPriceWithExpenses'],
             'income' => $price['income'],
             'images' => $poizonProduct->data['images'],
+            'no_images' => count($poizonProduct->data['images']) === 0,
             'brand' => $brand,
             'category' => $poizonProduct->data['category1'],
             'articleNumber' => $poizonProduct->data['article'],
@@ -870,7 +908,7 @@ class SyncSystemsProducts extends Command
      */
     private function calculatePrice($initialPrice, bool $isDivide = true): array
     {
-        $lari = 0.37;
+        $lari = 0.39;
         $shipment = 32;
         $terminalCommission = 1.02;
         $vat = 1.19;
@@ -903,9 +941,9 @@ class SyncSystemsProducts extends Command
     private function calculateCoefficient(float $price): float
     {
         $min_price = 50;
-        $max_price = 800;
-        $min_coefficient = 1.4;
-        $max_coefficient = 1.15;
+        $max_price = 999;
+        $min_coefficient = 1.45;
+        $max_coefficient = 1.17;
 
         if ($price < $min_price) {
             return $min_coefficient;

@@ -13,7 +13,7 @@ class StealPoizonShopPopularProducts extends Command
      *
      * @var string
      */
-    protected $signature = 'poizon:steal-poizon-shop-popular-products {--pages=10} {--category=sneakers}';
+    protected $signature = 'poizon:steal-poizon-shop-popular-products {--pages=10} {--category=sneakers} {--popularity=3000}';
 
     /**
      * The console command description.
@@ -29,6 +29,7 @@ class StealPoizonShopPopularProducts extends Command
     {
         echo "Steal Poizon Shop popular products.\n";
         $pages = $this->option('pages');
+        $popularity = $this->option('popularity');
         $category = $this->option('category');
 
         $poizon = new PoizonShopProduct();
@@ -40,10 +41,12 @@ class StealPoizonShopPopularProducts extends Command
                 $name = $product['name'];
                 echo "Product: $sku - $name\n";
                 $existingTrackProduct = TrackProduct::where('sku', $sku)->where('system', 'poizon-shop')->exists();
+                $popularityPoint = $popularity - $i;
                 if(!$existingTrackProduct) {
                     TrackProduct::create([
                         'sku' => $sku,
                         'system' => 'poizon-shop',
+                        'type' => $popularityPoint,
                     ]);
                 }
             }

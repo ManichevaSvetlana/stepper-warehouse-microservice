@@ -71,7 +71,7 @@ trait ShopTrait
             'offset' => $page * $limit - $limit,
         ]);
 
-        return $response->json()['response']['products'];
+        return $response->json()['response'];
     }
 
     /**

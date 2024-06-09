@@ -9,7 +9,7 @@ class UpdateShopData extends Command
 {
     /**
      * The name and signature of the console command.
-     *
+     * shop:update-shop-data --section=features
      * @var string
      */
     protected $signature = 'shop:update-shop-data {--section=all}';
@@ -62,15 +62,20 @@ class UpdateShopData extends Command
             $ids = [];
             $page = 1;
             do {
-                $products = $product->listShopProducts(50, $page);
-                foreach ($products as $productModel) {
-                    $ids[] = $productModel['id'];
-                    echo 'Update / create product: #' . $productModel['id'] . "\n";
-                    ShopProduct::updateOrCreate(
-                        ['system_id' => $productModel['id']],
-                        ['data' => $productModel, 'sku' => $productModel['sku']]
-                    );
+                try {
+                    $products = $product->listShopProducts(50, $page)['products'];
+                    foreach ($products as $productModel) {
+                        $ids[] = $productModel['id'];
+                        echo 'Update / create product: #' . $productModel['id'] . "\n";
+                        ShopProduct::updateOrCreate(
+                            ['system_id' => $productModel['id']],
+                            ['data' => $productModel, 'sku' => $productModel['sku']]
+                        );
+                    }
+                } catch (\Exception $e) {
+                    echo 'Error: ' . $e->getMessage() . "\n";
                 }
+
                 $page++;
             } while (!empty($products));
 

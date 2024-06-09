@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \Illuminate\Support\Facades\Schema;
+use \Illuminate\Database\Schema\Blueprint;
+
 
 Route::get('/test333', function () {
-
+    Schema::table('poizon_shop_products', function (Blueprint $table) {
+        $table->bigInteger('popularity')->default(0);
+    });
 });
 
 Route::get('/test1', function () {

@@ -15,7 +15,7 @@ class PoizonShopProduct extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['data', 'sku', 'type', 'updated_at', 'created_at'];
+    protected $fillable = ['data', 'sku', 'type', 'updated_at', 'created_at', 'popularity'];
 
     /**
      * The attributes that should be cast.

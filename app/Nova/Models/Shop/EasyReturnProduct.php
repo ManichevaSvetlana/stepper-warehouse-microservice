@@ -1,24 +1,21 @@
 <?php
 
-namespace App\Nova\Models\Poizon;
+namespace App\Nova\Models\Shop;
 
 use App\Nova\Resource;
-use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Code;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Slug;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class PoizonShopProduct extends Resource
+class EasyReturnProduct extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Poizon\PoizonShopProduct>
+     * @var class-string<\App\Models\Shop\EasyReturnProduct>
      */
-    public static $model = \App\Models\Poizon\PoizonShopProduct::class;
+    public static $model = \App\Models\Shop\EasyReturnProduct::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -33,7 +30,7 @@ class PoizonShopProduct extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'sku', 'data'
+        'id', 'article', 'sku', 'size'
     ];
 
     /**
@@ -46,12 +43,10 @@ class PoizonShopProduct extends Resource
     {
         return [
             ID::make()->sortable(),
-            Slug::make('SKU', 'sku')->required(),
-            Code::make('Data', 'data')->json(),
-            Code::make('Prices', 'prices')->json(),
-            Number::make('Popularity', 'popularity')->sortable(),
-            DateTime::make('Created At')->exceptOnForms()->sortable(),
-            DateTime::make('Updated At')->exceptOnForms()->sortable(),
+            Text::make('Article')->sortable(),
+            Text::make('SKU')->sortable(),
+            Text::make('Size')->sortable(),
+            Number::make('Price in CNY')->sortable(),
         ];
     }
 

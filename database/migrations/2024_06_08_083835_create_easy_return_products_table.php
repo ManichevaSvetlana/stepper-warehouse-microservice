@@ -10,12 +10,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('poizon_shop_products', function (Blueprint $table) {
+        Schema::create('easy_return_products', function (Blueprint $table) {
             $table->id();
-            $table->json('data');
-            $table->string('sku')->unique();
-            $table->string('type')->nullable();
-            $table->bigInteger('popularity')->default(0);
+            $table->string('article')->unique()->nullable();
+            $table->string('sku')->unique()->nullable();
+            $table->string('size');
+            $table->decimal('price_in_cny', 12, 2);
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('poizon_shop_products');
+        Schema::dropIfExists('easy_return_products');
     }
 };
