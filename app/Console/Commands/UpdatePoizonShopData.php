@@ -70,6 +70,7 @@ class UpdatePoizonShopData extends Command
                     ['sku' => $track->sku],
                     [
                         'data' => $data,
+                        'popularity' => $track->type,
                     ]
                 );
                 $track->update(['updated_at' => now()]);

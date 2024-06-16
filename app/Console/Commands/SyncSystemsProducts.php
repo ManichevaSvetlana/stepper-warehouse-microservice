@@ -16,7 +16,7 @@ class SyncSystemsProducts extends Command
     /**
      * The name and signature of the console command.
      *
-     * @var string // sync:systems-products --system=poizon-shop --section=shop --images=0
+     * @var string // sync:systems-products --system=poizon-shop --section=shop --count=10000
      */
     protected $signature = 'sync:systems-products {--system=poizon} {--section=all} {--sku=} {--images=1} {--count=200} {--mode=create}';
 
@@ -73,7 +73,7 @@ class SyncSystemsProducts extends Command
      *
      * @var array
      */
-    private array $deliveryDays = [
+    public array $deliveryDays = [
         "ID_759629" => [
             [
                 "id" => 4644055,
@@ -97,38 +97,38 @@ class SyncSystemsProducts extends Command
      *
      * @var int
      */
-    //private int $catalogId = 487155;
-    private int $catalogId = 0;
+    //public int $catalogId = 487155;
+    public int $catalogId = 0;
 
     /**
      * Category filter ID.
      *
      * @var int
      */
-    private int $categoryFilterId = 760721;
+    public int $categoryFilterId = 760721;
 
     /**
      * Delivery ID.
      *
      * @var int
      */
-    //private int $deliveryId = 607325;
-    private int $deliveryId = 615677;
+    //public int $deliveryId = 607325;
+    public int $deliveryId = 615677;
 
     /**
      * Catalog modification ID.
      *
      * @var int
      */
-    //private int $catalogModificationId = 58481;
-    private int $catalogModificationId = 87201;
+    //public int $catalogModificationId = 58481;
+    public int $catalogModificationId = 87201;
 
     /**
      * Categories and run products count.
      *
      * @var array
      */
-    private array $categoriesAndRunProductsCount = [];
+    public array $categoriesAndRunProductsCount = [];
 
     /**
      * Execute the console command.
@@ -213,7 +213,7 @@ class SyncSystemsProducts extends Command
      * @return array
      * @throws GuzzleException
      */
-    private function syncProductsForBitrix(string $systemName, mixed $poizonProduct, string $section, bool $withoutImages = false): array
+    public function syncProductsForBitrix(string $systemName, mixed $poizonProduct, string $section, bool $withoutImages = false): array
     {
         if ($systemName !== 'poizon-shop') {
             echo "Product Poizon: {$poizonProduct->sku}\n";
@@ -286,7 +286,7 @@ class SyncSystemsProducts extends Command
         return $syncedProductsForShop;
     }
 
-    private function removeColumn($html, $columnName) {
+    public function removeColumn($html, $columnName) {
         // Парсинг HTML
         $dom = new \DOMDocument();
         $dom->loadHTML($html);
@@ -330,8 +330,10 @@ class SyncSystemsProducts extends Command
      * @param array $products
      * @param bool $withoutImages
      * @param bool $visibilityPz
+     * @param bool $withoutCreate
+     * @return array|null
      */
-    private function createOrUpdateInShop(ShopProduct $shop, array $products, bool $withoutImages = false, bool $visibilityPz = true): void
+    public function createOrUpdateInShop(ShopProduct $shop, array $products, bool $withoutImages = false, bool $visibilityPz = true, bool $withoutCreate = false): ?array
     {
         $catalog = Feature::where('type', 'characteristic')->where('system', 'shop')->whereRaw("json_extract(data, '$.title.en') = 'Catalog'")->first();
         $characteristicsData = collect($catalog->data['characteristics']);
@@ -339,7 +341,7 @@ class SyncSystemsProducts extends Command
         $color = $characteristicsData->firstWhere('slug', 'color-1');
         if (!$size) {
             echo "Size feature not found\n";
-            return;
+            return null;
         }
         $sizes = $size['values'];
         $colors = $color['values'];
@@ -385,6 +387,7 @@ class SyncSystemsProducts extends Command
         ];
 
         $groupedBySku = collect($products)->groupBy('sku');
+        $responses = [];
 
         foreach ($groupedBySku as $group) {
             $noImages = false;
@@ -400,7 +403,8 @@ class SyncSystemsProducts extends Command
                 continue;
             }
             $productSku = $group[0]['sku'];
-            $images = ShopProduct::whereRaw("json_extract(data, '$.barcode') = '$productSku'")->exists() || $withoutImages ? [] : $group[0]['images'];
+            // ShopProduct::whereRaw("json_extract(data, '$.barcode') = '$productSku'")->exists() ||
+            $images = $withoutImages ? [] : $group[0]['images'];
             echo "Product SKU: {$productSku}\n";
             echo count($images) ? "Creating product with images\n" : "Updating product without images\n";
 
@@ -510,13 +514,15 @@ class SyncSystemsProducts extends Command
             if($withoutImages) $productsData = $preparedProducts;
 
             echo 'Creating product with variations in shop: ' . $title . PHP_EOL;
-            if (count($preparedProducts)) $response = $shop->createShopProducts($productsData);
+            if (count($preparedProducts)) $responses[] = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
             else {
                 $productsData[0]['presence'] = false;
                 $productsData[0]["availability"] = "Unpublish";
-                $response = $shop->createShopProducts($productsData);
+                $responses[] = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
             }
         }
+
+        return $responses;
     }
 
     /**
@@ -529,9 +535,10 @@ class SyncSystemsProducts extends Command
      * @param string $sku
      * @param mixed $price
      * @param array $characteristics
+     * @param bool $visisbility
      * @return array
-     * */
-    private function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = [], bool $visisbility = true): array
+     */
+    public function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = [], bool $visisbility = true): array
     {
         return [
             "title" => $title,
@@ -555,7 +562,7 @@ class SyncSystemsProducts extends Command
         ];
     }
 
-    private function setSalePrice()
+    public function setSalePrice()
     {
 
     }
@@ -573,7 +580,7 @@ class SyncSystemsProducts extends Command
      * @param string|null $sizesTable
      * @return array
      */
-    private function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = [], string $sizesTable = null, bool $visibility = true): array
+    public function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = [], string $sizesTable = null, bool $visibility = true): array
     {
         $parents = [];
         foreach ($parentIds as $parentId) {
@@ -617,7 +624,7 @@ class SyncSystemsProducts extends Command
      * @param string $numberString
      * @return string
      */
-    private function formatNumber(string $numberString): string
+    public function formatNumber(string $numberString): string
     {
         // Заменяем запятую на точку
         $numberString = str_replace(',', '.', $numberString);
@@ -646,7 +653,7 @@ class SyncSystemsProducts extends Command
      *
      * @throws GuzzleException
      */
-    private function createOrUpdateProductInBitrix(array $product, int $k, bool $withoutImages = false): void
+    public function createOrUpdateProductInBitrix(array $product, int $k, bool $withoutImages = false): void
     {
         $bitrix = new BitrixProduct();
 
@@ -688,7 +695,7 @@ class SyncSystemsProducts extends Command
      * @param $poizonProduct
      * @return array
      */
-    private function prepareProduct($skus, $sku, $sizesPropertiesList, $priceModel, $poizonProduct): array
+    public function prepareProduct($skus, $sku, $sizesPropertiesList, $priceModel, $poizonProduct): array
     {
         echo "SKU: {$sku}\n";
         $neededSku = $skus->firstWhere('skuId', $sku);
@@ -732,7 +739,7 @@ class SyncSystemsProducts extends Command
      * @param $category
      * @return array
      */
-    private function mapWithShopCategories($category): array
+    public function mapWithShopCategories($category): array
     {
         if(!$category || !($category["category3"] ?? false)) return [];
 
@@ -761,7 +768,7 @@ class SyncSystemsProducts extends Command
      * @param $poizonProduct
      * @return array
      */
-    private function prepareProductFromPoizonShop($poizonProduct, $priceModel): array
+    public function prepareProductFromPoizonShop($poizonProduct, $priceModel): array
     {
         echo "SKU: {$priceModel['skuId']}\n";
         $name = preg_replace('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{20000}-\x{2A6DF}]+/u', '', $poizonProduct->data['name']);
@@ -835,7 +842,7 @@ class SyncSystemsProducts extends Command
      * @param array $sizeTable
      * @return string
      */
-    private function createSizeTableForShop(array $sizeTable): string
+    public function createSizeTableForShop(array $sizeTable): string
     {
         // Начинаем собирать HTML-код таблицы
         $html = "<table border='1'>";
@@ -880,7 +887,7 @@ class SyncSystemsProducts extends Command
      * @param string $str
      * @return float
      */
-    private function parseFraction(string $str): float
+    public function parseFraction(string $str): float
     {
         // Замена распространенных дробей на их десятичные эквиваленты
         $fractions = [
@@ -906,7 +913,7 @@ class SyncSystemsProducts extends Command
      * @param bool $isDivide
      * @return array
      */
-    private function calculatePrice($initialPrice, bool $isDivide = true): array
+    public function calculatePrice($initialPrice, bool $isDivide = true): array
     {
         $lari = 0.39;
         $shipment = 32;
@@ -938,7 +945,7 @@ class SyncSystemsProducts extends Command
      * @param float $price
      * @return float
      */
-    private function calculateCoefficient(float $price): float
+    public function calculateCoefficient(float $price): float
     {
         $min_price = 50;
         $max_price = 999;
@@ -965,7 +972,7 @@ class SyncSystemsProducts extends Command
      * @param $number
      * @return int
      */
-    private function roundToNearest5or9($number): int
+    public function roundToNearest5or9($number): int
     {
         // Округляем число в большую сторону
         $rounded = ceil($number);

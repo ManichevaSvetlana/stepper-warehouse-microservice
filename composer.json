@@ -9,11 +9,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "berika/products-to-shop-uploader": "@dev",
         "laravel/framework": "^11.0",
         "laravel/nova": "^4.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "mesilov/bitrix24-php-sdk": "^0.2.0"
+        "mesilov/bitrix24-php-sdk": "^0.2.0",
+        "php-junior/nova-logs": "^1.1",
+        "stepanenko3/nova-logs-tool": "^2.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -76,6 +79,10 @@
         "0": {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        "1": {
+            "type": "path",
+            "url": "./nova-components/ProductsToShopUploader"
         }
     },
     "minimum-stability": "stable",

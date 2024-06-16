@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use App\Models\Poizon\PoizonShopProduct;
+use App\Models\System\TrackProduct;
 use Illuminate\Support\Facades\Http;
 
 trait PoizonShopTrait
@@ -27,7 +29,7 @@ trait PoizonShopTrait
     }
 
     /**
-     * Poizon Shpop: get product data.
+     * Poizon Shop: get product data.
      *
      * @return array
      * @var string $productId
@@ -40,5 +42,44 @@ trait PoizonShopTrait
 
 
         return $response->json();
+    }
+
+    /**
+     * Poizon Shop: get product data by article.
+     *
+     * @return array
+     * @var string $productId
+     */
+    public function getPoizonShopProductByArticle(string $article): array
+    {
+        $response = Http::withHeaders([
+            'accept' => 'application/json',
+        ])->get('https://autocomplete.diginetica.net/autocomplete?apiKey=Y4789GTN7C&strategy=advanced_xname%2Czero_queries&productsSize=20&regionId=global&forIs=true&showUnavailable=false&withContent=false&withSku=false&st=' . $article);
+
+        $products = $response->json()['products'];
+        if(!count($products)) return [];
+        $product = $products[0];
+        $productId = explode('-', $product['link_url']);
+        $productId = end($productId);
+        if(!$productId) return [];
+
+        $product = $this->getPoizonShopProductData($productId);
+        if(!$product || !($product['spuId'] ?? false)) return [];
+
+        $popularityPoint = TrackProduct::where('system', 'poizon-shop')->max('type') + 1;
+        $track = TrackProduct::create([
+            'sku' => $product['spuId'],
+            'system' => 'poizon-shop',
+            'type' => $popularityPoint,
+        ]);
+        PoizonShopProduct::updateOrCreate(
+            ['sku' => $track->sku],
+            [
+                'data' => $product,
+                'popularity' => $popularityPoint,
+            ]
+        );
+
+        return $product;
     }
 }

@@ -51,5 +51,11 @@ class StealPoizonShopPopularProducts extends Command
                 }
             }
         }
+
+        TrackProduct::chunk(100, function ($tracks) {
+            foreach ($tracks as $track) {
+                PoizonShopProduct::where('sku', $track->sku)->update(['popularity' => $track->type]);
+            }
+        });
     }
 }
