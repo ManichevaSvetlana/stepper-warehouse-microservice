@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use App\Models\Poizon\PoizonShopProduct;
 use App\Models\System\TrackProduct;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
 
 trait PoizonShopTrait
@@ -48,9 +49,10 @@ trait PoizonShopTrait
      * Poizon Shop: get product data by article.
      *
      * @return array
+     * @throws ConnectionException
      * @var string $productId
      */
-    public function getPoizonShopProductByArticle(string $article): array
+    public function getPoizonShopProductByArticle(string $article)
     {
         $response = Http::withHeaders([
             'accept' => 'application/json',
@@ -72,7 +74,7 @@ trait PoizonShopTrait
             'system' => 'poizon-shop',
             'type' => $popularityPoint,
         ]);
-        PoizonShopProduct::updateOrCreate(
+        $product = PoizonShopProduct::updateOrCreate(
             ['sku' => $track->sku],
             [
                 'data' => $product,
