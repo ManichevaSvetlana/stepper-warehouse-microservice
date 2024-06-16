@@ -33,6 +33,7 @@ class ApplicationController extends Controller
         } else {
             $arguments = [
                 '--sku' => $sku,
+                '--stock' => 0,
             ];
         }
 

@@ -15,6 +15,7 @@ trait PoizonShopTrait
      * @param int $page
      * @param string|null $category
      * @return array
+     * @throws ConnectionException
      */
     public function getPoizonShopPopularProducts(int $page, ?string $category = 'sneakers'): array
     {
@@ -33,6 +34,7 @@ trait PoizonShopTrait
      * Poizon Shop: get product data.
      *
      * @return array
+     * @throws ConnectionException
      * @var string $productId
      */
     public function getPoizonShopProductData(string $productId): array
@@ -48,24 +50,30 @@ trait PoizonShopTrait
     /**
      * Poizon Shop: get product data by article.
      *
+     * @param bool $isSku
      * @return array
      * @throws ConnectionException
-     * @var string $productId
+     * @param string $article
      */
-    public function getPoizonShopProductByArticle(string $article)
+    public function getPoizonShopProductByArticle(string $article, bool $isSku = true)
     {
-        $response = Http::withHeaders([
-            'accept' => 'application/json',
-        ])->get('https://autocomplete.diginetica.net/autocomplete?apiKey=Y4789GTN7C&strategy=advanced_xname%2Czero_queries&productsSize=20&regionId=global&forIs=true&showUnavailable=false&withContent=false&withSku=false&st=' . $article);
+        if($isSku) {
+            $product = $this->getPoizonShopProductData($article);
+        } else {
+            $response = Http::withHeaders([
+                'accept' => 'application/json',
+            ])->get('https://autocomplete.diginetica.net/autocomplete?apiKey=Y4789GTN7C&strategy=advanced_xname%2Czero_queries&productsSize=20&regionId=global&forIs=true&showUnavailable=false&withContent=false&withSku=false&st=' . $article);
 
-        $products = $response->json()['products'];
-        if(!count($products)) return [];
-        $product = $products[0];
-        $productId = explode('-', $product['link_url']);
-        $productId = end($productId);
-        if(!$productId) return [];
+            $products = $response->json()['products'];
+            if(!count($products)) return [];
+            $product = $products[0];
+            $productId = explode('-', $product['link_url']);
+            $productId = end($productId);
+            if(!$productId) return [];
 
-        $product = $this->getPoizonShopProductData($productId);
+            $product = $this->getPoizonShopProductData($productId);
+        }
+
         if(!$product || !($product['spuId'] ?? false)) return [];
 
         $popularityPoint = TrackProduct::where('system', 'poizon-shop')->max('type') + 1;

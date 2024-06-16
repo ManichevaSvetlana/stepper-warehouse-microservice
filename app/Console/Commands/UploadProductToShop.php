@@ -26,7 +26,7 @@ class UploadProductToShop extends Command
      *
      * @var string
      */
-    protected $signature = 'poizon:upload-product-to-shop {--sku=} {--sizes=} {--prices=} {--presence=} {--stock=1}';
+    protected $signature = 'poizon:upload-product-to-shop {--sku=} {--is_sku=1} {--sizes=} {--prices=} {--presence=} {--stock=1}';
     // php artisan poizon:upload-product-to-shop --sku=ID5412 --sizes=36,37,38 --prices=100.56,200.99,300 --presence=1,1,1
 
     /**
@@ -50,20 +50,21 @@ class UploadProductToShop extends Command
         $presence = $this->option('presence') ?? '';
         $presence = explode(',', $presence);
         $isStock = $this->option('stock') == 1;
+        $isSku = $this->option('is_sku') == 1;
 
         $poizonShop = new PoizonShopProduct();
 
         if (!$sku) {
-            $this->error('Please provide a SKU');
+            echo('Please provide a SKU\n');
             return false;
         }
-        $this->info("Uploading product with SKU: $sku");
+        echo("Uploading product with SKU: $sku\n");
 
         $product = PoizonShopProduct::where('sku', $sku)->orWhereJsonContains('data->article', $sku)->first();
         if (!$product) {
-            $product = $poizonShop->getPoizonShopProductByArticle($sku);
+            $product = $poizonShop->getPoizonShopProductByArticle($sku, $isSku);
             if (!$product) {
-                $this->error('Product not found');
+                echo('Product not found\n');
                 return false;
             }
         }
@@ -128,9 +129,9 @@ class UploadProductToShop extends Command
             $uploadingProducts[] = $variation;
         }
 
-        echo('Product is uploading to shop...');
+        echo("Product is uploading to shop...\n");
         $response = $shop->createShopProducts($uploadingProducts);
-        echo('Product uploaded to shop');
+        echo("Product uploaded to shop\n");
 
         return $response;
     }

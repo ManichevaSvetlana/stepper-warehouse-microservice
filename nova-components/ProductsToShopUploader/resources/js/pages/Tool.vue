@@ -8,6 +8,14 @@
             <form @submit.prevent="uploadProduct">
                 <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5">
                     <div class="w-full px-6 md:mt-2 @md/modal:mt-2 md:px-8 @md/modal:px-8 md:w-1/5 @md/modal:w-1/5">
+                        <label for="is_published-main-information-boolean-field" class="inline-block leading-tight space-x-1"><span>Is Stock</span></label>
+                    </div>
+                    <div class="w-full space-y-2 px-6 md:px-8 @md/modal:px-8 md:w-3/5 @md/modal:w-3/5">
+                        <input type="checkbox" v-model="isStock">
+                    </div>
+                </div>
+                <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5">
+                    <div class="w-full px-6 md:mt-2 @md/modal:mt-2 md:px-8 @md/modal:px-8 md:w-1/5 @md/modal:w-1/5">
                         <label for="sku-nova-field" class="inline-block leading-tight space-x-1">
                             <span>SKU</span>
                             <span class="text-red-500 text-sm">*</span>
@@ -19,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5">
+                <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5" v-if="isStock">
                     <div class="w-full px-6 md:mt-2 @md/modal:mt-2 md:px-8 @md/modal:px-8 md:w-1/5 @md/modal:w-1/5">
                         <label for="sizes-nova-field" class="inline-block leading-tight space-x-1">
                             <span>Sizes (comma separated)</span>
@@ -32,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5">
+                <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5" v-if="isStock">
                     <div class="w-full px-6 md:mt-2 @md/modal:mt-2 md:px-8 @md/modal:px-8 md:w-1/5 @md/modal:w-1/5">
                         <label for="prices-nova-field" class="inline-block leading-tight space-x-1">
                             <span>Prices (comma separated)</span>
@@ -45,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5">
+                <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5" v-if="isStock">
                     <div class="w-full px-6 md:mt-2 @md/modal:mt-2 md:px-8 @md/modal:px-8 md:w-1/5 @md/modal:w-1/5">
                         <label for="presence-nova-field" class="inline-block leading-tight space-x-1">
                             <span>Presence (comma separated)</span>
@@ -84,7 +92,8 @@ export default {
             presence: '',
             responseMessage: '',
             responseSuccess: false,
-            loading: false
+            loading: false,
+            isStock: true,
         };
     },
     methods: {
@@ -97,6 +106,7 @@ export default {
                     sizes: this.sizes,
                     prices: this.prices,
                     presence: this.presence,
+                    is_stock: this.isStock,
                 });
 
                 this.responseMessage = response.data;
