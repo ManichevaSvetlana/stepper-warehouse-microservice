@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8600552c9c52f2161b1404be5df790a",
+    "content-hash": "ea8c2f76b7f6d9cb00cf3b0482d6badc",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -4589,6 +4589,61 @@
                 "source": "https://github.com/stepanenko3/laravel-pagination/tree/v1.0.3"
             },
             "time": "2024-03-14T11:53:05+00:00"
+        },
+        {
+            "name": "stepanenko3/nova-command-runner",
+            "version": "v4.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stepanenko3/nova-command-runner.git",
+                "reference": "e35340894104eb5a2ef3b5f2fe8a3a180f5ed9d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stepanenko3/nova-command-runner/zipball/e35340894104eb5a2ef3b5f2fe8a3a180f5ed9d9",
+                "reference": "e35340894104eb5a2ef3b5f2fe8a3a180f5ed9d9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0",
+                "php": ">=7.4",
+                "stepanenko3/laravel-helpers": "^1.3.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "tightenco/duster": "^2.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Stepanenko3\\NovaCommandRunner\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stepanenko3\\NovaCommandRunner\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel Nova tool for running Artisan and bash(shell) commands.",
+            "keywords": [
+                "artisan",
+                "bash",
+                "commands",
+                "laravel",
+                "nova",
+                "shell"
+            ],
+            "support": {
+                "issues": "https://github.com/stepanenko3/nova-command-runner/issues",
+                "source": "https://github.com/stepanenko3/nova-command-runner/tree/v4.3.5"
+            },
+            "time": "2024-03-27T20:00:54+00:00"
         },
         {
             "name": "stepanenko3/nova-logs-tool",

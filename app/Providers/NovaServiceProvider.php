@@ -70,6 +70,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             new ProductsToShopUploader(),
             new \Stepanenko3\LogsTool\LogsTool(),
+            new \Stepanenko3\NovaCommandRunner\CommandRunnerTool,
         ];
     }
 

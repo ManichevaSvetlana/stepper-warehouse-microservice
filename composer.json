@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.9",
         "mesilov/bitrix24-php-sdk": "^0.2.0",
         "php-junior/nova-logs": "^1.1",
+        "stepanenko3/nova-command-runner": "^4.3",
         "stepanenko3/nova-logs-tool": "^2.2"
     },
     "require-dev": {
