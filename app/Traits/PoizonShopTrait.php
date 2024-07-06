@@ -60,6 +60,9 @@ trait PoizonShopTrait
         if($isSku) {
             $product = $this->getPoizonShopProductData($article);
         } else {
+            $product = $this->getPoizonShopProductData($article);
+            if($product) return $product;
+
             $response = Http::withHeaders([
                 'accept' => 'application/json',
             ])->get('https://autocomplete.diginetica.net/autocomplete?apiKey=Y4789GTN7C&strategy=advanced_xname%2Czero_queries&productsSize=20&regionId=global&forIs=true&showUnavailable=false&withContent=false&withSku=false&st=' . $article);

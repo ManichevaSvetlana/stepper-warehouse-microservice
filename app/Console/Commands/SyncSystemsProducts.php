@@ -66,6 +66,7 @@ class SyncSystemsProducts extends Command
         'women' => 4646925,
         'men' => 4646924,
         'unisex' => 4806893,
+        'easy-return' => 4804123
     ];
 
     /**
@@ -108,12 +109,40 @@ class SyncSystemsProducts extends Command
     public int $categoryFilterId = 760721;
 
     /**
+     * Easy return filter ID.
+     *
+     * @var int
+     */
+    public int $easyReturnFilterId = 814830;
+
+    /**
+     * Easy return category ID.
+     *
+     * @var int
+     */
+    public int $easyReturnCategoryId = 636327;
+
+    /**
+     * Easy return sticker ID.
+     *
+     * @var int
+     */
+    public int $easyReturnStickerId = 98442;
+
+    /**
      * Delivery ID.
      *
      * @var int
      */
     //public int $deliveryId = 607325;
     public int $deliveryId = 615677;
+
+    /**
+     * Sale category ID.
+     *
+     * @var int
+     */
+    public int $saleCategoryId = 615755;
 
     /**
      * Catalog modification ID.
@@ -185,7 +214,26 @@ class SyncSystemsProducts extends Command
 
                     try {
                         if($pzMode === 'create' && !$visibilityPz) echo '!!!!! You are in create mode an pz visibility is false so far for this product!!!! \n';
-                        else $this->createOrUpdateInShop($shop, $syncedProductsForShop, $withoutImages, $visibilityPz);
+                        else {
+                            $easyReturn = [];
+                            $saleInfo = [];
+                            if($poizonProduct->easy_return) {
+                                $easyReturn = [
+                                    'status' => true,
+                                    'max_cny_price' => $poizonProduct->easy_return_max_cny_price,
+                                    'sizes' => $poizonProduct->easy_return_sizes
+                                ];
+                            }
+                            if($poizonProduct->has_discount) {
+                                $saleInfo = [
+                                    'status' => true,
+                                    'real_discount' => $poizonProduct->real_discount,
+                                    'visible_discount' => $poizonProduct->visible_discount
+                                ];
+                            }
+
+                            $this->createOrUpdateInShop($shop, $syncedProductsForShop, $withoutImages, $visibilityPz, $easyReturn, $saleInfo);
+                        }
                     } catch (\Exception $e) {
                         echo "Error while storing shop: {$e->getMessage()}\n";
                         $failedProductsShop[$poizonProduct->sku] = $e->getMessage();
@@ -210,6 +258,7 @@ class SyncSystemsProducts extends Command
      * @param string $systemName
      * @param PoizonProduct|PoizonShopProduct $poizonProduct
      * @param string $section
+     * @param bool $withoutImages
      * @return array
      * @throws GuzzleException
      */
@@ -330,10 +379,12 @@ class SyncSystemsProducts extends Command
      * @param array $products
      * @param bool $withoutImages
      * @param bool $visibilityPz
+     * @param array $easyReturn
+     * @param array $saleInfo
      * @param bool $withoutCreate
      * @return array|null
      */
-    public function createOrUpdateInShop(ShopProduct $shop, array $products, bool $withoutImages = false, bool $visibilityPz = true, bool $withoutCreate = false): ?array
+    public function createOrUpdateInShop(ShopProduct $shop, array $products, bool $withoutImages = false, bool $visibilityPz = true, array $easyReturn = [], array $saleInfo = [], bool $withoutCreate = false): ?array
     {
         $catalog = Feature::where('type', 'characteristic')->where('system', 'shop')->whereRaw("json_extract(data, '$.title.en') = 'Catalog'")->first();
         $characteristicsData = collect($catalog->data['characteristics']);
@@ -390,7 +441,8 @@ class SyncSystemsProducts extends Command
         $responses = [];
 
         foreach ($groupedBySku as $group) {
-            $noImages = false;
+            $isSaleCategory = false;
+            $isEasyReturn = false;
             $preparedProducts = [];
             $productBrand = ucwords(strtolower($group[0]['brand']));
             $brand = Feature::where('type', 'brand')->where('system', 'shop')->whereRaw("json_extract(data, '$.title.en') = '$productBrand'")->first();
@@ -451,7 +503,9 @@ class SyncSystemsProducts extends Command
                         [
                             "id" => $sizeId['id'] ?? null,
                             "value" => [
-                                "en" => $sizeValue
+                                "en" => $sizeValue,
+                                "ru" => $sizeValue,
+                                "kat" =>$sizeValue,
                             ],
                         ]
                     ],
@@ -482,7 +536,28 @@ class SyncSystemsProducts extends Command
                     }
                 }
 
-                $preparedProducts[] = $this->getVariationProductForShop($sizeValue, $product['name'], $product['sku'], $article, $product['productSku'], $product['price'], $characteristics, $visibilityPz);
+                if($easyReturn['status'] ?? false) {
+                    $easyReturnSizes = explode(',', $easyReturn['sizes']);
+                    if(in_array($sizeValue, $easyReturnSizes) && $product['originalPriceInCNY'] <= $easyReturn['max_cny_price']) {
+                        if(!($characteristics["ID_{$this->easyReturnFilterId}"] ?? false)) $characteristics["ID_{$this->easyReturnFilterId}"] = [];
+                        $characteristics["ID_{$this->easyReturnFilterId}"][] = [
+                            "id" => $this->categoriesFilterMapping['easy-return'],
+                            "value" => [
+                                "en" => ''
+                            ],
+                        ];
+
+                        $isEasyReturn = true;
+                    }
+                }
+
+                /*if($saleInfo['status'] ?? false) {
+                    $product['price_old'] = $product['price'] + ($product['price'] * ($saleInfo['visible_discount'] - $saleInfo['real_discount']) / 100);
+                    $product['price'] = $product['price_old'] - ($product['price_old'] * $saleInfo['visible_discount'] / 100);
+                    $isSaleCategory = true;
+                }*/
+
+                $preparedProducts[] = $this->getVariationProductForShop($sizeValue, $product['name'], $product['sku'], $article, $product['productSku'], $product['price'], $characteristics, $visibilityPz, $product['price_old'] ?? null);
             }
 
             $brandId = $brand?->system_id;
@@ -494,6 +569,9 @@ class SyncSystemsProducts extends Command
             if ($group[0]['categoryIds']) {
                 $parentsIds = array_merge($parentsIds, $group[0]['categoryIds']);
             }
+
+            if($isSaleCategory) $parentsIds[] = $this->saleCategoryId;
+            if($isEasyReturn) $parentsIds[] = $this->easyReturnCategoryId;
 
             $sizesTable = null;
             $sizesTableValue = $group[0]['sizesTable'];
@@ -507,11 +585,14 @@ class SyncSystemsProducts extends Command
                 $sizesTable = $this->removeColumn($sizesTable, 'RU');
             }
 
+            $stickers = [];
+            if($isEasyReturn) $stickers[] = $this->easyReturnStickerId;
+
             $productsData = [
-                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images, [], $sizesTable, $visibilityPz),
+                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images, $stickers, $sizesTable, $visibilityPz),
                 ...$preparedProducts,
             ];
-            if($withoutImages) $productsData = $preparedProducts;
+            //if($withoutImages) $productsData = $preparedProducts;
 
             echo 'Creating product with variations in shop: ' . $title . PHP_EOL;
             if (count($preparedProducts)) $responses[] = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
@@ -520,6 +601,8 @@ class SyncSystemsProducts extends Command
                 $productsData[0]["availability"] = "Unpublish";
                 $responses[] = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
             }
+
+            //dd($responses, $productsData);
         }
 
         return $responses;
@@ -536,12 +619,17 @@ class SyncSystemsProducts extends Command
      * @param mixed $price
      * @param array $characteristics
      * @param bool $visisbility
+     * @param float|null $oldPrice
      * @return array
      */
-    public function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = [], bool $visisbility = true): array
+    public function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = [], bool $visisbility = true, ?float $oldPrice = null): array
     {
-        return [
-            "title" => $title,
+        $fields =  [
+            "title" => [
+                "en" => $title,
+                "ru" => $title,
+                "kat" => $title,
+            ],
             "parent_title" => $parentTitle,
             "characteristics_mode" => "Reset",
             "sku" => $sku,
@@ -560,6 +648,10 @@ class SyncSystemsProducts extends Command
                 ],
             ]
         ];
+
+        if($oldPrice) $fields['price_old'] = $oldPrice;
+
+        return $fields;
     }
 
     public function setSalePrice()
@@ -578,6 +670,7 @@ class SyncSystemsProducts extends Command
      * @param array $images
      * @param array $stickerIds
      * @param string|null $sizesTable
+     * @param bool $visibility
      * @return array
      */
     public function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = [], string $sizesTable = null, bool $visibility = true): array
@@ -594,9 +687,14 @@ class SyncSystemsProducts extends Command
                 "id" => $stickerId
             ];
         }
+        if($sizesTable) $sizesTable = strtolower($sizesTable);
         return [
             [
-                "title" => $title,
+                "title" => [
+                    "en" => $title,
+                    "ru" => $title,
+                    "kat" => $title,
+                ],
                 "sku" => $articleNumber,
                 "presence" => $visibility ? "true" : "false",
                 "images" => [
@@ -612,7 +710,9 @@ class SyncSystemsProducts extends Command
                 ],
                 "stickers" => $stickers,
                 "description" => [
-                    "en" => $sizesTable ?? ''
+                    "en" => $sizesTable ?? '',
+                    "ru" => $sizesTable ?? '',
+                    "kat" =>$sizesTable ?? '',
                 ],
             ]
         ];
@@ -915,7 +1015,7 @@ class SyncSystemsProducts extends Command
      */
     public function calculatePrice($initialPrice, bool $isDivide = true): array
     {
-        $lari = 0.39;
+        $lari = 0.395;
         $shipment = 32;
         $terminalCommission = 1.02;
         $vat = 1.19;
@@ -950,7 +1050,7 @@ class SyncSystemsProducts extends Command
         $min_price = 50;
         $max_price = 999;
         $min_coefficient = 1.45;
-        $max_coefficient = 1.17;
+        $max_coefficient = 1.2;
 
         if ($price < $min_price) {
             return $min_coefficient;

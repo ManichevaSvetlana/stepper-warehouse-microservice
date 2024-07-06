@@ -13,7 +13,7 @@ class UpdatePoizonShopData extends Command
      *
      * @var string
      */
-    protected $signature = 'poizon:update-poizon-shop-data {--mode=all}';
+    protected $signature = 'poizon:update-poizon-shop-data {--mode=all} {--sku=}';
 
     /**
      * The console command description.
@@ -30,6 +30,8 @@ class UpdatePoizonShopData extends Command
         echo "Poizon Shop: update local poizon products data.\n";
         $poizon = new PoizonShopProduct();
         $mode = $this->option('mode');
+        $startSku = $this->option('sku');
+        $startProcessing = false;
 
         $trackSkus = TrackProduct::where('system', 'poizon-shop')->get();
 
@@ -56,6 +58,15 @@ class UpdatePoizonShopData extends Command
 
         foreach ($sortedTrackSkus as $track) {
             echo "SKU track product - : {$track->sku}\n";
+
+            if ($startSku) {
+                if (!$startProcessing && $track->sku !== $startSku) {
+                    echo 'Skip track: ' . $track->sku . "\n";
+                    continue;
+                }
+
+                $startProcessing = true;
+            }
 
             try {
                 $data = $poizon->getPoizonShopProductData($track->sku);

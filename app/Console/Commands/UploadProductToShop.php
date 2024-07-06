@@ -91,7 +91,7 @@ class UploadProductToShop extends Command
 
         $preparedVariations = collect($preparedVariations)->map(function ($item, $index) use ($prices) {
             if (isset($prices[$index])) {
-                $item['price'] = $prices[$index];
+                $item['price'] = $prices[$index] ?? $prices[0];
             }
             return $item;
         });
@@ -100,7 +100,7 @@ class UploadProductToShop extends Command
         $shop = new ShopProduct();
         $shop->setShopAuth();
 
-        $preparedVariations = $command->createOrUpdateInShop($shop, $preparedVariations, false, true, true)[0];
+        $preparedVariations = $command->createOrUpdateInShop($shop, $preparedVariations, false, true, [], [], true)[0];
 
         $uploadingProducts = [];
         foreach ($preparedVariations as $k => $variation) {
