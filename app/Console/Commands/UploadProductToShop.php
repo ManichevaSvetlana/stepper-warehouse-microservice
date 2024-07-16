@@ -71,7 +71,7 @@ class UploadProductToShop extends Command
 
         $command = new SyncSystemsProducts();
 
-        $preparedProduct = collect($command->syncProductsForBitrix('poizon-shop', $product, 'shop'));
+        $preparedProduct = collect($command->syncProductsForBitrix('poizon-shop', $product, 'shop', false, false));
 
         if($isStock) {
             $preparedVariations = [];
@@ -100,7 +100,11 @@ class UploadProductToShop extends Command
         $shop = new ShopProduct();
         $shop->setShopAuth();
 
-        $preparedVariations = $command->createOrUpdateInShop($shop, $preparedVariations, false, true, [], [], true)[0];
+        $preparedVariations = $command->createOrUpdateInShop($shop, $preparedVariations, false, true, [], [], $product->popularity, true);
+
+        if(count($preparedVariations) === 1 && $this->isArrayOfArrays($preparedVariations[0])) {
+            $preparedVariations = $preparedVariations[0];
+        }
 
         $uploadingProducts = [];
         foreach ($preparedVariations as $k => $variation) {
@@ -124,6 +128,11 @@ class UploadProductToShop extends Command
 
                     $variation['parent'] = $parents;
                 }
+
+                if(isset($variation['characteristics'])) {
+                    if (isset($variation['characteristics']['ID_759629'])) unset($variation['characteristics']['ID_759629']);
+                    if (isset($variation['characteristics']['ID_759681'])) unset($variation['characteristics']['ID_759681']);
+                }
             }
 
             $uploadingProducts[] = $variation;
@@ -134,5 +143,20 @@ class UploadProductToShop extends Command
         echo("Product uploaded to shop\n");
 
         return $response;
+    }
+
+    public function isArrayOfArrays($array): bool
+    {
+        if (!is_array($array)) {
+            return false;
+        }
+
+        foreach ($array as $element) {
+            if (!is_array($element)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

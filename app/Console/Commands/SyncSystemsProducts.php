@@ -232,7 +232,7 @@ class SyncSystemsProducts extends Command
                                 ];
                             }
 
-                            $this->createOrUpdateInShop($shop, $syncedProductsForShop, $withoutImages, $visibilityPz, $easyReturn, $saleInfo);
+                            $this->createOrUpdateInShop($shop, $syncedProductsForShop, $withoutImages, $visibilityPz, $easyReturn, $saleInfo, $poizonProduct->popularity);
                         }
                     } catch (\Exception $e) {
                         echo "Error while storing shop: {$e->getMessage()}\n";
@@ -259,10 +259,11 @@ class SyncSystemsProducts extends Command
      * @param PoizonProduct|PoizonShopProduct $poizonProduct
      * @param string $section
      * @param bool $withoutImages
+     * @param bool $ignoreZeroPrice
      * @return array
      * @throws GuzzleException
      */
-    public function syncProductsForBitrix(string $systemName, mixed $poizonProduct, string $section, bool $withoutImages = false): array
+    public function syncProductsForBitrix(string $systemName, mixed $poizonProduct, string $section, bool $withoutImages = false, bool $ignoreZeroPrice = true): array
     {
         if ($systemName !== 'poizon-shop') {
             echo "Product Poizon: {$poizonProduct->sku}\n";
@@ -304,7 +305,7 @@ class SyncSystemsProducts extends Command
             $prices = $poizonProduct->data['skus'];
             $k = 0;
             foreach ($prices as $priceModel) {
-                if ($priceModel['cnyPrice'] < 5 || !($priceModel['size']['primary'] ?? false)) continue;
+                if (($priceModel['cnyPrice'] < 5 && $ignoreZeroPrice) || (!($priceModel['size']['primary'] ?? false)) && $ignoreZeroPrice)  continue;
                 try {
                     $syncedProduct = $this->prepareProductFromPoizonShop($poizonProduct, $priceModel);
                     $syncedProductsForShop[] = $syncedProduct;
@@ -330,7 +331,6 @@ class SyncSystemsProducts extends Command
                 }
             }
         }
-
 
         return $syncedProductsForShop;
     }
@@ -381,10 +381,11 @@ class SyncSystemsProducts extends Command
      * @param bool $visibilityPz
      * @param array $easyReturn
      * @param array $saleInfo
+     * @param int $popularity
      * @param bool $withoutCreate
      * @return array|null
      */
-    public function createOrUpdateInShop(ShopProduct $shop, array $products, bool $withoutImages = false, bool $visibilityPz = true, array $easyReturn = [], array $saleInfo = [], bool $withoutCreate = false): ?array
+    public function createOrUpdateInShop(ShopProduct $shop, array $products, bool $withoutImages = false, bool $visibilityPz = true, array $easyReturn = [], array $saleInfo = [], int $popularity = 1, bool $withoutCreate = false): ?array
     {
         $catalog = Feature::where('type', 'characteristic')->where('system', 'shop')->whereRaw("json_extract(data, '$.title.en') = 'Catalog'")->first();
         $characteristicsData = collect($catalog->data['characteristics']);
@@ -557,7 +558,7 @@ class SyncSystemsProducts extends Command
                     $isSaleCategory = true;
                 }*/
 
-                $preparedProducts[] = $this->getVariationProductForShop($sizeValue, $product['name'], $product['sku'], $article, $product['productSku'], $product['price'], $characteristics, $visibilityPz, $product['price_old'] ?? null);
+                $preparedProducts[] = $this->getVariationProductForShop($sizeValue, $product['name'], $product['sku'], $article, $product['productSku'], $product['price'], $characteristics, $visibilityPz, $product['price_old'] ?? null, $popularity, $key + 1);
             }
 
             $brandId = $brand?->system_id;
@@ -589,7 +590,7 @@ class SyncSystemsProducts extends Command
             if($isEasyReturn) $stickers[] = $this->easyReturnStickerId;
 
             $productsData = [
-                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images, $stickers, $sizesTable, $visibilityPz),
+                ...$this->getParentProductForShop($title, $productSku, $brandId, $parentsIds, $article, $images, $stickers, $sizesTable, $visibilityPz, $popularity),
                 ...$preparedProducts,
             ];
             //if($withoutImages) $productsData = $preparedProducts;
@@ -601,8 +602,6 @@ class SyncSystemsProducts extends Command
                 $productsData[0]["availability"] = "Unpublish";
                 $responses[] = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
             }
-
-            //dd($responses, $productsData);
         }
 
         return $responses;
@@ -620,9 +619,11 @@ class SyncSystemsProducts extends Command
      * @param array $characteristics
      * @param bool $visisbility
      * @param float|null $oldPrice
+     * @param int $parentPosition
+     * @param int $position
      * @return array
      */
-    public function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = [], bool $visisbility = true, ?float $oldPrice = null): array
+    public function getVariationProductForShop(string $title, string $parentTitle, string $articleNumber, string $parentSku, string $sku, mixed $price, array $characteristics = [], bool $visisbility = true, ?float $oldPrice = null, int $parentPosition = 1, int $position = 1): array
     {
         $fields =  [
             "title" => [
@@ -633,6 +634,8 @@ class SyncSystemsProducts extends Command
             "parent_title" => $parentTitle,
             "characteristics_mode" => "Reset",
             "sku" => $sku,
+            "position" => $position,
+            "parent_position" => $parentPosition,
             "parent_sku" => $parentSku,
             "barcode" => $parentSku,
             "currency" => "GEL",
@@ -654,11 +657,6 @@ class SyncSystemsProducts extends Command
         return $fields;
     }
 
-    public function setSalePrice()
-    {
-
-    }
-
     /**
      * Get parent product for shop.
      *
@@ -671,9 +669,10 @@ class SyncSystemsProducts extends Command
      * @param array $stickerIds
      * @param string|null $sizesTable
      * @param bool $visibility
+     * @param int $parentPosition
      * @return array
      */
-    public function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = [], string $sizesTable = null, bool $visibility = true): array
+    public function getParentProductForShop(string $title, string $sku, int $brandId, array $parentIds, string $articleNumber, array $images = [], array $stickerIds = [], string $sizesTable = null, bool $visibility = true, int $parentPosition = 1): array
     {
         $parents = [];
         foreach ($parentIds as $parentId) {
@@ -708,6 +707,7 @@ class SyncSystemsProducts extends Command
                 "brand" => [
                     "id" => $brandId
                 ],
+                "parent_position" => $parentPosition,
                 "stickers" => $stickers,
                 "description" => [
                     "en" => $sizesTable ?? '',
