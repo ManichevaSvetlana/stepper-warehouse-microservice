@@ -305,7 +305,8 @@ class SyncSystemsProducts extends Command
             $prices = $poizonProduct->data['skus'];
             $k = 0;
             foreach ($prices as $priceModel) {
-                if (($priceModel['cnyPrice'] < 5 && $ignoreZeroPrice) || (!($priceModel['size']['primary'] ?? false)) && $ignoreZeroPrice)  continue;
+                if (($priceModel['cnyPrice'] < 5 && $ignoreZeroPrice) || (!key_exists('primary', $priceModel['size'] ?? []) && $ignoreZeroPrice))  continue;
+                if(!key_exists('primary', $priceModel['size'] ?? [])) $priceModel['size']['primary'] = 0;
                 try {
                     $syncedProduct = $this->prepareProductFromPoizonShop($poizonProduct, $priceModel);
                     $syncedProductsForShop[] = $syncedProduct;
@@ -440,7 +441,6 @@ class SyncSystemsProducts extends Command
 
         $groupedBySku = collect($products)->groupBy('sku');
         $responses = [];
-
         foreach ($groupedBySku as $group) {
             $isSaleCategory = false;
             $isEasyReturn = false;
@@ -807,7 +807,7 @@ class SyncSystemsProducts extends Command
 
         $color = collect($poizonProduct->data['basicParam']['basicList'])->firstWhere('key', '主色');
         $brand = $poizonProduct->data['brandRootInfo']['brandItemList'][0]['brandName'];
-        if ($brand === 'adidas originals') {
+        if (str_contains(strtolower($brand), 'adidas')) {
             $brand = 'adidas';
         }
 
@@ -876,7 +876,7 @@ class SyncSystemsProducts extends Command
         $size = $this->parseFraction($priceModel['size']['primary']);
 
         $brand = $poizonProduct->data['brand'];
-        if ($brand === 'adidas originals') {
+        if (str_contains(strtolower($brand), 'adidas')) {
             $brand = 'adidas';
         }
 
