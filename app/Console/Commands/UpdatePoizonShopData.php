@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Poizon\PoizonShopProduct;
+use App\Models\System\CommandRunSku;
 use App\Models\System\TrackProduct;
 use Illuminate\Console\Command;
 
@@ -26,6 +27,37 @@ class UpdatePoizonShopData extends Command
      * Execute the console command.
      */
     public function handle()
+    {
+        try {
+            $this->updatePoizonShopData();
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+
+            $sku = $this->getCurrentSku();
+            if($sku) {
+                $this->call('poizon:update-poizon-shop-data', [
+                    '--sku' => $sku,
+                ]);
+            }
+        }
+    }
+
+    /**
+     * Get current SKU.
+     *
+     * @return ?string
+     */
+    private function getCurrentSku(): ?string
+    {
+        return CommandRunSku::where('type', 'poizon-shop')->orderBy('sku', 'asc')->first()?->sku;
+    }
+
+    /**
+     * Update poizon shop data.
+     *
+     * @return void
+     */
+    private function updatePoizonShopData(): void
     {
         echo "Poizon Shop: update local poizon products data.\n";
         $poizon = new PoizonShopProduct();
@@ -69,6 +101,7 @@ class UpdatePoizonShopData extends Command
             }
 
             try {
+                CommandRunSku::firstOrCreate(['sku' => $track->sku, 'type' => 'poizon-shop']);
                 $data = $poizon->getPoizonShopProductData($track->sku);
                 if($data) $runRequests++;
 
@@ -94,6 +127,7 @@ class UpdatePoizonShopData extends Command
             }
         }
 
+        CommandRunSku::where('type', 'poizon-shop')->delete();
         PoizonShopProduct::whereNotIn('sku', $trackSkus->pluck('sku')->toArray())->delete();
         echo "Poizon: update local poizon products data completed. Run queries count: $runRequests \n";
     }

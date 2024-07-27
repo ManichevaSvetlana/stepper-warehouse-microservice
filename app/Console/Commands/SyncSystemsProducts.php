@@ -7,6 +7,7 @@ use App\Models\Feature;
 use App\Models\Poizon\PoizonProduct;
 use App\Models\Poizon\PoizonShopProduct;
 use App\Models\Shop\ShopProduct;
+use App\Models\System\CommandRunSku;
 use App\Models\System\FailedProduct;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Console\Command;
@@ -161,9 +162,57 @@ class SyncSystemsProducts extends Command
 
     /**
      * Execute the console command.
-     * @throws GuzzleException
      */
     public function handle()
+    {
+        try {
+            $this->handleSyncProducts();
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+
+            $sku = $this->getCurrentSku();
+            if ($sku) {
+                $this->call('sync:systems-products', [
+                    '--system' => $this->option('system'),
+                    '--section' => $this->option('section'),
+                    '--count' => $this->option('count'),
+                    '--images' => $this->option('images'),
+                    '--sku' => $sku,
+                ]);
+            }
+        } catch (GuzzleException $e) {
+            $this->error($e->getMessage());
+
+            $sku = $this->getCurrentSku();
+            if ($sku) {
+                $this->call('sync:systems-products', [
+                    '--system' => $this->option('system'),
+                    '--section' => $this->option('section'),
+                    '--count' => $this->option('count'),
+                    '--images' => $this->option('images'),
+                    '--sku' => $sku,
+                ]);
+            }
+        }
+    }
+
+    /**
+     * Get current SKU.
+     *
+     * @return ?string
+     */
+    private function getCurrentSku(): ?string
+    {
+        return CommandRunSku::where('type', 'shop')->orderBy('sku', 'asc')->first()?->sku;
+    }
+
+    /**
+     * Handle sync products.
+     *
+     * @return void
+     * @throws GuzzleException
+     */
+    public function handleSyncProducts(): void
     {
         $section = $this->option('section');
         $startSku = $this->option('sku');
@@ -178,7 +227,6 @@ class SyncSystemsProducts extends Command
 
         $modelProducts->chunk(100, function ($poizonProducts) use (&$failedProductsShop, &$startProcessing, $startSku, $systemName, $section, $withoutImages, $pzCount, $pzMode) {
             foreach ($poizonProducts as $poizonProduct) {
-
                 $visibilityPz = true;
                 $categoriesPZ = $poizonProduct->data['category'];
                 $lastCategoryPZ = end($categoriesPZ);
@@ -199,6 +247,7 @@ class SyncSystemsProducts extends Command
                     $startProcessing = true;
                 }
 
+                CommandRunSku::firstOrCreate(['sku' => $poizonProduct->sku, 'type' => 'shop']);
                 $productCountInCategoryPZ = PoizonShopProduct::whereJsonContains('data->category->category3', $lastCategoryPZ)->count();
                 if ($this->categoriesAndRunProductsCount[$lastCategoryPZ] < ($productCountInCategoryPZ - $pzCount) && $poizonProduct->popularity < 5000) {
                     $visibilityPz = false;
@@ -248,6 +297,7 @@ class SyncSystemsProducts extends Command
             }
         });
 
+        CommandRunSku::where('type', 'shop')->delete();
         $count = count($failedProductsShop);
         echo "Failed products for shop: $count \n";
     }
