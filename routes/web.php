@@ -5,6 +5,10 @@ use \Illuminate\Support\Facades\Schema;
 use \Illuminate\Database\Schema\Blueprint;
 
 
+Route::get('/run-command', function () {
+    return \Illuminate\Support\Facades\Artisan::call('poizon:update-poizon-shop-data');
+});
+
 Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });

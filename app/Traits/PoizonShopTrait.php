@@ -39,12 +39,36 @@ trait PoizonShopTrait
      */
     public function getPoizonShopProductData(string $productId): array
     {
-        $response = Http::withHeaders([
-            'accept' => 'application/json',
-        ])->get('https://poizonshop.ru/api/catalog/product/' . $productId);
+        $url = 'https://poizonshop.ru/api/catalog/product/' . $productId;
 
+        $headers = [
+            'accept: application/json',
+            'Content-Type: application/json; charset=utf-8',
+            'Baggage: sentry-environment=production,sentry-release=e94rvlLllb-RqxbeEwsDN,sentry-public_key=238d9da4918fb742c57924b6c815910c',
+            'Sec-Ch-Ua: "Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"',
+            'Sec-Ch-Ua-Mobile: ?0',
+            'Sec-Ch-Ua-Platform: "macOS"',
+            'Sentry-Trace: ff75eb8baa8b41109d54c9085b8d4c07-b43f61051faf1f2f-1',
+            'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
+        ];
 
-        return $response->json();
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            throw new \Exception(curl_error($ch));
+        }
+
+        curl_close($ch);
+
+        dd($response);
+
+        return json_decode($response, true);
     }
 
     /**
