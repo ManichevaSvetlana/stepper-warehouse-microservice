@@ -66,8 +66,6 @@ trait PoizonShopTrait
 
         curl_close($ch);
 
-        dd($response);
-
         return json_decode($response, true);
     }
 
