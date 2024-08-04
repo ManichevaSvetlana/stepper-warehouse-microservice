@@ -26,7 +26,7 @@ class UploadProductToShop extends Command
      *
      * @var string
      */
-    protected $signature = 'poizon:upload-product-to-shop {--sku=} {--is_sku=1} {--sizes=} {--prices=} {--presence=} {--stock=1}';
+    protected $signature = 'poizon:upload-product-to-shop {--sku=} {--is_sku=1} {--sizes=} {--prices=} {--sale_prices=} {--presence=} {--stock=1}';
     // php artisan poizon:upload-product-to-shop --sku=ID5412 --sizes=36,37,38 --prices=100.56,200.99,300 --presence=1,1,1
 
     /**
@@ -51,6 +51,8 @@ class UploadProductToShop extends Command
         $presence = explode(',', $presence);
         $isStock = $this->option('stock') == 1;
         $isSku = $this->option('is_sku') == 1;
+        $salePrices = $this->option('sale_prices') ?? '';
+        $salePrices = explode(',', $salePrices);
 
         $poizonShop = new PoizonShopProduct();
 
@@ -89,8 +91,11 @@ class UploadProductToShop extends Command
             $preparedVariations = $preparedProduct->toArray();
         }
 
-        $preparedVariations = collect($preparedVariations)->map(function ($item, $index) use ($prices) {
-            if (isset($prices[$index])) {
+        $preparedVariations = collect($preparedVariations)->map(function ($item, $index) use ($prices, $salePrices) {
+            if (isset($salePrices[$index])) {
+                $item['price'] = $salePrices[$index];
+            }
+            else {
                 $item['price'] = $prices[$index] ?? $prices[0];
             }
             return $item;
@@ -108,6 +113,9 @@ class UploadProductToShop extends Command
 
         $uploadingProducts = [];
         foreach ($preparedVariations as $k => $variation) {
+            if (isset($salePrices[$k])) {
+                $variation['old_price'] = $prices[$k] ?? $prices[0] ?? $salePrices[$k];
+            }
             if ($isStock) {
                 if (isset($variation['sku'])) $variation['sku'] = str_replace('online-', '', $variation['sku']);
                 if (isset($variation['parent_sku'])) {

@@ -125,6 +125,8 @@ class UpdatePoizonShopData extends Command
             } catch (\Exception $e) {
                 echo "Product was not received SKU: {$track->sku}\n";
             }
+
+            sleep(2);
         }
 
         CommandRunSku::where('type', 'poizon-shop')->delete();

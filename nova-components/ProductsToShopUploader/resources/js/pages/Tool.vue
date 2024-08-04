@@ -47,9 +47,23 @@
                             <span class="text-red-500 text-sm">*</span>
                         </label>
                     </div>
+
                     <div class="w-full space-y-2 px-6 md:px-8 @md/modal:px-8 md:w-3/5 @md/modal:w-3/5">
                         <div class="flex items-center">
                             <input class="w-full form-control form-input form-control-bordered" id="prices-nova-field"  v-model="prices" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-2 md:flex @md/modal:flex md:flex-row @md/modal:flex-row md:space-y-0 @md/modal:space-y-0 py-5" v-if="isStock">
+                    <div class="w-full px-6 md:mt-2 @md/modal:mt-2 md:px-8 @md/modal:px-8 md:w-1/5 @md/modal:w-1/5">
+                        <label for="sale-prices-nova-field" class="inline-block leading-tight space-x-1">
+                            <span>Sale Prices (comma separated, not required)</span>
+                        </label>
+                    </div>
+
+                    <div class="w-full space-y-2 px-6 md:px-8 @md/modal:px-8 md:w-3/5 @md/modal:w-3/5">
+                        <div class="flex items-center">
+                            <input class="w-full form-control form-input form-control-bordered" id="sale-prices-nova-field"  v-model="salePrices">
                         </div>
                     </div>
                 </div>
@@ -88,6 +102,7 @@ export default {
         return {
             sku: '',
             sizes: '',
+            salePrices: '',
             prices: '',
             presence: '',
             responseMessage: '',
@@ -105,6 +120,7 @@ export default {
                     sku: this.sku,
                     sizes: this.sizes,
                     prices: this.prices,
+                    sale_prices: this.salePrices,
                     presence: this.presence,
                     is_stock: this.isStock,
                 });
@@ -125,6 +141,7 @@ export default {
             this.sku = '';
             this.sizes = '';
             this.prices = '';
+            this.salePrices = '';
             this.presence = '';
         }
     }

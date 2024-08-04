@@ -21,6 +21,7 @@ class ApplicationController extends Controller
         if($isStock) {
             $sizes = $request->input('sizes');
             $prices = $request->input('prices');
+            $salePrices = $request->input('sale_prices');
             $presence = $request->input('presence');
 
             // Формирование аргументов для команды
@@ -30,6 +31,9 @@ class ApplicationController extends Controller
                 '--prices' => $prices,
                 '--presence' => $presence,
             ];
+            if($salePrices) {
+                $arguments['--sale_prices'] = $salePrices;
+            }
         } else {
             $arguments = [
                 '--sku' => $sku,
