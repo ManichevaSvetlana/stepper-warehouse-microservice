@@ -1,1323 +1,850 @@
-"https://shop-20685.e3.co.ua/api/catalog/import" // app/Traits/ShopTrait.php:90
-array:15 [
-  0 => array:13 [
-    "title" => "42.5"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631316150"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 595
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644040
-          "value" => array:1 [
-            "en" => "42.5"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  1 => array:13 [
-    "title" => "38.5"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985134"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 395
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644032
-          "value" => array:1 [
-            "en" => "38.5"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  2 => array:13 [
-    "title" => "39.5"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985135"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 399
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644034
-          "value" => array:1 [
-            "en" => "39.5"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  3 => array:13 [
-    "title" => "40.5"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985137"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 505
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644036
-          "value" => array:1 [
-            "en" => "40.5"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  4 => array:13 [
-    "title" => "41.5"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985138"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 509
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644038
-          "value" => array:1 [
-            "en" => "41.5"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  5 => array:13 [
-    "title" => "42"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985139"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 425
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644039
-          "value" => array:1 [
-            "en" => "42"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  6 => array:13 [
-    "title" => "42.5"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985140"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 505
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644040
-          "value" => array:1 [
-            "en" => "42.5"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  7 => array:13 [
-    "title" => "43"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985141"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 609
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644041
-          "value" => array:1 [
-            "en" => "43"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  8 => array:13 [
-    "title" => "44"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985142"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 455
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644043
-          "value" => array:1 [
-            "en" => "44"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  9 => array:13 [
-    "title" => "44.5"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985143"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 449
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644044
-          "value" => array:1 [
-            "en" => "44.5"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  10 => array:13 [
-    "title" => "45"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985144"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 569
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644045
-          "value" => array:1 [
-            "en" => "45"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  11 => array:13 [
-    "title" => "36"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631985147"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 485
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644027
-          "value" => array:1 [
-            "en" => "36"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  12 => array:13 [
-    "title" => "37"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631988427"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 485
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644029
-          "value" => array:1 [
-            "en" => "37"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  13 => array:13 [
-    "title" => "37.5"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "631989370"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 449
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644030
-          "value" => array:1 [
-            "en" => "37.5"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-  14 => array:13 [
-    "title" => "38"
-    "parent_title" => "New Balance NB 997R"
-    "characteristics_mode" => "Reset"
-    "sku" => "632089020"
-    "parent_sku" => "online-U997RCB"
-    "barcode" => "online-U997RCB"
-    "currency" => "GEL"
-    "price" => 355
-    "presence" => 9999
-    "force_alias_update" => "1"
-    "availability" => "Publish"
-    "characteristics" => array:5 [
-      "ID_759629" => array:1 [
-        0 => array:2 [
-          "id" => 4644055
-          "value" => array:1 [
-            "en" => "Delivery 10 - 20 days"
-          ]
-        ]
-      ]
-      "ID_759681" => array:1 [
-        0 => array:2 [
-          "id" => 4644232
-          "value" => array:1 [
-            "en" => "Split payment: 50% now & 50% when you get your sneakers"
-          ]
-        ]
-      ]
-      "ID_759628" => array:1 [
-        0 => array:2 [
-          "id" => 4644031
-          "value" => array:1 [
-            "en" => "38"
-          ]
-        ]
-      ]
-      "ID_760721" => array:3 [
-        0 => array:2 [
-          "id" => 4646929
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        1 => array:2 [
-          "id" => 4646925
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-        2 => array:2 [
-          "id" => 4646924
-          "value" => array:1 [
-            "en" => ""
-          ]
-        ]
-      ]
-      "ID_759627" => array:1 [
-        0 => array:2 [
-          "id" => 4644024
-          "value" => array:1 [
-            "en" => "yellow"
-          ]
-        ]
-      ]
-    ]
-    "modification" => array:2 [
-      "id" => 87201
-      "value" => array:1 [
-        "en" => "Catalog"
-      ]
-    ]
-  ]
-] // app/Traits/ShopTrait.php:90
-Illuminate\Http\Client\Response^ {#2771
-  #response: GuzzleHttp\Psr7\Response^ {#2715
-    -reasonPhrase: "Forbidden"
-    -statusCode: 403
-    -headers: array:23 [
-      "Date" => array:1 [
-        0 => "Fri, 07 Jun 2024 14:02:49 GMT"
-      ]
-      "Content-Length" => array:1 [
-        0 => "0"
-      ]
-      "Connection" => array:1 [
-        0 => "keep-alive"
-      ]
-      "Cache-Control" => array:1 [
-        0 => "public"
-      ]
-      "strict-transport-security" => array:1 [
-        0 => "max-age=31536000; includeSubdomains"
-      ]
-      "X-Frame-Options" => array:1 [
-        0 => "SAMEORIGIN"
-      ]
-      "X-Content-Type-Options" => array:1 [
-        0 => "nosniff"
-      ]
-      "X-XSS-Protection" => array:1 [
-        0 => "1; mode=block"
-      ]
-      "Access-Control-Allow-Origin" => array:1 [
-        0 => "*"
-      ]
-      "Access-Control-Allow-Credentials" => array:1 [
-        0 => "true"
-      ]
-      "Access-Control-Allow-Headers" => array:1 [
-        0 => "Content-Type"
-      ]
-      "Access-Control-Allow-Methods" => array:1 [
-        0 => "GET, POST, PUT, OPTIONS"
-      ]
-      "Cross-Origin-Opener-Policy" => array:1 [
-        0 => "unsafe-none"
-      ]
-      "Cross-Origin-Embedder-Policy" => array:1 [
-        0 => "unsafe-none"
-      ]
-      "Cross-Origin-Resource-Policy" => array:1 [
-        0 => "cross-origin"
-      ]
-      "Referrer-Policy" => array:1 [
-        0 => "no-referrer-when-downgrade"
-      ]
-      "Permissions-Policy" => array:1 [
-        0 => "geolocation=*, camera=()"
-      ]
-      "CF-Cache-Status" => array:1 [
-        0 => "DYNAMIC"
-      ]
-      "Report-To" => array:1 [
-        0 => "{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=RaD7dp%2BVAeeyo8OE01%2BWo5ugq0Fv26MzucZlVwBA%2B4JA3S01f2x7DhhsidBgc%2FMftJDbleahbF9viw6BC%2B10GiGn100z94NAbisLWXMLV4OaQt6QBrgKvfY3RnwFybserjv8FBGi"}],"group":"cf-nel","max_age":604800}"
-      ]
-      "NEL" => array:1 [
-        0 => "{"success_fraction":0,"report_to":"cf-nel","max_age":604800}"
-      ]
-      "Server" => array:1 [
-        0 => "cloudflare"
-      ]
-      "CF-RAY" => array:1 [
-        0 => "89012e998dfa95a6-TBS"
-      ]
-      "alt-svc" => array:1 [
-        0 => "h3=":443"; ma=86400"
-      ]
-    ]
-    -headerNames: array:23 [
-      "date" => "Date"
-      "content-length" => "Content-Length"
-      "connection" => "Connection"
-      "cache-control" => "Cache-Control"
-      "strict-transport-security" => "strict-transport-security"
-      "x-frame-options" => "X-Frame-Options"
-      "x-content-type-options" => "X-Content-Type-Options"
-      "x-xss-protection" => "X-XSS-Protection"
-      "access-control-allow-origin" => "Access-Control-Allow-Origin"
-      "access-control-allow-credentials" => "Access-Control-Allow-Credentials"
-      "access-control-allow-headers" => "Access-Control-Allow-Headers"
-      "access-control-allow-methods" => "Access-Control-Allow-Methods"
-      "cross-origin-opener-policy" => "Cross-Origin-Opener-Policy"
-      "cross-origin-embedder-policy" => "Cross-Origin-Embedder-Policy"
-      "cross-origin-resource-policy" => "Cross-Origin-Resource-Policy"
-      "referrer-policy" => "Referrer-Policy"
-      "permissions-policy" => "Permissions-Policy"
-      "cf-cache-status" => "CF-Cache-Status"
-      "report-to" => "Report-To"
-      "nel" => "NEL"
-      "server" => "Server"
-      "cf-ray" => "CF-RAY"
-      "alt-svc" => "alt-svc"
-    ]
-    -protocol: "1.1"
-    -stream: GuzzleHttp\Psr7\Stream^ {#2719
-      -stream: stream resource {@931
-        wrapper_type: "PHP"
-        stream_type: "TEMP"
-        mode: "w+b"
-        unread_bytes: 0
-        seekable: true
-        uri: "php://temp"
-        options: []
-      }
-      -size: null
-      -seekable: true
-      -readable: true
-      -writable: true
-      -uri: "php://temp"
-      -customMetadata: []
+{
+  "price": {
+    "item": {
+      "floorPrice": 55900,
+      "upperPrice": 0,
+      "intentPrice": 0,
+      "originalPrice": 55900,
+      "nonGlobalOriginalPrice": 55900,
+      "activityPrice": 0,
+      "saleInventoryNo": "SN102676820992PS24",
+      "price": 55900,
+      "type": 1,
+      "maxPrice": 242000,
+      "tradeType": 0,
+      "skuId": 601421684
     }
-  }
-  #decoded: null
-  +cookies: GuzzleHttp\Cookie\CookieJar^ {#2732
-    -cookies: []
-    -strictMode: false
-  }
-  +transferStats: GuzzleHttp\TransferStats^ {#2714
-    -request: GuzzleHttp\Psr7\Request^ {#2722
-      -method: "POST"
-      -requestTarget: null
-      -uri: GuzzleHttp\Psr7\Uri^ {#2744
-        -scheme: "https"
-        -userInfo: ""
-        -host: "shop-20685.e3.co.ua"
-        -port: null
-        -path: "/api/catalog/import"
-        -query: ""
-        -fragment: ""
-        -composedComponents: "https://shop-20685.e3.co.ua/api/catalog/import"
-      }
-      -headers: array:4 [
-        "Content-Length" => array:1 [
-          0 => "10722"
-        ]
-        "User-Agent" => array:1 [
-          0 => "GuzzleHttp/7"
-        ]
-        "Content-Type" => array:1 [
-          0 => "application/json"
-        ]
-        "Host" => array:1 [
-          0 => "shop-20685.e3.co.ua"
-        ]
-      ]
-      -headerNames: array:4 [
-        "content-length" => "Content-Length"
-        "user-agent" => "User-Agent"
-        "content-type" => "Content-Type"
-        "host" => "Host"
-      ]
-      -protocol: "1.1"
-      -stream: GuzzleHttp\Psr7\Stream^ {#2731
-        -stream: stream resource {@929
-          wrapper_type: "PHP"
-          stream_type: "TEMP"
-          mode: "w+b"
-          unread_bytes: 0
-          seekable: true
-          uri: "php://temp"
-          options: []
+  },
+  "lastSold": {
+    "avatar": "https://qiniu.dewucdn.com/FshWfBCVKCxQo8wKvgYQByUjpNmU",
+    "lastSoldText": "得*6小时前购买了39",
+    "contentText": "91人付款",
+    "tinySoldNumText": "91人付款",
+    "lastSoldWeakenText": "6小时前购买"
+  },
+  "image": {
+    "imageLayoutType": 0,
+    "isOnlyShowHitCspu": true,
+    "spuImage": {
+      "supportPanorama": 0,
+      "supportColorBlock": 0,
+      "arSkuIdRelation": [
+        {
+          "propertyValueId": 27490389,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421678
+        },
+        {
+          "propertyValueId": 27490390,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421679
+        },
+        {
+          "propertyValueId": 27490391,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421680
+        },
+        {
+          "propertyValueId": 27490392,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421681
+        },
+        {
+          "propertyValueId": 27490393,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421682
+        },
+        {
+          "propertyValueId": 27490394,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421683
+        },
+        {
+          "propertyValueId": 27490395,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421684
+        },
+        {
+          "propertyValueId": 27490396,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421685
+        },
+        {
+          "propertyValueId": 27490397,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421686
+        },
+        {
+          "propertyValueId": 27490398,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421687
+        },
+        {
+          "propertyValueId": 27490399,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421688
+        },
+        {
+          "propertyValueId": 27490400,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421689
+        },
+        {
+          "propertyValueId": 27490401,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421690
+        },
+        {
+          "propertyValueId": 27490402,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421691
+        },
+        {
+          "propertyValueId": 27490403,
+          "supportFlag": false,
+          "spuId": 1207583,
+          "skuId": 601421692
         }
-        -size: 10722
-        -seekable: true
-        -readable: true
-        -writable: true
-        -uri: "php://temp"
-        -customMetadata: []
+      ],
+      "moreMaterialFlag": 0,
+      "threeDimension": {
+        "spu3dShowType": 0,
+        "propertyValueId": 0,
+        "moreMaterialFlag": 0,
+        "spu3dModelFormat": 0
+      },
+      "images": [
+        {
+          "propertyValueId": 0,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 0,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20220212/899119bf0a084e02983b463166775ca6.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 0,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20220212/fd6bc37772894b24a042678509be469b.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 0,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20220212/f417bf9040224554ad2a301b2ce81aed.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 0,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20220212/964c7dfac2da4b65acbb714cab7aa0c0.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 0,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20220212/e2a4af57aa0a44cc8104bdab3fc1f67a.jpg",
+          "imgType": 0,
+          "desc": ""
+        }
+      ]
+    }
+  },
+  "frontLabelSummaryDTO": {
+    "afterTitle": {
+      "sortRule": [
+        {
+          "labelType": "LABEL_DE_WU_EXCLUSIVE",
+          "sorted": 10,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_EXCLUSIVE_LAUNCH",
+          "sorted": 20,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_FIRST_SELL",
+          "sorted": 30,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_FIRST_BUY",
+          "sorted": 31,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_BRAND_ONLY_4_BRAND_OFFICIAL",
+          "sorted": 40,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_BRAND_ONLY_4_BRAND_ONLY",
+          "sorted": 41,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_GLOBAL_BUY",
+          "sorted": 50,
+          "sourceType": "SPU"
+        }
+      ]
+    },
+    "belowTitle": {
+      "sortRule": [
+        {
+          "labelType": "LABEL_PAGE_LANDING_RANK",
+          "sorted": 10,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_LANDING_THEME",
+          "sorted": 11,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_LANDING_SERIES",
+          "sorted": 20,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_LANDING_IP",
+          "sorted": 30,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_FLOAT_PROP",
+          "sorted": 55,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_LANDING_RELATED",
+          "sorted": 70,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_MORE_SIMILAR_STYLE",
+          "sorted": 80,
+          "sourceType": "SPU"
+        }
+      ],
+      "item": [
+        {
+          "customType": 1,
+          "labelId": 0,
+          "sourceType": "SPU",
+          "sourceId": 1207583,
+          "labelType": "LABEL_PAGE_LANDING_SERIES",
+          "labelShowName": {
+            "showNameType": "TEXT",
+            "text": "Air Max Volley"
+          },
+          "labelRoute": {
+            "routeType": "landing_page",
+            "routeUrl": "https://m.poizon.com/router/product/series/detail?brandId=144&seriesId=1001089&spuId=1207583&sourceName=productDetail",
+            "routeTypeStyle": "ARROW_STYLE"
+          },
+          "labelRouteHided": false
+        }
+      ]
+    }
+  },
+  "basicParam": {
+    "basicList": [
+      {
+        "propertyValueId": 0,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "主货号",
+        "value": "CU4275-001"
+      },
+      {
+        "propertyValueId": 0,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "发售价格",
+        "value": "¥649"
+      },
+      {
+        "propertyValueId": 0,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "发售日期",
+        "value": "2020秋季"
+      },
+      {
+        "propertyValueId": 210206457,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "主色",
+        "value": "紫色"
+      },
+      {
+        "propertyValueId": 27507694,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "配色",
+        "value": "黑/粉/紫"
+      },
+      {
+        "propertyValueId": 27507695,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "适用季节",
+        "value": "春,夏,秋,冬"
+      },
+      {
+        "propertyValueId": 27507687,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "鞋面材质",
+        "value": "织物,合成革,TPU"
+      },
+      {
+        "propertyValueId": 27507689,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "鞋跟类型",
+        "value": "平跟"
+      },
+      {
+        "propertyValueId": 27507691,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "鞋帮高度",
+        "value": "低帮"
+      }
+    ],
+    "windowsList": [],
+    "windowTitle": "商品参数",
+    "windowSubTitle": "纠错"
+  },
+  "favoriteData": {
+    "hasFavorite": false,
+    "hasMyOwn": false,
+    "favoriteCount": {
+      "count": 309,
+      "content": "309人想要",
+      "tinyContent": "309"
+    },
+    "myOwnCount": {
+      "count": 67,
+      "content": "67",
+      "tinyContent": "67"
+    }
+  },
+  "brandRootInfo": {
+    "title": "品牌",
+    "multiRelationText": "",
+    "brandLayer": 1,
+    "brandItemShowSize": 1,
+    "brandItemList": [
+      {
+        "mainBrand": 0,
+        "brandType": 0,
+        "artistId": 0,
+        "brandLogo": "https://cdn.poizon.com/pro-img/cut-img/20240809/7aa64ce8f1db4d7ab57e0f685fc87499.jpg",
+        "brandName": "Nike",
+        "coverUrl": "https://cdn.poizon.com/node-common/JUU1JTkzJTgxJUU3JTg5JThDJUU0JUI4JUJCJUU5JUExJUI1JUU5JUE2JTk2JUU1JTlCJUJFMDYwMTE2ODU1OTE0ODY2MTk=.jpg",
+        "brandTextList": [
+          {
+            "type": 6,
+            "showText": "26万+款好物"
+          },
+          {
+            "type": 4,
+            "showText": "813万+人订阅"
+          },
+          {
+            "type": 2,
+            "showText": "尖端运动科技"
+          }
+        ],
+        "brandId": 144
+      }
+    ]
+  },
+  "sizeDto": {
+    "sizeFlag": 3,
+    "sizeInfoRecommendText": "查看尺码表",
+    "comparedRecommendRow": 1,
+    "foldShowRowNum": 0,
+    "downFoldShowRowNum": 4,
+    "sizeInfo": {
+      "sizeTemplate": {
+        "title": "尺码对照表",
+        "tips": "",
+        "name": "",
+        "list": [
+          {
+            "sizeKey": "欧码EU",
+            "sizeValue": "35.5,36,36.5,37.5,38,38.5,39,40,40.5,41,42,42.5,43,44,44.5,45,45.5,46"
+          },
+          {
+            "sizeKey": "CHN中国码",
+            "sizeValue": "220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295,300,305"
+          },
+          {
+            "sizeKey": "US美码",
+            "sizeValue": "5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,12.5,13,13.5"
+          },
+          {
+            "sizeKey": "UK英码",
+            "sizeValue": "2.5,3,3.5,4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10,10.5,11"
+          },
+          {
+            "sizeKey": "JP日本码",
+            "sizeValue": "22,22.5,23,23.5,24,24.5,25,25.5,26,26.5,27,27.5,28,28.5,29,29.5,30,30.5"
+          },
+          {
+            "sizeKey": "KR韩国码",
+            "sizeValue": "220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295,300,305"
+          },
+          {
+            "sizeKey": "适合脚长",
+            "sizeValue": "22,22.5,23,23.5,24,24.5,25,25.5,26,26.5,27,27.5,28,28.5,29,29.5,30,30.5"
+          }
+        ],
+        "brandLogoUrl": "https://cdn.poizon.com/pro-img/cut-img/20240809/7aa64ce8f1db4d7ab57e0f685fc87499.jpg",
+        "hasSizeTable": true,
+        "hasFold": true,
+        "hasSelected": false,
+        "hitRowNum": 1,
+        "hitColNum": 0,
+        "defaultRowNum": 1,
+        "offsetCodeType": 0,
+        "type": 1,
+        "isShow": 1
       }
     }
-    -response: GuzzleHttp\Psr7\Response^ {#2715}
-    -transferTime: 0.133109
-    -handlerStats: array:41 [
-      "url" => "https://shop-20685.e3.co.ua/api/catalog/import"
-      "content_type" => null
-      "http_code" => 403
-      "header_size" => 1115
-      "request_size" => 10867
-      "filetime" => -1
-      "ssl_verify_result" => 0
-      "redirect_count" => 0
-      "total_time" => 0.133109
-      "namelookup_time" => 0.001312
-      "connect_time" => 0.005221
-      "pretransfer_time" => 0.016127
-      "size_upload" => 10722.0
-      "size_download" => 0.0
-      "speed_download" => 0.0
-      "speed_upload" => 80550.0
-      "download_content_length" => 0.0
-      "upload_content_length" => 10722.0
-      "starttransfer_time" => 0.132597
-      "redirect_time" => 0.0
-      "redirect_url" => ""
-      "primary_ip" => "172.67.196.79"
-      "certinfo" => []
-      "primary_port" => 443
-      "local_ip" => "192.168.1.100"
-      "local_port" => 49679
-      "http_version" => 2
-      "protocol" => 2
-      "ssl_verifyresult" => 0
-      "scheme" => "HTTPS"
-      "appconnect_time_us" => 16054
-      "connect_time_us" => 5221
-      "namelookup_time_us" => 1312
-      "pretransfer_time_us" => 16127
-      "redirect_time_us" => 0
-      "starttransfer_time_us" => 132597
-      "total_time_us" => 133109
-      "effective_method" => "POST"
-      "capath" => ""
-      "cainfo" => ""
-      "appconnect_time" => 0.016054
+  },
+  "detail": {
+    "isSelf": 0,
+    "isShow": 1,
+    "fitId": 3,
+    "defaultSkuId": 0,
+    "goodsType": 0,
+    "status": 1,
+    "bizType": 0,
+    "levelPvSize": 1,
+    "level1CategoryId": 29,
+    "level2CategoryId": 30,
+    "brandId": 144,
+    "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+    "soldCountText": "91人付款",
+    "subTitle": "",
+    "originalTitle": "Nike Air Max Volley 轻便低帮网球鞋 女款 黑紫",
+    "structureTitle": "Nike Air Max Volley 低帮 网球鞋 女款 黑紫",
+    "authPrice": 649,
+    "spuId": 1207583,
+    "categoryId": 1001178,
+    "title": "Nike Air Max Volley 低帮 网球鞋 女款 黑紫",
+    "desc": "",
+    "sourceName": "default",
+    "articleNumber": "CU4275-001",
+    "sellDate": "2020秋季",
+    "categoryName": "网球鞋"
+  },
+  "skus": [
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421678,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490389
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421679,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490390
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421680,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490391
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421681,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490392
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421682,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490393
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421683,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490394
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421684,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490395
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421685,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490396
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421686,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490397
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421687,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490398
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421688,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490399
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421689,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490400
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421690,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490401
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421691,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490402
+        }
+      ]
+    },
+    {
+      "authPrice": 64900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20220212/94d97540949340e6b01e22e196722c8d.jpg",
+      "skuId": 601421692,
+      "spuId": 1207583,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 27490403
+        }
+      ]
+    }
+  ],
+  "saleProperties": {
+    "list": [
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490389,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "35.5",
+        "sort": 0
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490390,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "36",
+        "sort": 1
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490391,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "36.5",
+        "sort": 2
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490392,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "37.5",
+        "sort": 3
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490393,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "38",
+        "sort": 4
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490394,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "38.5",
+        "sort": 5
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490395,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "39",
+        "sort": 6
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490396,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "40",
+        "sort": 7
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490397,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "40.5",
+        "sort": 8
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490398,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "41",
+        "sort": 9
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490399,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "42",
+        "sort": 10
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490400,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "42.5",
+        "sort": 11
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490401,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "43",
+        "sort": 12
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490402,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "44",
+        "sort": 13
+      },
+      {
+        "propertyId": 1012482,
+        "propertyValueId": 27490403,
+        "customValue": "",
+        "level": 1,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "44.5",
+        "sort": 14
+      }
     ]
-    -handlerErrorData: 0
+  },
+  "shareInfo": {
+    "threeDLinkUrl": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=1207583&sourceName=shareDetail&shareSource=productDetail",
+    "shareLinkUrl": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=1207583&sourceName=shareDetail"
   }
 }

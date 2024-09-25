@@ -2,12 +2,15 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Poizon\PoizonProduct;
 use App\Models\Poizon\PoizonShopProduct;
 use App\Models\Shop\ShopProduct;
+use App\Models\System\TrackProduct;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Console\Command;
+use Illuminate\Http\Client\ConnectionException;
 
-class UploadProductToShop extends Command
+class UploadProductToShopFromPoizon extends Command
 {
     /**
      * Categories mapping.
@@ -26,7 +29,7 @@ class UploadProductToShop extends Command
      *
      * @var string
      */
-    protected $signature = 'poizon-shop:upload-product-to-shop {--sku=} {--is_sku=1} {--sizes=} {--prices=} {--sale_prices=} {--presence=} {--stock=1}';
+    protected $signature = 'poizon:upload-product-to-shop {--sku=} {--is_sku=1} {--sizes=} {--prices=} {--sale_prices=} {--presence=} {--stock=1}';
     // php artisan poizon:upload-product-to-shop --sku=ID5412 --sizes=36,37,38 --prices=100.56,200.99,300 --presence=1,1,1
 
     /**
@@ -34,11 +37,12 @@ class UploadProductToShop extends Command
      *
      * @var string
      */
-    protected $description = 'Upload product to shop';
+    protected $description = 'Upload product to shop from poizon';
 
     /**
      * Execute the console command.
      * @throws GuzzleException
+     * @throws ConnectionException
      */
     public function handle()
     {
@@ -55,6 +59,8 @@ class UploadProductToShop extends Command
         $salePrices = explode(',', $salePrices);
 
         $poizonShop = new PoizonShopProduct();
+        $poizon = new PoizonProduct();
+        $command = new SyncSystemsProducts();
 
         if (!$sku) {
             echo('Please provide a SKU\n');
@@ -65,16 +71,18 @@ class UploadProductToShop extends Command
         $product = PoizonShopProduct::where('sku', $sku)->orWhereJsonContains('data->article', $sku)->first();
         if (!$product) {
             $product = $poizonShop->getPoizonShopProductByArticle($sku, $isSku);
-            if (!$product) {
-                echo('Product not found\n');
-                return false;
-            }
         }
 
-        $command = new SyncSystemsProducts();
+        if (!$product) {
+            echo('Product in poizonshop not found\n');
+            $product = $poizon->getPoizonProductData($sku);
+            $preparedProduct = $poizon->getShopFormatFromData($product, $this->categoriesMapping['parent_is_stock'], [615754], []);
+        } else {
+            $preparedProduct = $command->syncProductsForBitrix('poizon-shop', $product, 'shop', false, false);
+        }
 
-        $preparedProduct = collect($command->syncProductsForBitrix('poizon-shop', $product, 'shop', false, false));
-
+        $preparedProduct = collect($preparedProduct);
+        $popularity = TrackProduct::where('sku', $sku)->max('type') ?? 10000;
         if($isStock) {
             $preparedVariations = [];
             foreach ($sizes as $size) {
@@ -103,12 +111,12 @@ class UploadProductToShop extends Command
             $preparedVariations = $preparedProduct->toArray();
         }
 
-        $preparedVariations = $preparedVariations->toArray();
+        if(!is_array($preparedVariations)) $preparedVariations = $preparedVariations->toArray();
 
         $shop = new ShopProduct();
         $shop->setShopAuth();
 
-        $preparedVariations = $command->createOrUpdateInShop($shop, $preparedVariations, false, true, [], [], $product->popularity, true);
+        $preparedVariations = $command->createOrUpdateInShop($shop, $preparedVariations, false, true, [], [], $popularity, true);
 
         if(count($preparedVariations) === 1 && $this->isArrayOfArrays($preparedVariations[0])) {
             $preparedVariations = $preparedVariations[0];

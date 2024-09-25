@@ -909,6 +909,32 @@ class SyncSystemsProducts extends Command
     }
 
     /**
+     * Process brand.
+     *
+     * @param string $brand
+     * @return string
+     */
+    public function processBrand(string $brand): string
+    {
+        if (str_contains(strtolower($brand), 'adidas')) {
+            return 'adidas';
+        }
+
+        return $brand;
+    }
+
+    /**
+     * Process name.
+     *
+     * @param string $name
+     * @return string
+     */
+    public function processName(string $name): string
+    {
+        return preg_replace('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{20000}-\x{2A6DF}]+/u', '', $name);
+    }
+
+    /**
      * Prepare product data from poizon shop for sync.
      *
      * @param $skus
@@ -921,14 +947,11 @@ class SyncSystemsProducts extends Command
     public function prepareProductFromPoizonShop($poizonProduct, $priceModel): array
     {
         echo "SKU: {$priceModel['skuId']}\n";
-        $name = preg_replace('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{20000}-\x{2A6DF}]+/u', '', $poizonProduct->data['name']);
+        $name = $this->processName($poizonProduct->data['name']);
         $price = $this->calculatePrice($priceModel['cnyPrice'], false);
         $size = $this->parseFraction($priceModel['size']['primary']);
 
-        $brand = $poizonProduct->data['brand'];
-        if (str_contains(strtolower($brand), 'adidas')) {
-            $brand = 'adidas';
-        }
+        $brand = $this->processBrand($poizonProduct->data['brand']);
 
         $findCategoryIds = [];
         $findCategoryFilterIds = [];

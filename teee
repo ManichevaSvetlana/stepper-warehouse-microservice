@@ -1,302 +1,4352 @@
+Poizon API:
 {
-    "id": 58481,
-    "external_id": null,
-    "display_in_showcase": 1,
-    "type": "Buttons",
-    "title": {
-        "en": "Catalog"
-    },
-    "characteristics": [
+  "price": {
+    "item": {
+      "floorPrice": 57700,
+      "upperPrice": 0,
+      "intentPrice": 0,
+      "originalPrice": 52900,
+      "nonGlobalOriginalPrice": 57900,
+      "activityPrice": 0,
+      "saleInventoryNo": "SN103575186521PS09",
+      "price": 57700,
+      "type": 1,
+      "maxPrice": 114400,
+      "tradeType": 3,
+      "skuId": 629860036
+    }
+  },
+  "lastSold": {
+    "avatar": "https://cdn.poizon.com/du_app/2020/image/200231758_modelPRA-AL00Xmodel_byte171110byte_5b686b8b6c19b56243d53e3260bb14c4_du_android_w970_h970.png",
+    "lastSoldText": "c*2小时前购买了白黑 37⅓",
+    "contentText": "8000+人付款",
+    "tinySoldNumText": "8k人付款",
+    "lastSoldWeakenText": "2小时前购买"
+  },
+  "image": {
+    "imageLayoutType": 0,
+    "isOnlyShowHitCspu": true,
+    "spuImage": {
+      "supportPanorama": 0,
+      "supportColorBlock": 0,
+      "arSkuIdRelation": [
         {
-            "id": 563598,
-            "external_id": null,
-            "slug": "color",
-            "display_in_showcase": 1,
-            "color": 1,
-            "slider": 0,
-            "required": 0,
-            "use_in_filter": 1,
-            "multiselect": 0,
-            "sort_direction": "Ascending",
-            "title": {
-                "en": "Color"
-            },
-            "short_description": {
-                "en": null
-            },
-            "values": [
-                {
-                    "id": 4224033,
-                    "external_id": null,
-                    "title": {
-                        "en": "White"
-                    }
-                },
-                {
-                    "id": 4224034,
-                    "external_id": null,
-                    "title": {
-                        "en": "Black"
-                    }
-                },
-                {
-                    "id": 4224035,
-                    "external_id": null,
-                    "title": {
-                        "en": "Gray"
-                    }
-                },
-                {
-                    "id": 4224036,
-                    "external_id": null,
-                    "title": {
-                        "en": "Brown"
-                    }
-                },
-                {
-                    "id": 4224037,
-                    "external_id": null,
-                    "title": {
-                        "en": "Blue"
-                    }
-                },
-                {
-                    "id": 4224038,
-                    "external_id": null,
-                    "title": {
-                        "en": "Green"
-                    }
-                },
-                {
-                    "id": 4224039,
-                    "external_id": null,
-                    "title": {
-                        "en": "Yellow"
-                    }
-                },
-                {
-                    "id": 4224040,
-                    "external_id": null,
-                    "title": {
-                        "en": "Red"
-                    }
-                },
-                {
-                    "id": 4224041,
-                    "external_id": null,
-                    "title": {
-                        "en": "Purple "
-                    }
-                },
-                {
-                    "id": 4224042,
-                    "external_id": null,
-                    "title": {
-                        "en": "Pink"
-                    }
-                },
-                {
-                    "id": 4419749,
-                    "external_id": null,
-                    "title": {
-                        "en": "Brown "
-                    }
-                },
-                {
-                    "id": 4419750,
-                    "external_id": null,
-                    "title": {
-                        "en": "Grey"
-                    }
-                }
-            ]
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860030,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
         },
         {
-            "id": 563599,
-            "external_id": null,
-            "slug": "stock",
-            "display_in_showcase": 1,
-            "color": 0,
-            "slider": 0,
-            "required": 0,
-            "use_in_filter": 1,
-            "multiselect": 0,
-            "sort_direction": "Default",
-            "title": {
-                "en": "Stock"
-            },
-            "short_description": {
-                "en": null
-            },
-            "values": [
-                {
-                    "id": 4054579,
-                    "external_id": null,
-                    "title": {
-                        "en": "Delivery from 7 days"
-                    }
-                },
-                {
-                    "id": 4054580,
-                    "external_id": null,
-                    "title": {
-                        "en": "Delivery in 2 hours"
-                    }
-                }
-            ]
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860031,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
         },
         {
-            "id": 629285,
-            "external_id": null,
-            "slug": "size-1",
-            "display_in_showcase": 1,
-            "color": 0,
-            "slider": 0,
-            "required": 0,
-            "use_in_filter": 1,
-            "multiselect": 0,
-            "sort_direction": "Default",
-            "title": {
-                "en": "Size"
-            },
-            "short_description": {
-                "en": null
-            },
-            "values": [
-                {
-                    "id": 4224043,
-                    "external_id": null,
-                    "title": {
-                        "en": "36"
-                    }
-                },
-                {
-                    "id": 4224044,
-                    "external_id": null,
-                    "title": {
-                        "en": "36.5"
-                    }
-                },
-                {
-                    "id": 4224045,
-                    "external_id": null,
-                    "title": {
-                        "en": "37"
-                    }
-                },
-                {
-                    "id": 4224046,
-                    "external_id": null,
-                    "title": {
-                        "en": "38"
-                    }
-                },
-                {
-                    "id": 4224047,
-                    "external_id": null,
-                    "title": {
-                        "en": "38.5"
-                    }
-                },
-                {
-                    "id": 4224048,
-                    "external_id": null,
-                    "title": {
-                        "en": "39"
-                    }
-                },
-                {
-                    "id": 4224049,
-                    "external_id": null,
-                    "title": {
-                        "en": "40"
-                    }
-                },
-                {
-                    "id": 4224050,
-                    "external_id": null,
-                    "title": {
-                        "en": "40.5"
-                    }
-                },
-                {
-                    "id": 4224051,
-                    "external_id": null,
-                    "title": {
-                        "en": "41"
-                    }
-                },
-                {
-                    "id": 4224052,
-                    "external_id": null,
-                    "title": {
-                        "en": "42"
-                    }
-                },
-                {
-                    "id": 4224053,
-                    "external_id": null,
-                    "title": {
-                        "en": "42.5"
-                    }
-                },
-                {
-                    "id": 4224054,
-                    "external_id": null,
-                    "title": {
-                        "en": "43"
-                    }
-                },
-                {
-                    "id": 4224055,
-                    "external_id": null,
-                    "title": {
-                        "en": "44"
-                    }
-                },
-                {
-                    "id": 4224056,
-                    "external_id": null,
-                    "title": {
-                        "en": "44.5"
-                    }
-                },
-                {
-                    "id": 4224057,
-                    "external_id": null,
-                    "title": {
-                        "en": "45"
-                    }
-                },
-                {
-                    "id": 4224058,
-                    "external_id": null,
-                    "title": {
-                        "en": "37.5"
-                    }
-                },
-                {
-                    "id": 4224059,
-                    "external_id": null,
-                    "title": {
-                        "en": "41.5"
-                    }
-                },
-                {
-                    "id": 4224060,
-                    "external_id": null,
-                    "title": {
-                        "en": "39.5"
-                    }
-                },
-                {
-                    "id": 4552291,
-                    "external_id": null,
-                    "title": {
-                        "en": "35.5"
-                    }
-                }
-            ]
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860032,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860033,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860034,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860035,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860036,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860037,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860038,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860039,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860040,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860041,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860042,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860043,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860044,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860045,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860046,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860047,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860048,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        {
+          "propertyValueId": 281877292,
+          "supportFlag": true,
+          "spuId": 5840544,
+          "skuId": 629860049,
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
         }
+      ],
+      "moreMaterialFlag": 0,
+      "threeDimension": {
+        "spu3dShowType": 1,
+        "propertyValueId": 0,
+        "moreMaterialFlag": 0,
+        "spu3dModelFormat": 1,
+        "objFileUrl": "https://h5static.dewucdn.com/node-common/c5ca2a97-9501-2185-33e0-babb90a2c8c0.zip?key=du3D201916fa73b2",
+        "coverUrl": "https://h5static.dewucdn.com/node-common/a5529b97-a164-253a-cd18-c5a6b8a2cf0c-1000-700.png",
+        "gifUrl": "https://h5static.dewucdn.com/node-common/c3790f99-89ff-cd13-6e62-0b6be4363506-500-350.gif",
+        "key": "16fa73b2",
+        "arFile": "",
+        "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+      },
+      "images": [
+        {
+          "propertyValueId": 281877292,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 281877292,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/1c7e29c8776e4346aa4c74d63f18daec.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 281877292,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/80b3a2fbfa3b40c2acf90839f2105195.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 281877292,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/7e40308adb64477ebdc8496050f1730c.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 281877292,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/5424ff2766244a9c97410ab9b9f4065c.jpg",
+          "imgType": 0,
+          "desc": ""
+        },
+        {
+          "propertyValueId": 281877292,
+          "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/844329f840464c34986cee008793148c.jpg",
+          "imgType": 0,
+          "desc": ""
+        }
+      ]
+    }
+  },
+  "frontLabelSummaryDTO": {
+    "afterTitle": {
+      "sortRule": [
+        {
+          "labelType": "LABEL_DE_WU_EXCLUSIVE",
+          "sorted": 10,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_EXCLUSIVE_LAUNCH",
+          "sorted": 20,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_FIRST_SELL",
+          "sorted": 30,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_FIRST_BUY",
+          "sorted": 31,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_BRAND_ONLY_4_BRAND_OFFICIAL",
+          "sorted": 40,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_BRAND_ONLY_4_BRAND_ONLY",
+          "sorted": 41,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_GLOBAL_BUY",
+          "sorted": 50,
+          "sourceType": "SPU"
+        }
+      ]
+    },
+    "belowTitle": {
+      "sortRule": [
+        {
+          "labelType": "LABEL_PAGE_LANDING_RANK",
+          "sorted": 10,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_LANDING_THEME",
+          "sorted": 11,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_LANDING_SERIES",
+          "sorted": 20,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_LANDING_IP",
+          "sorted": 30,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_FLOAT_PROP",
+          "sorted": 55,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_LANDING_RELATED",
+          "sorted": 70,
+          "sourceType": "SPU"
+        },
+        {
+          "labelType": "LABEL_PAGE_MORE_SIMILAR_STYLE",
+          "sorted": 80,
+          "sourceType": "SPU"
+        }
+      ],
+      "item": [
+        {
+          "customType": 1,
+          "labelId": 0,
+          "sourceType": "SPU",
+          "sourceId": 5840544,
+          "labelType": "LABEL_PAGE_LANDING_RANK",
+          "labelShowName": {
+            "showNameType": "TEXT",
+            "text": "adidas板鞋热销榜"
+          },
+          "labelRoute": {
+            "routeType": "landing_page",
+            "routeUrl": "https://m.poizon.com/router/product/RankListPage?source=400000&rankId=54643&rankIds=54643,71521,82693",
+            "routeTypeStyle": "ARROW_STYLE"
+          },
+          "labelRouteHided": false
+        },
+        {
+          "customType": 0,
+          "labelId": 3563,
+          "sourceType": "SPU",
+          "sourceId": 5840544,
+          "labelType": "LABEL_PAGE_LANDING_THEME",
+          "labelShowName": {
+            "showNameType": "TEXT",
+            "text": "费启鸣同款"
+          },
+          "labelRoute": {
+            "routeType": "landing_page",
+            "routeUrl": "https://m.poizon.com/router/product/BoutiqueRecommendDetailPage?recommendId=1188470&exSpuIds=5840544",
+            "routeTypeStyle": "ARROW_STYLE"
+          },
+          "labelRouteHided": false
+        },
+        {
+          "customType": 1,
+          "labelId": 0,
+          "sourceType": "SPU",
+          "sourceId": 5840544,
+          "labelType": "LABEL_PAGE_LANDING_SERIES",
+          "labelShowName": {
+            "showNameType": "TEXT",
+            "text": "Samba XLG"
+          },
+          "labelRoute": {
+            "routeType": "landing_page",
+            "routeUrl": "https://m.poizon.com/router/product/series/detail?brandId=3&seriesId=1034362&spuId=5840544&sourceName=productDetail",
+            "routeTypeStyle": "ARROW_STYLE"
+          },
+          "labelRouteHided": false
+        }
+      ]
+    }
+  },
+  "basicParam": {
+    "basicList": [
+      {
+        "propertyValueId": 368506336,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "鞋面材质",
+        "value": "头层牛皮"
+      },
+      {
+        "propertyValueId": 281877286,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "适用季节",
+        "value": "春,夏,秋,冬"
+      },
+      {
+        "propertyValueId": 281894848,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "辅色",
+        "value": "黑色"
+      },
+      {
+        "propertyValueId": 281877288,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "鞋帮高度",
+        "value": "低帮"
+      },
+      {
+        "propertyValueId": 281877285,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "主色",
+        "value": "白色"
+      },
+      {
+        "propertyValueId": 281877290,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "闭合方式",
+        "value": "系带"
+      },
+      {
+        "propertyValueId": 281877291,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "功能性",
+        "value": "防滑,耐磨"
+      },
+      {
+        "propertyValueId": 281877289,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "鞋头款式",
+        "value": "圆头"
+      },
+      {
+        "propertyValueId": 281877287,
+        "valueType": 0,
+        "definitionId": 0,
+        "key": "鞋跟类型",
+        "value": "平跟"
+      }
+    ],
+    "windowsList": [],
+    "windowTitle": "商品参数",
+    "windowSubTitle": "纠错"
+  },
+  "favoriteData": {
+    "hasFavorite": false,
+    "hasMyOwn": false,
+    "favoriteCount": {
+      "count": 119300,
+      "content": "11万+人想要",
+      "tinyContent": "11w"
+    },
+    "myOwnCount": {
+      "count": 7471,
+      "content": "7000+",
+      "tinyContent": "7k"
+    }
+  },
+  "brandRootInfo": {
+    "title": "品牌",
+    "multiRelationText": "",
+    "brandLayer": 1,
+    "brandItemShowSize": 1,
+    "brandItemList": [
+      {
+        "mainBrand": 0,
+        "brandType": 0,
+        "artistId": 0,
+        "brandLogo": "https://cdn.poizon.com/pro-img/cut-img/20230802/672f48b90bf04b2b9b423228f6dddc60.jpg",
+        "brandName": "adidas",
+        "coverUrl": "https://cdn.poizon.com/node-common/YWRpZGFzMTYwOTc0MjA4MTk4Mg==.jpg",
+        "brandTextList": [
+          {
+            "type": 6,
+            "showText": "9.5万+款好物"
+          },
+          {
+            "type": 4,
+            "showText": "153万+人订阅"
+          },
+          {
+            "type": 2,
+            "showText": "街头潮流多元化"
+          }
+        ],
+        "brandId": 3
+      }
     ]
+  },
+  "sizeDto": {
+    "sizeFlag": 3,
+    "sizeInfoRecommendText": "查看尺码表",
+    "comparedRecommendRow": 1,
+    "foldShowRowNum": 0,
+    "downFoldShowRowNum": 4,
+    "sizeInfo": {
+      "sizeTemplate": {
+        "title": "尺码对照表",
+        "tips": "部分欧洲品牌用'分数'表示尺码规格，1/3码实际大小接近整数码，1/2码实际大小接近半码（如41 1/3 ≈ 41；42 2/3≈42.5）",
+        "name": "",
+        "list": [
+          {
+            "sizeKey": "欧码EU",
+            "sizeValue": "35,35⅔,36,36⅔,37⅓,38,38⅔,39⅓,40,40⅔,41⅓,42,42⅔,43⅓,44,44⅔,45⅓,46,46⅔,47⅓,48,48⅔,49⅓,50,50⅔,51⅓,52⅔,53⅓,54⅔"
+          },
+          {
+            "sizeKey": "FR法码",
+            "sizeValue": "35,35⅔,36,36⅔,37⅓,38,38⅔,39⅓,40,40⅔,41⅓,42,42⅔,43⅓,44,44⅔,45⅓,46,46⅔,47⅓,48,48⅔,49⅓,50,50⅔,51⅓,52⅔,53⅓,54⅔"
+          },
+          {
+            "sizeKey": "CHN中国码",
+            "sizeValue": "210,215,220,225,230,235,235,240,245,250,255,260,265,265,270,275,280,285,290,290,295,300,305,310,315,320,325,335,345"
+          },
+          {
+            "sizeKey": "US美码",
+            "sizeValue": "M3/W4,M3.5/W4.5,M4/W5,M4.5/W5.5,M5/W6,M5.5/W6.5,M6/W7,M6.5/W7.5,M7/W8,M7.5/W8.5,M8/W9,M8.5/W9.5,M9/W10,M9.5/W10.5,M10/W11,M10.5/W11.5,M11/W12,M11.5/W12.5,M12/W13,M12.5/W13.5,M13/W14,M13.5/W14.5,M14/W15,M14.5/W15.5,M15,M16,M17,M18,M19"
+          },
+          {
+            "sizeKey": "UK英码",
+            "sizeValue": "2.5,3,3½,4,4½,5,5½,6,6½,7,7½,8,8½,9,9½,10,10½,11,11½,12,12½,13,13.5,14,14.5,15,16,17,18"
+          },
+          {
+            "sizeKey": "JP日本码",
+            "sizeValue": "210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295,300,305,310,315,320,325,/,/,/,/,/"
+          },
+          {
+            "sizeKey": "选购尺码",
+            "sizeValue": "35,35.5,36,36.5,37,38,38.5,39,40,40.5,41,42,42.5,43,44,44.5,45,46,46.5,47,48,48.5,49,50,50.5,51,52.5,53,54.5"
+          },
+          {
+            "sizeKey": "适合脚长",
+            "sizeValue": "21,21.5,22,22.5,23,23.5,23.5,24,24.5,25,25.5,26,26.5,26.5,27,27.5,28,28.5,29,29,29.5,30,30.5,31,31.5,32,32.5,33.5,34.5"
+          }
+        ],
+        "brandLogoUrl": "https://cdn.poizon.com/pro-img/cut-img/20230802/672f48b90bf04b2b9b423228f6dddc60.jpg",
+        "hasSizeTable": true,
+        "hasFold": true,
+        "hasSelected": false,
+        "hitRowNum": 1,
+        "hitColNum": 0,
+        "defaultRowNum": 1,
+        "offsetCodeType": 0,
+        "type": 1,
+        "isShow": 1
+      }
+    }
+  },
+  "detail": {
+    "isSelf": 0,
+    "isShow": 1,
+    "fitId": 1,
+    "defaultSkuId": 0,
+    "goodsType": 0,
+    "status": 1,
+    "bizType": 0,
+    "levelPvSize": 2,
+    "level1CategoryId": 29,
+    "level2CategoryId": 35,
+    "brandId": 3,
+    "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+    "soldCountText": "8000+人付款",
+    "subTitle": "",
+    "originalTitle": "",
+    "structureTitle": "adidas Samba XLG 舒适百搭 潮流 防滑耐磨 低帮 板鞋 男女同款 白黑",
+    "authPrice": 899,
+    "spuId": 5840544,
+    "categoryId": 38,
+    "title": "adidas Samba XLG 舒适百搭 潮流 防滑耐磨 低帮 板鞋 男女同款 白黑",
+    "desc": "",
+    "sourceName": "default",
+    "articleNumber": "IE1377",
+    "sellDate": "2023.08",
+    "categoryName": "板鞋"
+  },
+  "skus": [
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860030,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877293
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860031,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877294
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860032,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877295
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860033,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877296
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860034,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877297
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860035,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877298
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860036,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877299
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860037,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877300
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860038,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877301
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860039,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877302
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860040,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877303
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860041,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877304
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860042,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877305
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860043,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877306
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860044,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877307
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860045,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877308
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860046,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877309
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860047,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877310
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860048,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877311
+        }
+      ]
+    },
+    {
+      "authPrice": 89900,
+      "status": 1,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "skuId": 629860049,
+      "spuId": 5840544,
+      "properties": [
+        {
+          "level": 1,
+          "propertyValueId": 281877292
+        },
+        {
+          "level": 2,
+          "propertyValueId": 281877312
+        }
+      ]
+    }
+  ],
+  "saleProperties": {
+    "list": [
+      {
+        "propertyId": 3427,
+        "propertyValueId": 281877292,
+        "customValue": "白黑",
+        "level": 1,
+        "showValue": 0,
+        "definitionId": 1,
+        "fontProperty": false,
+        "name": "颜色",
+        "value": "白黑",
+        "sort": 0
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877294,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "36",
+        "sort": 1
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877295,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "36⅔",
+        "sort": 2
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877296,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "37⅓",
+        "sort": 3
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877297,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "38",
+        "sort": 4
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877298,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "38⅔",
+        "sort": 5
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877299,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "39⅓",
+        "sort": 6
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877300,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "40",
+        "sort": 7
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877301,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "40⅔",
+        "sort": 8
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877302,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "41⅓",
+        "sort": 9
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877303,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "42",
+        "sort": 10
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877304,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "42⅔",
+        "sort": 11
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877305,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "43⅓",
+        "sort": 12
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877306,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "44",
+        "sort": 13
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877307,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "44⅔",
+        "sort": 14
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877308,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "45⅓",
+        "sort": 15
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877309,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "46",
+        "sort": 16
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877310,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "46⅔",
+        "sort": 17
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877311,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "47⅓",
+        "sort": 18
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877312,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "48",
+        "sort": 19
+      },
+      {
+        "propertyId": 4665,
+        "propertyValueId": 281877293,
+        "customValue": "",
+        "level": 2,
+        "showValue": 1,
+        "definitionId": 6,
+        "fontProperty": false,
+        "name": "尺码",
+        "value": "35½",
+        "sort": 20
+      }
+    ]
+  },
+  "shareInfo": {
+    "threeDLinkUrl": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=5840544&sourceName=shareDetail&shareSource=productDetail",
+    "shareLinkUrl": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=5840544&sourceName=shareDetail"
+  }
 }
+
+
+
+
+[
+    0 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784914
+      "name" => "Adidas Neo Vl Court"
+      "size" => 35.5
+      "price" => 289
+      "originalPriceInLari" => 133.115
+      "originalPriceInCNY" => 337
+      "originalPriceWithExpenses" => 194.8357
+      "income" => 91.9602
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    1 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784915
+      "name" => "Adidas Neo Vl Court"
+      "size" => 36.0
+      "price" => 289
+      "originalPriceInLari" => 133.115
+      "originalPriceInCNY" => 337
+      "originalPriceWithExpenses" => 194.8357
+      "income" => 91.9602
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    2 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784916
+      "name" => "Adidas Neo Vl Court"
+      "size" => 36.5
+      "price" => 289
+      "originalPriceInLari" => 133.115
+      "originalPriceInCNY" => 337
+      "originalPriceWithExpenses" => 194.8357
+      "income" => 91.9602
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    3 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784917
+      "name" => "Adidas Neo Vl Court"
+      "size" => 37.0
+      "price" => 289
+      "originalPriceInLari" => 133.115
+      "originalPriceInCNY" => 337
+      "originalPriceWithExpenses" => 194.8357
+      "income" => 91.9602
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    4 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784918
+      "name" => "Adidas Neo Vl Court"
+      "size" => 38.0
+      "price" => 279
+      "originalPriceInLari" => 129.165
+      "originalPriceInCNY" => 327
+      "originalPriceWithExpenses" => 190.1747
+      "income" => 86.6622
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    5 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784919
+      "name" => "Adidas Neo Vl Court"
+      "size" => 38.5
+      "price" => 289
+      "originalPriceInLari" => 133.115
+      "originalPriceInCNY" => 337
+      "originalPriceWithExpenses" => 194.8357
+      "income" => 91.9602
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    6 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784920
+      "name" => "Adidas Neo Vl Court"
+      "size" => 39.0
+      "price" => 279
+      "originalPriceInLari" => 129.165
+      "originalPriceInCNY" => 327
+      "originalPriceWithExpenses" => 190.1747
+      "income" => 86.6622
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    7 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784921
+      "name" => "Adidas Neo Vl Court"
+      "size" => 40.0
+      "price" => 275
+      "originalPriceInLari" => 125.215
+      "originalPriceInCNY" => 317
+      "originalPriceWithExpenses" => 185.5137
+      "income" => 87.387
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    8 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784922
+      "name" => "Adidas Neo Vl Court"
+      "size" => 40.5
+      "price" => 279
+      "originalPriceInLari" => 129.165
+      "originalPriceInCNY" => 327
+      "originalPriceWithExpenses" => 190.1747
+      "income" => 86.6622
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    9 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784923
+      "name" => "Adidas Neo Vl Court"
+      "size" => 41.0
+      "price" => 279
+      "originalPriceInLari" => 129.165
+      "originalPriceInCNY" => 327
+      "originalPriceWithExpenses" => 190.1747
+      "income" => 86.6622
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    10 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784924
+      "name" => "Adidas Neo Vl Court"
+      "size" => 42.0
+      "price" => 275
+      "originalPriceInLari" => 125.215
+      "originalPriceInCNY" => 317
+      "originalPriceWithExpenses" => 185.5137
+      "income" => 87.387
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    11 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784925
+      "name" => "Adidas Neo Vl Court"
+      "size" => 42.5
+      "price" => 275
+      "originalPriceInLari" => 125.215
+      "originalPriceInCNY" => 317
+      "originalPriceWithExpenses" => 185.5137
+      "income" => 87.387
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    12 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784926
+      "name" => "Adidas Neo Vl Court"
+      "size" => 43.0
+      "price" => 275
+      "originalPriceInLari" => 125.215
+      "originalPriceInCNY" => 317
+      "originalPriceWithExpenses" => 185.5137
+      "income" => 87.387
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    13 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784927
+      "name" => "Adidas Neo Vl Court"
+      "size" => 44.0
+      "price" => 289
+      "originalPriceInLari" => 133.115
+      "originalPriceInCNY" => 337
+      "originalPriceWithExpenses" => 194.8357
+      "income" => 91.9602
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    14 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784928
+      "name" => "Adidas Neo Vl Court"
+      "size" => 44.5
+      "price" => 289
+      "originalPriceInLari" => 133.115
+      "originalPriceInCNY" => 337
+      "originalPriceWithExpenses" => 194.8357
+      "income" => 91.9602
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    15 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784929
+      "name" => "Adidas Neo Vl Court"
+      "size" => 45.0
+      "price" => 295
+      "originalPriceInLari" => 137.065
+      "originalPriceInCNY" => 347
+      "originalPriceWithExpenses" => 199.4967
+      "income" => 93.243
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    16 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784930
+      "name" => "Adidas Neo Vl Court"
+      "size" => 46.0
+      "price" => 295
+      "originalPriceInLari" => 137.065
+      "originalPriceInCNY" => 347
+      "originalPriceWithExpenses" => 199.4967
+      "income" => 93.243
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    17 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784931
+      "name" => "Adidas Neo Vl Court"
+      "size" => 46.5
+      "price" => 325
+      "originalPriceInLari" => 156.815
+      "originalPriceInCNY" => 397
+      "originalPriceWithExpenses" => 222.8017
+      "income" => 99.657
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    18 => array:19 [
+      "sku" => 5540373
+      "productSku" => 627784932
+      "name" => "Adidas Neo Vl Court"
+      "size" => 47.0
+      "price" => 319
+      "originalPriceInLari" => 152.865
+      "originalPriceInCNY" => 387
+      "originalPriceWithExpenses" => 218.1407
+      "income" => 98.3742
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    19 => array:19 [
+      "sku" => 5540373
+      "productSku" => 639101237
+      "name" => "Adidas Neo Vl Court"
+      "size" => 48.0
+      "price" => 405
+      "originalPriceInLari" => 204.215
+      "originalPriceInCNY" => 517
+      "originalPriceWithExpenses" => 278.7337
+      "income" => 123.081
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+    20 => array:19 [
+      "sku" => 5540373
+      "productSku" => 660328732
+      "name" => "Adidas Neo Vl Court"
+      "size" => 0.0
+      "price" => 609
+      "originalPriceInLari" => 334.565
+      "originalPriceInCNY" => 847
+      "originalPriceWithExpenses" => 432.5467
+      "income" => 171.4362
+      "images" => array:5 [
+        0 => "https://cdn.poizon.com/pro-img/origin-img/20230724/8830adb3204c49e18969f944e3fe8a78.png"
+        1 => "https://cdn.poizon.com/pro-img/origin-img/20230724/2b12bb591a794fac835fc4b06b70f7d6.png"
+        2 => "https://cdn.poizon.com/pro-img/origin-img/20230724/93f09f1420bb437dad2facb58e628d95.png"
+        3 => "https://cdn.poizon.com/pro-img/origin-img/20230724/342b5b33c2614f58acca3f68fe13f030.png"
+        4 => "https://cdn.poizon.com/pro-img/origin-img/20230724/478da85d8a474c738146dd2f97017e14.png"
+      ]
+      "no_images" => false
+      "brand" => "adidas"
+      "category" => 29
+      "articleNumber" => "ID6015"
+      "colorName" => "白色"
+      "colorId" => "#5b4a44"
+      "categoryIds" => array:2 [
+        0 => 636307
+        1 => 636308
+      ]
+      "categoryFiltersIds" => array:1 [
+        0 => 4806893
+      ]
+      "sizesTable" => "<table border='1'><thead><tr><th>EU</th><th>FR</th><th>MM</th><th>US</th><th>UK</th></tr></thead><tbody><tr><td>35⅔</td><td>35⅔</td><td>215</td><td>M3.5/W4.5</td><td>3</td></tr><tr><td>36</td><td>36</td><td>220</td><td>M4/W5</td><td>3.5</td></tr><tr><td>36⅔</td><td>36⅔</td><td>225</td><td>M4.5/W5.5</td><td>4</td></tr><tr><td>37⅓</td><td>37⅓</td><td>230</td><td>M5/W6</td><td>4.5</td></tr><tr><td>38</td><td>38</td><td>235</td><td>M5.5/W6.5</td><td>5</td></tr><tr><td>38⅔</td><td>38⅔</td><td>235</td><td>M6/W7</td><td>5.5</td></tr><tr><td>39⅓</td><td>39⅓</td><td>240</td><td>M6.5/W7.5</td><td>6</td></tr><tr><td>40</td><td>40</td><td>245</td><td>M7/W8</td><td>6.5</td></tr><tr><td>40⅔</td><td>40⅔</td><td>250</td><td>M7.5/W8.5</td><td>7</td></tr><tr><td>41⅓</td><td>41⅓</td><td>255</td><td>M8/W9</td><td>7.5</td></tr><tr><td>42</td><td>42</td><td>260</td><td>M8.5/W9.5</td><td>8</td></tr><tr><td>42⅔</td><td>42⅔</td><td>265</td><td>M9/W10</td><td>8.5</td></tr><tr><td>43⅓</td><td>43⅓</td><td>265</td><td>M9.5/W10.5</td><td>9</td></tr><tr><td>44</td><td>44</td><td>270</td><td>M10/W11</td><td>9.5</td></tr><tr><td>44⅔</td><td>44⅔</td><td>275</td><td>M10.5/W11.5</td><td>10</td></tr><tr><td>45⅓</td><td>45⅓</td><td>280</td><td>M11/W12</td><td>10.5</td></tr><tr><td>46</td><td>46</td><td>285</td><td>M11.5/W12.5</td><td>11</td></tr><tr><td>46⅔</td><td>46⅔</td><td>290</td><td>M12/W13</td><td>11.5</td></tr><tr><td>47⅓</td><td>47⅓</td><td>290</td><td>M12.5/W13.5</td><td>12</td></tr><tr><td>48</td><td>48</td><td>295</td><td>M13/W14</td><td>12.5</td></tr><tr><td>48⅔</td><td>48⅔</td><td>300</td><td>M13.5/W14.5</td><td>13</td></tr><tr><td>49⅓</td><td>49⅓</td><td>300</td><td>M14/W15</td><td>13.5</td></tr></tbody></table>"
+    ]
+  ]
+
+
+
+
+
+
+
+  /////
+
+
+  {
+    "price": {
+      "item": {
+        "floorPrice": 57700,
+        "upperPrice": 0,
+        "intentPrice": 0,
+        "originalPrice": 52900,
+        "nonGlobalOriginalPrice": 57900,
+        "activityPrice": 0,
+        "saleInventoryNo": "SN103575186521PS09",
+        "price": 57700,
+        "type": 1,
+        "maxPrice": 114400,
+        "tradeType": 3,
+        "skuId": 629860036
+      }
+    },
+    "lastSold": {
+      "avatar": "https://cdn.poizon.com/du_app/2020/image/200231758_modelPRA-AL00Xmodel_byte171110byte_5b686b8b6c19b56243d53e3260bb14c4_du_android_w970_h970.png",
+      "lastSoldText": "c*2小时前购买了白黑 37⅓",
+      "contentText": "8000+人付款",
+      "tinySoldNumText": "8k人付款",
+      "lastSoldWeakenText": "2小时前购买"
+    },
+    "image": {
+      "imageLayoutType": 0,
+      "isOnlyShowHitCspu": true,
+      "spuImage": {
+        "supportPanorama": 0,
+        "supportColorBlock": 0,
+        "arSkuIdRelation": [
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860030,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860031,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860032,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860033,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860034,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860035,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860036,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860037,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860038,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860039,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860040,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860041,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860042,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860043,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860044,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860045,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860046,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860047,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860048,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          },
+          {
+            "propertyValueId": 281877292,
+            "supportFlag": true,
+            "spuId": 5840544,
+            "skuId": 629860049,
+            "arFile": "",
+            "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+          }
+        ],
+        "moreMaterialFlag": 0,
+        "threeDimension": {
+          "spu3dShowType": 1,
+          "propertyValueId": 0,
+          "moreMaterialFlag": 0,
+          "spu3dModelFormat": 1,
+          "objFileUrl": "https://h5static.dewucdn.com/node-common/c5ca2a97-9501-2185-33e0-babb90a2c8c0.zip?key=du3D201916fa73b2",
+          "coverUrl": "https://h5static.dewucdn.com/node-common/a5529b97-a164-253a-cd18-c5a6b8a2cf0c-1000-700.png",
+          "gifUrl": "https://h5static.dewucdn.com/node-common/c3790f99-89ff-cd13-6e62-0b6be4363506-500-350.gif",
+          "key": "16fa73b2",
+          "arFile": "",
+          "arFileBD": "https://h5static.dewucdn.com/node-common/9b4863fc-b2bc-f0eb-8f6a-11d705e193be.zip"
+        },
+        "images": [
+          {
+            "propertyValueId": 281877292,
+            "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+            "imgType": 0,
+            "desc": ""
+          },
+          {
+            "propertyValueId": 281877292,
+            "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/1c7e29c8776e4346aa4c74d63f18daec.jpg",
+            "imgType": 0,
+            "desc": ""
+          },
+          {
+            "propertyValueId": 281877292,
+            "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/80b3a2fbfa3b40c2acf90839f2105195.jpg",
+            "imgType": 0,
+            "desc": ""
+          },
+          {
+            "propertyValueId": 281877292,
+            "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/7e40308adb64477ebdc8496050f1730c.jpg",
+            "imgType": 0,
+            "desc": ""
+          },
+          {
+            "propertyValueId": 281877292,
+            "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/5424ff2766244a9c97410ab9b9f4065c.jpg",
+            "imgType": 0,
+            "desc": ""
+          },
+          {
+            "propertyValueId": 281877292,
+            "url": "https://cdn.poizon.com/pro-img/origin-img/20240718/844329f840464c34986cee008793148c.jpg",
+            "imgType": 0,
+            "desc": ""
+          }
+        ]
+      }
+    },
+    "frontLabelSummaryDTO": {
+      "afterTitle": {
+        "sortRule": [
+          {
+            "labelType": "LABEL_DE_WU_EXCLUSIVE",
+            "sorted": 10,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_EXCLUSIVE_LAUNCH",
+            "sorted": 20,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_FIRST_SELL",
+            "sorted": 30,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_FIRST_BUY",
+            "sorted": 31,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_BRAND_ONLY_4_BRAND_OFFICIAL",
+            "sorted": 40,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_BRAND_ONLY_4_BRAND_ONLY",
+            "sorted": 41,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_GLOBAL_BUY",
+            "sorted": 50,
+            "sourceType": "SPU"
+          }
+        ]
+      },
+      "belowTitle": {
+        "sortRule": [
+          {
+            "labelType": "LABEL_PAGE_LANDING_RANK",
+            "sorted": 10,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_PAGE_LANDING_THEME",
+            "sorted": 11,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_PAGE_LANDING_SERIES",
+            "sorted": 20,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_PAGE_LANDING_IP",
+            "sorted": 30,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_PAGE_FLOAT_PROP",
+            "sorted": 55,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_PAGE_LANDING_RELATED",
+            "sorted": 70,
+            "sourceType": "SPU"
+          },
+          {
+            "labelType": "LABEL_PAGE_MORE_SIMILAR_STYLE",
+            "sorted": 80,
+            "sourceType": "SPU"
+          }
+        ],
+        "item": [
+          {
+            "customType": 1,
+            "labelId": 0,
+            "sourceType": "SPU",
+            "sourceId": 5840544,
+            "labelType": "LABEL_PAGE_LANDING_RANK",
+            "labelShowName": {
+              "showNameType": "TEXT",
+              "text": "adidas板鞋热销榜"
+            },
+            "labelRoute": {
+              "routeType": "landing_page",
+              "routeUrl": "https://m.poizon.com/router/product/RankListPage?source=400000&rankId=54643&rankIds=54643,71521,82693",
+              "routeTypeStyle": "ARROW_STYLE"
+            },
+            "labelRouteHided": false
+          },
+          {
+            "customType": 0,
+            "labelId": 3563,
+            "sourceType": "SPU",
+            "sourceId": 5840544,
+            "labelType": "LABEL_PAGE_LANDING_THEME",
+            "labelShowName": {
+              "showNameType": "TEXT",
+              "text": "费启鸣同款"
+            },
+            "labelRoute": {
+              "routeType": "landing_page",
+              "routeUrl": "https://m.poizon.com/router/product/BoutiqueRecommendDetailPage?recommendId=1188470&exSpuIds=5840544",
+              "routeTypeStyle": "ARROW_STYLE"
+            },
+            "labelRouteHided": false
+          },
+          {
+            "customType": 1,
+            "labelId": 0,
+            "sourceType": "SPU",
+            "sourceId": 5840544,
+            "labelType": "LABEL_PAGE_LANDING_SERIES",
+            "labelShowName": {
+              "showNameType": "TEXT",
+              "text": "Samba XLG"
+            },
+            "labelRoute": {
+              "routeType": "landing_page",
+              "routeUrl": "https://m.poizon.com/router/product/series/detail?brandId=3&seriesId=1034362&spuId=5840544&sourceName=productDetail",
+              "routeTypeStyle": "ARROW_STYLE"
+            },
+            "labelRouteHided": false
+          }
+        ]
+      }
+    },
+    "basicParam": {
+      "basicList": [
+        {
+          "propertyValueId": 368506336,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "鞋面材质",
+          "value": "头层牛皮"
+        },
+        {
+          "propertyValueId": 281877286,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "适用季节",
+          "value": "春,夏,秋,冬"
+        },
+        {
+          "propertyValueId": 281894848,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "辅色",
+          "value": "黑色"
+        },
+        {
+          "propertyValueId": 281877288,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "鞋帮高度",
+          "value": "低帮"
+        },
+        {
+          "propertyValueId": 281877285,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "主色",
+          "value": "白色"
+        },
+        {
+          "propertyValueId": 281877290,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "闭合方式",
+          "value": "系带"
+        },
+        {
+          "propertyValueId": 281877291,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "功能性",
+          "value": "防滑,耐磨"
+        },
+        {
+          "propertyValueId": 281877289,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "鞋头款式",
+          "value": "圆头"
+        },
+        {
+          "propertyValueId": 281877287,
+          "valueType": 0,
+          "definitionId": 0,
+          "key": "鞋跟类型",
+          "value": "平跟"
+        }
+      ],
+      "windowsList": [],
+      "windowTitle": "商品参数",
+      "windowSubTitle": "纠错"
+    },
+    "favoriteData": {
+      "hasFavorite": false,
+      "hasMyOwn": false,
+      "favoriteCount": {
+        "count": 119300,
+        "content": "11万+人想要",
+        "tinyContent": "11w"
+      },
+      "myOwnCount": {
+        "count": 7471,
+        "content": "7000+",
+        "tinyContent": "7k"
+      }
+    },
+    "brandRootInfo": {
+      "title": "品牌",
+      "multiRelationText": "",
+      "brandLayer": 1,
+      "brandItemShowSize": 1,
+      "brandItemList": [
+        {
+          "mainBrand": 0,
+          "brandType": 0,
+          "artistId": 0,
+          "brandLogo": "https://cdn.poizon.com/pro-img/cut-img/20230802/672f48b90bf04b2b9b423228f6dddc60.jpg",
+          "brandName": "adidas",
+          "coverUrl": "https://cdn.poizon.com/node-common/YWRpZGFzMTYwOTc0MjA4MTk4Mg==.jpg",
+          "brandTextList": [
+            {
+              "type": 6,
+              "showText": "9.5万+款好物"
+            },
+            {
+              "type": 4,
+              "showText": "153万+人订阅"
+            },
+            {
+              "type": 2,
+              "showText": "街头潮流多元化"
+            }
+          ],
+          "brandId": 3
+        }
+      ]
+    },
+    "sizeDto": {
+      "sizeFlag": 3,
+      "sizeInfoRecommendText": "查看尺码表",
+      "comparedRecommendRow": 1,
+      "foldShowRowNum": 0,
+      "downFoldShowRowNum": 4,
+      "sizeInfo": {
+        "sizeTemplate": {
+          "title": "尺码对照表",
+          "tips": "部分欧洲品牌用'分数'表示尺码规格，1/3码实际大小接近整数码，1/2码实际大小接近半码（如41 1/3 ≈ 41；42 2/3≈42.5）",
+          "name": "",
+          "list": [
+            {
+              "sizeKey": "欧码EU",
+              "sizeValue": "35,35⅔,36,36⅔,37⅓,38,38⅔,39⅓,40,40⅔,41⅓,42,42⅔,43⅓,44,44⅔,45⅓,46,46⅔,47⅓,48,48⅔,49⅓,50,50⅔,51⅓,52⅔,53⅓,54⅔"
+            },
+            {
+              "sizeKey": "FR法码",
+              "sizeValue": "35,35⅔,36,36⅔,37⅓,38,38⅔,39⅓,40,40⅔,41⅓,42,42⅔,43⅓,44,44⅔,45⅓,46,46⅔,47⅓,48,48⅔,49⅓,50,50⅔,51⅓,52⅔,53⅓,54⅔"
+            },
+            {
+              "sizeKey": "CHN中国码",
+              "sizeValue": "210,215,220,225,230,235,235,240,245,250,255,260,265,265,270,275,280,285,290,290,295,300,305,310,315,320,325,335,345"
+            },
+            {
+              "sizeKey": "US美码",
+              "sizeValue": "M3/W4,M3.5/W4.5,M4/W5,M4.5/W5.5,M5/W6,M5.5/W6.5,M6/W7,M6.5/W7.5,M7/W8,M7.5/W8.5,M8/W9,M8.5/W9.5,M9/W10,M9.5/W10.5,M10/W11,M10.5/W11.5,M11/W12,M11.5/W12.5,M12/W13,M12.5/W13.5,M13/W14,M13.5/W14.5,M14/W15,M14.5/W15.5,M15,M16,M17,M18,M19"
+            },
+            {
+              "sizeKey": "UK英码",
+              "sizeValue": "2.5,3,3½,4,4½,5,5½,6,6½,7,7½,8,8½,9,9½,10,10½,11,11½,12,12½,13,13.5,14,14.5,15,16,17,18"
+            },
+            {
+              "sizeKey": "JP日本码",
+              "sizeValue": "210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295,300,305,310,315,320,325,/,/,/,/,/"
+            },
+            {
+              "sizeKey": "选购尺码",
+              "sizeValue": "35,35.5,36,36.5,37,38,38.5,39,40,40.5,41,42,42.5,43,44,44.5,45,46,46.5,47,48,48.5,49,50,50.5,51,52.5,53,54.5"
+            },
+            {
+              "sizeKey": "适合脚长",
+              "sizeValue": "21,21.5,22,22.5,23,23.5,23.5,24,24.5,25,25.5,26,26.5,26.5,27,27.5,28,28.5,29,29,29.5,30,30.5,31,31.5,32,32.5,33.5,34.5"
+            }
+          ],
+          "brandLogoUrl": "https://cdn.poizon.com/pro-img/cut-img/20230802/672f48b90bf04b2b9b423228f6dddc60.jpg",
+          "hasSizeTable": true,
+          "hasFold": true,
+          "hasSelected": false,
+          "hitRowNum": 1,
+          "hitColNum": 0,
+          "defaultRowNum": 1,
+          "offsetCodeType": 0,
+          "type": 1,
+          "isShow": 1
+        }
+      }
+    },
+    "detail": {
+      "isSelf": 0,
+      "isShow": 1,
+      "fitId": 1,
+      "defaultSkuId": 0,
+      "goodsType": 0,
+      "status": 1,
+      "bizType": 0,
+      "levelPvSize": 2,
+      "level1CategoryId": 29,
+      "level2CategoryId": 35,
+      "brandId": 3,
+      "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+      "soldCountText": "8000+人付款",
+      "subTitle": "",
+      "originalTitle": "",
+      "structureTitle": "adidas Samba XLG 舒适百搭 潮流 防滑耐磨 低帮 板鞋 男女同款 白黑",
+      "authPrice": 899,
+      "spuId": 5840544,
+      "categoryId": 38,
+      "title": "adidas Samba XLG 舒适百搭 潮流 防滑耐磨 低帮 板鞋 男女同款 白黑",
+      "desc": "",
+      "sourceName": "default",
+      "articleNumber": "IE1377",
+      "sellDate": "2023.08",
+      "categoryName": "板鞋"
+    },
+    "skus": [
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860030,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877293,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877293,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "35½",
+              "sort": 20
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103619411612PS28",
+              "price": 89900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103547174303PS28",
+              "price": 77900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "欧洲直邮",
+              "saleInventoryNo": "SN103607660309PS28",
+              "price": 129700,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 14,
+                "max": 16
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "轻微使用",
+              "saleInventoryNo": "629860030",
+              "price": 49900,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860031,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877294,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877294,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "36",
+              "sort": 1
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103612217456PS10",
+              "price": 61900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103623320907PS10",
+              "price": 59900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "美国直邮",
+              "saleInventoryNo": "SN103613957877PS10",
+              "price": 113300,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 15,
+                "max": 17
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860032,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877295,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877295,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "36⅔",
+              "sort": 2
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103605238602PS16",
+              "price": 60900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 1,
+              "tradeDesc": "极速发货",
+              "saleInventoryNo": "SN103611446057PS16",
+              "price": 57900,
+              "timeDelivery": {
+                "min": 3,
+                "max": 4
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "韩国直邮",
+              "saleInventoryNo": "SN103561359728PS16",
+              "price": 59800,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 5,
+                "max": 7
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860032",
+              "price": 54900,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860033,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877296,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877296,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "37⅓",
+              "sort": 3
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103580704590PS06",
+              "price": 61900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103624040643PS06",
+              "price": 58900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "韩国直邮",
+              "saleInventoryNo": "SN103359354884PS06",
+              "price": 74000,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 11,
+                "max": 13
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860033",
+              "price": 55900,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860034,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877297,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877297,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "38",
+              "sort": 4
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103575140943PS05",
+              "price": 61900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103617235281PS05",
+              "price": 55900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "韩国直邮",
+              "saleInventoryNo": "SN103536428952PS05",
+              "price": 64200,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 11,
+                "max": 13
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860035,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877298,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877298,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "38⅔",
+              "sort": 5
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103574502134PS19",
+              "price": 61900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 1,
+              "tradeDesc": "极速发货",
+              "saleInventoryNo": "SN103623346619PS19",
+              "price": 55900,
+              "timeDelivery": {
+                "min": 3,
+                "max": 4
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "韩国直邮",
+              "saleInventoryNo": "SN103462539678PS19",
+              "price": 72900,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 11,
+                "max": 13
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "轻微使用",
+              "saleInventoryNo": "629860035",
+              "price": 49900,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860036,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877299,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877299,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "39⅓",
+              "sort": 6
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103544405308PS09",
+              "price": 70900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103615948726PS09",
+              "price": 54900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "韩国直邮",
+              "saleInventoryNo": "SN103606257149PS09",
+              "price": 55500,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 5,
+                "max": 7
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860036",
+              "price": 52200,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860037,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877300,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877300,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "40",
+              "sort": 7
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103619412602PS31",
+              "price": 56900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 1,
+              "tradeDesc": "极速发货",
+              "saleInventoryNo": "SN103617120827PS31",
+              "price": 55900,
+              "timeDelivery": {
+                "min": 3,
+                "max": 4
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "韩国直邮",
+              "saleInventoryNo": "SN103046523786PS31",
+              "price": 76200,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 12,
+                "max": 14
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860037",
+              "price": 44400,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860038,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877301,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877301,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "40⅔",
+              "sort": 8
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103606301308PS14",
+              "price": 58900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "美国直邮",
+              "saleInventoryNo": "SN103614016891PS14",
+              "price": 107900,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 15,
+                "max": 17
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "仅鞋盒瑕疵",
+              "saleInventoryNo": "629860038",
+              "price": 52900,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860038",
+              "price": 55900,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860039,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877302,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877302,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "41⅓",
+              "sort": 9
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103620339118PS24",
+              "price": 59900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "美国直邮",
+              "saleInventoryNo": "SN103581320117PS24",
+              "price": 110000,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 15,
+                "max": 17
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860039",
+              "price": 57500,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860040,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877303,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877303,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "42",
+              "sort": 10
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103619385054PS27",
+              "price": 68900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103610551199PS27",
+              "price": 58900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "美国直邮",
+              "saleInventoryNo": "SN103620659505PS27",
+              "price": 110000,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 15,
+                "max": 17
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860040",
+              "price": 54700,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860041,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877304,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877304,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "42⅔",
+              "sort": 11
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103601105900PS13",
+              "price": 57900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103610312859PS13",
+              "price": 56900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "美国直邮",
+              "saleInventoryNo": "SN103153658662PS13",
+              "price": 100200,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 15,
+                "max": 17
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860041",
+              "price": 52900,
+              "timeDelivery": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860042,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877305,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877305,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "43⅓",
+              "sort": 12
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103606634996PS23",
+              "price": 56900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103613237516PS23",
+              "price": 55900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "美国直邮",
+              "saleInventoryNo": "SN103250589807PS23",
+              "price": 98000,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 8,
+                "max": 10
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860043,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877306,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877306,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "44",
+              "sort": 13
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103598984456PS01",
+              "price": 59900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103610275766PS01",
+              "price": 58900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "中国香港直邮",
+              "saleInventoryNo": "SN103149662326PS01",
+              "price": 75100,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 6,
+                "max": 9
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860043",
+              "price": 54000,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860044,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877307,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877307,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "44⅔",
+              "sort": 14
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103606026055PS02",
+              "price": 56900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "中国香港直邮",
+              "saleInventoryNo": "SN103610903586PS02",
+              "price": 54400,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 4,
+                "max": 5
+              }
+            },
+            {
+              "tradeType": 0,
+              "tradeDesc": "普通发货",
+              "saleInventoryNo": "SN103610401203PS02",
+              "price": 54900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860045,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877308,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877308,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "45⅓",
+              "sort": 15
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103601085022PS20",
+              "price": 74900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "韩国直邮",
+              "saleInventoryNo": "SN103367365006PS20",
+              "price": 74000,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 11,
+                "max": 13
+              }
+            },
+            {
+              "tradeType": 95,
+              "tradeDesc": "全新微瑕",
+              "saleInventoryNo": "629860045",
+              "price": 67900,
+              "timeDelivery": {
+                "min": 5,
+                "max": 6
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860046,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877309,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877309,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "46",
+              "sort": 16
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103547712636PS14",
+              "price": 102900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "欧洲直邮",
+              "saleInventoryNo": "SN103623454408PS14",
+              "price": 114400,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 14,
+                "max": 16
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860047,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877310,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877310,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "46⅔",
+              "sort": 17
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 3,
+              "tradeDesc": "韩国直邮",
+              "saleInventoryNo": "SN103367403535PS24",
+              "price": 87100,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 11,
+                "max": 13
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860048,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877311,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877311,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "47⅓",
+              "sort": 18
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 2,
+              "tradeDesc": "闪电直发",
+              "saleInventoryNo": "SN103589552430PS09",
+              "price": 108900,
+              "timeDelivery": {
+                "min": 2,
+                "max": 3
+              }
+            },
+            {
+              "tradeType": 3,
+              "tradeDesc": "欧洲直邮",
+              "saleInventoryNo": "SN103614817653PS09",
+              "price": 162400,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 14,
+                "max": 16
+              }
+            }
+          ]
+        }
+      },
+      {
+        "authPrice": 89900,
+        "status": 1,
+        "logoUrl": "https://cdn.poizon.com/pro-img/origin-img/20240718/53cea6f033ce4715930f6591d846bb0c.jpg",
+        "skuId": 629860049,
+        "spuId": 5840544,
+        "properties": [
+          {
+            "level": 1,
+            "propertyValueId": 281877292,
+            "saleProperty": {
+              "propertyId": 3427,
+              "propertyValueId": 281877292,
+              "customValue": "白黑",
+              "level": 1,
+              "showValue": 0,
+              "definitionId": 1,
+              "fontProperty": false,
+              "name": "颜色",
+              "value": "白黑",
+              "sort": 0
+            }
+          },
+          {
+            "level": 2,
+            "propertyValueId": 281877312,
+            "saleProperty": {
+              "propertyId": 4665,
+              "propertyValueId": 281877312,
+              "customValue": "",
+              "level": 2,
+              "showValue": 1,
+              "definitionId": 6,
+              "fontProperty": false,
+              "name": "尺码",
+              "value": "48",
+              "sort": 19
+            }
+          }
+        ],
+        "price": {
+          "quantity": 10,
+          "prices": [
+            {
+              "tradeType": 3,
+              "tradeDesc": "美国直邮",
+              "saleInventoryNo": "SN103517850086PS31",
+              "price": 113300,
+              "channelAdditionInfoDTO": {
+                "explain": "已含税",
+                "symbol": "≈"
+              },
+              "timeDelivery": {
+                "min": 15,
+                "max": 17
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "saleProperties": {
+      "list": [
+        {
+          "propertyId": 3427,
+          "propertyValueId": 281877292,
+          "customValue": "白黑",
+          "level": 1,
+          "showValue": 0,
+          "definitionId": 1,
+          "fontProperty": false,
+          "name": "颜色",
+          "value": "白黑",
+          "sort": 0
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877294,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "36",
+          "sort": 1
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877295,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "36⅔",
+          "sort": 2
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877296,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "37⅓",
+          "sort": 3
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877297,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "38",
+          "sort": 4
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877298,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "38⅔",
+          "sort": 5
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877299,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "39⅓",
+          "sort": 6
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877300,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "40",
+          "sort": 7
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877301,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "40⅔",
+          "sort": 8
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877302,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "41⅓",
+          "sort": 9
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877303,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "42",
+          "sort": 10
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877304,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "42⅔",
+          "sort": 11
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877305,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "43⅓",
+          "sort": 12
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877306,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "44",
+          "sort": 13
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877307,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "44⅔",
+          "sort": 14
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877308,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "45⅓",
+          "sort": 15
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877309,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "46",
+          "sort": 16
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877310,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "46⅔",
+          "sort": 17
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877311,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "47⅓",
+          "sort": 18
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877312,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "48",
+          "sort": 19
+        },
+        {
+          "propertyId": 4665,
+          "propertyValueId": 281877293,
+          "customValue": "",
+          "level": 2,
+          "showValue": 1,
+          "definitionId": 6,
+          "fontProperty": false,
+          "name": "尺码",
+          "value": "35½",
+          "sort": 20
+        }
+      ]
+    },
+    "shareInfo": {
+      "threeDLinkUrl": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=5840544&sourceName=shareDetail&shareSource=productDetail",
+      "shareLinkUrl": "https://cdn-m.dewu.com/router/product/ProductDetail?spuId=5840544&sourceName=shareDetail"
+    }
+  }

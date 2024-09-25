@@ -33,11 +33,11 @@ trait PoizonShopTrait
     /**
      * Poizon Shop: get product data.
      *
-     * @return array
-     * @throws ConnectionException
+     * @return array|null
+     * @throws \Exception
      * @var string $productId
      */
-    public function getPoizonShopProductData(string $productId): array
+    public function getPoizonShopProductData(string $productId): ?array
     {
         $url = 'https://poizonshop.ru/api/catalog/product/' . $productId;
 
