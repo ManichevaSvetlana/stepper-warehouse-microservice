@@ -25,6 +25,13 @@ class UploadProductToShopFromPoizon extends Command
     ];
 
     /**
+     * Categories mapping.
+     *
+     * @var string
+     */
+    public string $parentDelivery = '615677';
+
+    /**
      * The name and signature of the console command.
      *
      * @var string
@@ -76,7 +83,9 @@ class UploadProductToShopFromPoizon extends Command
         if (!$product) {
             echo('Product in poizonshop not found\n');
             $product = $poizon->getPoizonProductData($sku);
-            $preparedProduct = $poizon->getShopFormatFromData($product, $this->categoriesMapping['parent_is_stock'], [615754], []);
+            $parent = $isStock ? $this->categoriesMapping['parent_is_stock'] : $this->parentDelivery;
+            $categories = $isStock ? $this->categoriesMapping : [$this->parentDelivery];
+            $preparedProduct = $poizon->getShopFormatFromData($product, $parent, $categories, []);
         } else {
             $preparedProduct = $command->syncProductsForBitrix('poizon-shop', $product, 'shop', false, false);
         }
