@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('order_site_id')->nullable();
             $table->string('product_name')->nullable();
             $table->string('product_article')->nullable();
-            $table->string('product_link')->nullable();
+            $table->text('product_link')->nullable();
             $table->string('product_size')->nullable();
             $table->date('date_of_order');
             $table->date('onex_date')->nullable();

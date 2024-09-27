@@ -27,6 +27,7 @@ return new class extends Migration
             $table->date('onex_date')->nullable();
             $table->date('flight_date')->nullable();
             $table->text('comment')->nullable();
+            $table->text('product_link')->nullable();
             $table->timestamps();
         });
     }

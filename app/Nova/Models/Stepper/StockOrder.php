@@ -81,6 +81,7 @@ class StockOrder extends Resource
             Date::make('Дата Onex', 'onex_date')->nullable()->sortable(),
             Date::make('Дата рейса', 'flight_date')->nullable()->sortable(),
             Textarea::make('Комментарий', 'comment')->nullable()->hideFromIndex(),
+            Text::make('Ссылка на продукт', 'product_link')->hideFromIndex(),
 
             DateTime::make('Created')->exceptOnForms(),
             DateTime::make('Updated')->exceptOnForms(),
