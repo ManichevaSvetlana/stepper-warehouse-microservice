@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('poizon_date')->nullable();
             $table->string('track_number')->nullable();
             $table->boolean('is_on_control')->default(false);
+            $table->boolean('is_on_website')->default(false);
             $table->string('onex_status')->nullable();
             $table->date('onex_date')->nullable();
             $table->date('flight_date')->nullable();

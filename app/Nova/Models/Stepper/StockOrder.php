@@ -2,11 +2,12 @@
 
 namespace App\Nova\Models\Stepper;
 
+use Alexwenzel\DependencyContainer\DependencyContainer;
 use App\Nova\Resource;
-use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
@@ -76,6 +77,7 @@ class StockOrder extends Resource
                 'customs_clearance' => 'Таможенное прохождение',
                 'pick_up' => 'Получено'
             ]),
+            Boolean::make('Загружен на сайт', 'is_on_website')->nullable()->sortable(),
             Date::make('Дата Onex', 'onex_date')->nullable()->sortable(),
             Date::make('Дата рейса', 'flight_date')->nullable()->sortable(),
             Textarea::make('Комментарий', 'comment')->nullable()->hideFromIndex(),
@@ -83,7 +85,7 @@ class StockOrder extends Resource
             DateTime::make('Created')->exceptOnForms(),
             DateTime::make('Updated')->exceptOnForms(),
 
-            BelongsToMany::make('Orders', 'orders', Order::class),
+            HasMany::make('Orders', 'orders', Order::class),
         ];
     }
 

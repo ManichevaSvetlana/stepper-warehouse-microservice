@@ -5,16 +5,12 @@ namespace App\Nova\Models\Stepper;
 use Alexwenzel\DependencyContainer\DependencyContainer;
 use App\Nova\Resource;
 use Dnwjn\NovaButton\Button;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -34,7 +30,7 @@ class Order extends Resource
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'order_site_id';
 
     /**
      * The columns that should be searched.
@@ -42,7 +38,16 @@ class Order extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name'
+        'id', 'product_name', 'order_site_id', 'product_article', 'contact_value'
+    ];
+
+    /**
+     * Default ordering for index query.
+     *
+     * @var array
+     */
+    public static $sort = [
+        'created_at' => 'desc'
     ];
 
     /**
@@ -55,26 +60,25 @@ class Order extends Resource
     {
         return [
             Panel::make('Тип заказа', [
-                Boolean::make('Онлайн заказ', 'is_online_order')->sortable(),
+                Text::make('Номер заказа', 'order_site_id')->required()->sortable(),
+                Boolean::make('Онлайн заказ', 'is_online_order')->sortable()->filterable(),
             ]),
 
             Panel::make('Основная информация о заказе', [
-                Date::make('Дата заказа', 'date_of_order')->required()->sortable(),
-                Number::make('Цена', 'price')->required()->sortable()->step(0.01),
+                Date::make('Дата заказа', 'date_of_order')->required()->sortable()->filterable(),
+                Number::make('Цена', 'price')->required()->sortable()->step(0.01)->filterable(),
                 Number::make('Скидка', 'sale_value')->sortable()->step(0.01),
+                Text::make('Название продукта', 'product_name')->sortable(),
+                Text::make('Размер продукта', 'product_size')->sortable()->filterable(),
                 DependencyContainer::make([
-                    Text::make('ID заказа на сайте', 'order_site_id')->required()->sortable(),
-                    Text::make('Название продукта', 'product_name')->required()->sortable(),
                     Text::make('Артикул продукта', 'product_article')->required()->sortable(),
                     Text::make('Ссылка на продукт', 'product_link')->required()->hideFromIndex(),
-                    Text::make('Размер продукта', 'product_size')->required()->sortable(),
                     Number::make('Первый платёж', 'first_payment')->hideFromIndex()->step(0.01),
                     Number::make('Второй платёж', 'second_payment')->hideFromIndex()->step(0.01),
-                    Boolean::make('Полностью оплачено', 'is_fully_paid')->sortable(),
+                    Boolean::make('Полностью оплачено', 'is_fully_paid')->sortable()->filterable(),
                 ])->dependsOn('is_online_order', 1),
-                DependencyContainer::make([
-                    BelongsTo::make('Товар в магазине', 'stockOrder', StockOrder::class)->required(),
-                ])->dependsOn('is_online_order', 0),
+
+                BelongsTo::make('Товар в магазине (если не онлайн заказ)', 'stockOrder', StockOrder::class)->nullable()->hideFromIndex()->searchable(),
             ]),
 
             Panel::make('Контактная информация', [
@@ -103,7 +107,7 @@ class Order extends Resource
                     'tbilisi_courier_door' => 'Курьер до двери в Тбилиси',
                     'delivo_point' => 'Пункт выдачи Delivo',
                     'delivo_door' => 'Доставка Delivo на адрес'
-                ])->displayUsingLabels()->default('pick_up'),
+                ])->displayUsingLabels()->default('pick_up')->filterable(),
                 DependencyContainer::make([
                     Select::make('Город доставки', 'delivery_city')->options([
                         'tbilisi' => 'Tbilisi',
@@ -141,7 +145,7 @@ class Order extends Resource
             Panel::make('Логистические данные', [
                 DependencyContainer::make([
                     Boolean::make('Заказано', 'is_ordered')->sortable(),
-                    Boolean::make('На контроле', 'is_on_control')->sortable(),
+                    Boolean::make('На контроле', 'is_on_control')->sortable()->filterable(),
                     Text::make('SKU', 'sku')->hideFromIndex(),
                     Text::make('Трек-номер', 'track_number')->hideFromIndex(),
                     Number::make('Цена в юанях', 'cny_price')->hideFromIndex()->step(0.01),
@@ -158,8 +162,9 @@ class Order extends Resource
                             'customs_clearance' => 'Таможенное прохождение',
                             'pick_up' => 'Получено'
                         ])
+                        ->filterable()
                         ->displayUsingLabels()->default('not_processed'),
-                ])->dependsOnNot('is_online_order', 1),
+                ])->dependsOn('is_online_order', 1),
             ]),
 
             Panel::make('Уведомления и комментарии', [
@@ -171,7 +176,7 @@ class Order extends Resource
                     'prepayment_returned' => 'Возврат предоплаты',
                     'exchange' => 'Обмен',
                     'review_expected' => 'Ожидание отзыва'
-                ])->displayUsingLabels()->default('waiting'),
+                ])->displayUsingLabels()->default('waiting')->filterable(),
                 Text::make('Источник', 'source')->hideFromIndex(),
                 Textarea::make('Комментарий', 'comment')->hideFromIndex(),
             ]),
@@ -240,5 +245,23 @@ class Order extends Resource
     public function actions(NovaRequest $request)
     {
         return [];
+    }
+
+    /**
+     * Build an "index" query for the given resource.
+     *
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        if (empty($request->get('orderBy'))) {
+            $query->getQuery()->orders = [];
+
+            return $query->orderBy(key(static::$sort), reset(static::$sort));
+        }
+
+        return $query;
     }
 }

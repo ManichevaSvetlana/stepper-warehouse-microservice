@@ -54,8 +54,8 @@ return new class extends Migration
 
         Schema::create('order_managers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
-            $table->foreignId('manager_id')->constrained('managers')->onDelete('cascade');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('manager_id');
             $table->timestamps();
         });
     }
@@ -66,5 +66,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('orders');
+        Schema::dropIfExists('order_managers');
     }
 };

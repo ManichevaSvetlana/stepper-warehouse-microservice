@@ -1084,9 +1084,10 @@ class SyncSystemsProducts extends Command
      *
      * @param $initialPrice
      * @param bool $isDivide
+     * @param bool $isToStock
      * @return array
      */
-    public function calculatePrice($initialPrice, bool $isDivide = true): array
+    public function calculatePrice($initialPrice, bool $isDivide = true, bool $isToStock = false): array
     {
         $lari = 0.395;
         $shipment = 32;
@@ -1096,7 +1097,7 @@ class SyncSystemsProducts extends Command
         $originalPriceInCNY = $isDivide ? $initialPrice / 100 : $initialPrice; // original price
         $originalPriceInLari = $originalPriceInCNY * $lari; // price in lari
         $priceWithShipment = $originalPriceInLari + $shipment; // price with shipment
-        $price = $this->calculateCoefficient($priceWithShipment) * $priceWithShipment; // price with coefficient
+        $price = $this->calculateCoefficient($priceWithShipment, $isToStock) * $priceWithShipment; // price with coefficient
 
 
         $price = $this->roundToNearest5or9((($price * $terminalCommission) * $vat)); // price with commissions
@@ -1116,14 +1117,15 @@ class SyncSystemsProducts extends Command
      * Calculate coefficient.
      *
      * @param float $price
+     * @param bool $isToStock
      * @return float
      */
-    public function calculateCoefficient(float $price): float
+    public function calculateCoefficient(float $price, bool $isToStock = false): float
     {
         $min_price = 50;
         $max_price = 999;
-        $min_coefficient = 1.45;
-        $max_coefficient = 1.2;
+        $min_coefficient = !$isToStock ? 1.45 : 1.65;
+        $max_coefficient = !$isToStock ? 1.2 : 1.4;
 
         if ($price < $min_price) {
             return $min_coefficient;

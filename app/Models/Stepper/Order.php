@@ -9,11 +9,6 @@ class Order extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'order_site_id',
         'product_name',
@@ -50,6 +45,8 @@ class Order extends Model
         'sku',
         'price_for_sale',
         'is_transformed_to_stock_order',
+        'created_at',
+        'updated_at',
     ];
 
     /**
@@ -58,6 +55,8 @@ class Order extends Model
      * @var array<string, string>
      */
     protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
         'date_of_order' => 'datetime',
         'onex_date' => 'datetime',
         'poizon_date' => 'datetime',
