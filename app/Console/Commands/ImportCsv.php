@@ -79,7 +79,7 @@ class ImportCsv extends Command
                 'price' => floatval($csv[3]) ?? null,
                 'comment' => $csv[4] ?? null,
                 'source' => $csv[5] ?? null,
-                'sale_value' => $csv[7] ?? null,
+                'sale_value' => floatval($csv[7]) ?? null,
                 'created_at' => $dateOfOrder,
                 'updated_at' => $dateOfOrder,
             ]);
@@ -148,7 +148,7 @@ class ImportCsv extends Command
                 'is_fully_paid' => strtolower($csv[12]) === 'true' ? 1 : 0,
                 'status_notification' => $this->notificationStatuses[trim($csv[14])] ?? 'waiting',
                 'status_delivery' => $this->deliveryStatuses[trim($csv[15])] ?? 'not_processed',
-                'sale_value' => $csv[16] ?? null,
+                'sale_value' => floatval($csv[16]) ?? null,
                 'contact_value' => $contactValue ?? null,
                 'contact_type' => $contactType ?? 'other',
 
