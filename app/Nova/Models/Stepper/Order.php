@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\FormData;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
@@ -152,19 +153,28 @@ class Order extends Resource
                     Date::make('Дата поступления на Poizon', 'poizon_date')->hideFromIndex(),
                     Date::make('Дата поступления в Onex', 'onex_date')->sortable(),
                     Date::make('Дата рейса', 'flight_date')->hideFromIndex(),
-                    Select::make('Статус доставки', 'status_delivery')
-                        ->hideFromIndex()
-                        ->options([
-                            'not_processed' => 'Не обработано',
-                            'expected' => 'Ожидается',
-                            'in_sort_centre' => 'На сортировочном центре',
-                            'on_its_way' => 'В пути',
-                            'customs_clearance' => 'Таможенное прохождение',
-                            'pick_up' => 'Получено'
-                        ])
-                        ->filterable()
-                        ->displayUsingLabels()->default('not_processed'),
                 ])->dependsOn('is_online_order', 1),
+
+                Select::make('Статус доставки', 'status_delivery')
+                    ->hideFromIndex()
+                    ->options([
+                        'not_processed' => 'Не обработано',
+                        'expected' => 'Ожидается',
+                        'in_sort_centre' => 'На сортировочном центре',
+                        'on_its_way' => 'В пути',
+                        'customs_clearance' => 'Таможенное прохождение',
+                        'pick_up' => 'Получено'
+                    ])
+                    ->filterable()
+                    ->displayUsingLabels()->default('not_processed')->dependsOn('is_online_order', function (Select $field, NovaRequest $request, FormData $formData) {
+                        // Проверяем значение поля 'is_online_order'
+                        if ($formData->is_online_order == 1) {
+                            $field->show(); // Показываем поле если is_online_order равно 1
+                        } else {
+                            $field->hide(); // Скрываем поле если is_online_order не равно 1
+                        }
+                    })
+                ,
             ]),
 
             Panel::make('Уведомления и комментарии', [
