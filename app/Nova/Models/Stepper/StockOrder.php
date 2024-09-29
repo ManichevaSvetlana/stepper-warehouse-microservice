@@ -37,7 +37,7 @@ class StockOrder extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name'
+        'id', 'name', 'article', 'sku'
     ];
 
     /**
@@ -47,7 +47,7 @@ class StockOrder extends Resource
      */
     public function title(): string
     {
-        return $this->name . ' - ' . $this->size . ': #' . $this->id;
+        return $this->name . ' - ' . $this->size . ': #' . $this->id . ' (' . $this->article . ')';
     }
 
     /**
