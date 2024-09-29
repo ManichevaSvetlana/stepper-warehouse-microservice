@@ -61,16 +61,25 @@ class Order extends Resource
     {
         return [
             Panel::make('Тип заказа', [
-                Text::make('Номер заказа', 'order_site_id')->required()->sortable(),
-                Boolean::make('Онлайн заказ', 'is_online_order')->sortable()->filterable(),
+                Boolean::make('Индивидуальный заказ (10-20 дней)', 'is_online_order')->sortable()->filterable(),
             ]),
 
             Panel::make('Основная информация о заказе', [
+                Text::make('Номер заказа на сайте', 'order_site_id')->required()->sortable()->dependsOn('is_online_order', 1),
                 Date::make('Дата заказа', 'date_of_order')->required()->sortable()->filterable(),
-                Number::make('Цена', 'price')->required()->sortable()->step(0.01)->filterable(),
+                // Price
+                Number::make('Цена', 'price')->required()->sortable()->step(0.01)->filterable()->dependsOn('is_online_order', 1),
+                Number::make('Цена', 'price')->sortable()->step(0.01)->filterable()->dependsOn('is_online_order', 0),
+
                 Number::make('Скидка', 'sale_value')->sortable()->step(0.01),
-                Text::make('Название продукта', 'product_name')->sortable(),
-                Text::make('Размер продукта', 'product_size')->sortable()->filterable(),
+
+                // Product Name
+                Text::make('Название продукта', 'product_name')->required()->sortable()->dependsOn('is_online_order', 1),
+                Text::make('Название продукта', 'product_name')->sortable()->dependsOn('is_online_order', 0),
+                // Product Size
+                Text::make('Размер продукта', 'product_size')->required()->sortable()->filterable()->dependsOn('is_online_order', 1),
+                Text::make('Размер продукта', 'product_size')->sortable()->filterable()->dependsOn('is_online_order', 0),
+
                 DependencyContainer::make([
                     Text::make('Артикул продукта', 'product_article')->required()->sortable(),
                     Text::make('Ссылка на продукт', 'product_link')->required()->hideFromIndex(),
@@ -79,7 +88,7 @@ class Order extends Resource
                     Boolean::make('Полностью оплачено', 'is_fully_paid')->sortable()->filterable(),
                 ])->dependsOn('is_online_order', 1),
 
-                BelongsTo::make('Товар в магазине (если не онлайн заказ)', 'stockOrder', StockOrder::class)->nullable()->hideFromIndex()->searchable(),
+                BelongsTo::make('Товар в магазине', 'stockOrder', StockOrder::class)->nullable()->hideFromIndex()->searchable()->dependsOn('is_online_order', 0),
             ]),
 
             Panel::make('Контактная информация', [
