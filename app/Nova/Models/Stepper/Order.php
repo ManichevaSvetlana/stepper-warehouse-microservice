@@ -60,7 +60,7 @@ class Order extends Resource
     public function fields(NovaRequest $request)
     {
         $dependsFunction = function ($field, $request, $formData, $attribute, $value) {
-            if ($formData->$attribute == $value) {
+            if ($formData->$attribute && $value === 1) {
                 $field->show();
             } else {
                 $field->hide();
