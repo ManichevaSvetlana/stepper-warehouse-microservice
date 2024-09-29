@@ -59,26 +59,48 @@ class Order extends Resource
      */
     public function fields(NovaRequest $request)
     {
+        $dependsFunction = function ($field, $request, $formData, $attribute, $value) {
+            if ($formData->$attribute == $value) {
+                $field->show();
+            } else {
+                $field->hide();
+            }
+        };
+
         return [
             Panel::make('Тип заказа', [
                 Boolean::make('Индивидуальный заказ (10-20 дней)', 'is_online_order')->sortable()->filterable(),
             ]),
 
             Panel::make('Основная информация о заказе', [
-                Text::make('Номер заказа на сайте', 'order_site_id')->required()->sortable()->dependsOn('is_online_order', 1),
+                Text::make('Номер заказа на сайте', 'order_site_id')->required()->sortable()->dependsOn('is_online_order', function($field, $request, $formData) use($dependsFunction){
+                    return $dependsFunction($field, $request, $formData, 'is_online_order', 1);
+                }),
                 Date::make('Дата заказа', 'date_of_order')->required()->sortable()->filterable(),
                 // Price
-                Number::make('Цена', 'price')->required()->sortable()->step(0.01)->filterable()->dependsOn('is_online_order', 1),
-                Number::make('Цена', 'price')->sortable()->step(0.01)->filterable()->dependsOn('is_online_order', 0),
+                Number::make('Цена', 'price')->required()->sortable()->step(0.01)->filterable()->dependsOn('is_online_order', function($field, $request, $formData) use($dependsFunction){
+                    return $dependsFunction($field, $request, $formData, 'is_online_order', 1);
+                }),
+                Number::make('Цена', 'price')->sortable()->step(0.01)->filterable()->dependsOn('is_online_order', function($field, $request, $formData) use($dependsFunction){
+                    return $dependsFunction($field, $request, $formData, 'is_online_order', 0);
+                })->hideFromIndex(),
 
                 Number::make('Скидка', 'sale_value')->sortable()->step(0.01),
 
                 // Product Name
-                Text::make('Название продукта', 'product_name')->required()->sortable()->dependsOn('is_online_order', 1),
-                Text::make('Название продукта', 'product_name')->sortable()->dependsOn('is_online_order', 0),
+                Text::make('Название продукта', 'product_name')->required()->sortable()->dependsOn('is_online_order', function($field, $request, $formData) use($dependsFunction){
+                    return $dependsFunction($field, $request, $formData, 'is_online_order', 1);
+                }),
+                Text::make('Название продукта', 'product_name')->sortable()->dependsOn('is_online_order', function($field, $request, $formData) use($dependsFunction){
+                    return $dependsFunction($field, $request, $formData, 'is_online_order', 0);
+                })->hideFromIndex(),
                 // Product Size
-                Text::make('Размер продукта', 'product_size')->required()->sortable()->filterable()->dependsOn('is_online_order', 1),
-                Text::make('Размер продукта', 'product_size')->sortable()->filterable()->dependsOn('is_online_order', 0),
+                Text::make('Размер продукта', 'product_size')->required()->sortable()->filterable()->dependsOn('is_online_order', function($field, $request, $formData) use($dependsFunction){
+                    return $dependsFunction($field, $request, $formData, 'is_online_order', 1);
+                }),
+                Text::make('Размер продукта', 'product_size')->sortable()->filterable()->dependsOn('is_online_order', function($field, $request, $formData) use($dependsFunction){
+                    return $dependsFunction($field, $request, $formData, 'is_online_order', 0);
+                })->hideFromIndex(),
 
                 DependencyContainer::make([
                     Text::make('Артикул продукта', 'product_article')->required()->sortable(),
@@ -88,11 +110,13 @@ class Order extends Resource
                     Boolean::make('Полностью оплачено', 'is_fully_paid')->sortable()->filterable(),
                 ])->dependsOn('is_online_order', 1),
 
-                BelongsTo::make('Товар в магазине', 'stockOrder', StockOrder::class)->nullable()->hideFromIndex()->searchable()->dependsOn('is_online_order', 0),
+                BelongsTo::make('Товар в магазине', 'stockOrder', StockOrder::class)->nullable()->hideFromIndex()->searchable()->dependsOn('is_online_order', function($field, $request, $formData) use($dependsFunction){
+                    return $dependsFunction($field, $request, $formData, 'is_online_order', 0);
+                }),
             ]),
 
             Panel::make('Контактная информация', [
-                Select::make('Тип контакта', 'contact_type')->required()->hideFromIndex()->options([
+                Select::make('Как связаться с клиентом', 'contact_type')->required()->hideFromIndex()->options([
                     'phone' => 'Телефон',
                     'email' => 'Email',
                     'whatsapp' => 'WhatsApp',
@@ -102,11 +126,11 @@ class Order extends Resource
                     'instagram' => 'Instagram',
                     'other' => 'Другое',
                 ])->displayUsingLabels(),
-                Text::make('Контактные данные', 'contact_value')->required()->hideFromIndex(),
-                Text::make('Имя пользователя', 'site_name')->hideFromIndex(),
-                Text::make('Телефон пользователя', 'site_phone')->hideFromIndex(),
+                Text::make('Контактные данные клиента', 'contact_value')->required()->hideFromIndex(),
+                Text::make('Имя клиента', 'site_name')->hideFromIndex(),
+                Text::make('Телефон клиента', 'site_phone')->hideFromIndex(),
                 DependencyContainer::make([
-                    Text::make('Электронная почта пользователя', 'site_email')->hideFromIndex(),
+                    Text::make('Электронная почта клиента', 'site_email')->hideFromIndex(),
                 ])->dependsOn('is_online_order', 1),
             ]),
 
