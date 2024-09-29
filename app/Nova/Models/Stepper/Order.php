@@ -84,8 +84,15 @@ class Order extends Resource
                     Boolean::make('Полностью оплачено', 'is_fully_paid')->sortable()->filterable(),
                 ])->dependsOn('is_online_order', 1),
 
+                BelongsTo::make('Товар в магазине', 'stockOrder', StockOrder::class)->nullable()->hideFromIndex()->searchable()->dependsOn('is_online_order', function ($field, NovaRequest $request, FormData $formData) {
+                    if ($formData->is_online_order == 0) {
+                        $field->show();
+                    } else {
+                        $field->hide();
+                    }
+                }),
+
                 DependencyContainer::make([
-                    BelongsTo::make('Товар в магазине', 'stockOrder', StockOrder::class)->nullable()->hideFromIndex()->searchable(),
                     Text::make('Название продукта', 'product_name'),
                     Text::make('Размер продукта', 'product_size')->required(),
                     Number::make('Цена', 'price')->step(0.01)->hideFromIndex(),
@@ -178,11 +185,10 @@ class Order extends Resource
                     ])
                     ->filterable()
                     ->displayUsingLabels()->default('not_processed')->dependsOn('is_online_order', function (Select $field, NovaRequest $request, FormData $formData) {
-                        // Проверяем значение поля 'is_online_order'
                         if ($formData->is_online_order == 1) {
-                            $field->show(); // Показываем поле если is_online_order равно 1
+                            $field->show();
                         } else {
-                            $field->hide(); // Скрываем поле если is_online_order не равно 1
+                            $field->hide();
                         }
                     })
                 ,
