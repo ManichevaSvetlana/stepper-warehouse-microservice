@@ -4,10 +4,11 @@ namespace App\Models\Stepper;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'order_site_id',
@@ -47,6 +48,7 @@ class Order extends Model
         'is_transformed_to_stock_order',
         'created_at',
         'updated_at',
+        'is_return_possible'
     ];
 
     /**

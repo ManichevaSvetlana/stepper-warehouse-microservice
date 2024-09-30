@@ -6,7 +6,11 @@ use \Illuminate\Database\Schema\Blueprint;
 
 
 Route::get('/run-command', function () {
-    return \Illuminate\Support\Facades\Artisan::call('poizon:update-poizon-shop-data');
+    if (!Schema::hasColumn('orders', 'is_return_possible')) {
+         Schema::table('orders', function (Blueprint $table) {
+              $table->boolean('is_return_possible')->default(false);
+         });
+    }
 });
 
 Route::get('/', function () {

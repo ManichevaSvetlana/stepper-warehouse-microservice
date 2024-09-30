@@ -82,6 +82,7 @@ class Order extends Resource
                     Number::make('Первый платёж', 'first_payment')->hideFromIndex()->step(0.01),
                     Number::make('Второй платёж', 'second_payment')->hideFromIndex()->step(0.01),
                     Boolean::make('Полностью оплачено', 'is_fully_paid')->sortable()->filterable(),
+                    Boolean::make('Возможен обмен', 'is_return_possible')->sortable()->filterable(),
                 ])->dependsOn('is_online_order', 1),
 
                 BelongsTo::make('Товар в магазине', 'stockOrder', StockOrder::class)->nullable()->hideFromIndex()->searchable()->dependsOn('is_online_order', function ($field, NovaRequest $request, FormData $formData) {

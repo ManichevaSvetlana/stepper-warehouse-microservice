@@ -47,6 +47,7 @@ return new class extends Migration
             $table->boolean('is_on_control')->default(false);
             $table->date('flight_date')->nullable();
             $table->boolean('is_online_order')->default(false);
+            $table->boolean('is_return_possible')->default(false);
             $table->boolean('is_transformed_to_stock_order')->default(false);
             $table->softDeletes();
             $table->timestamps();
