@@ -9,6 +9,7 @@ use App\Models\Poizon\PoizonShopProduct;
 use App\Models\Shop\ShopProduct;
 use App\Models\System\CommandRunSku;
 use App\Models\System\FailedProduct;
+use App\Models\System\RunnedProduct;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Console\Command;
 
@@ -646,12 +647,17 @@ class SyncSystemsProducts extends Command
             //if($withoutImages) $productsData = $preparedProducts;
 
             echo 'Creating product with variations in shop: ' . $title . PHP_EOL;
-            if (count($preparedProducts)) $responses[] = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
+            if (count($preparedProducts)) $tempResponse = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
             else {
                 $productsData[0]['presence'] = false;
                 $productsData[0]["availability"] = "Unpublish";
-                $responses[] = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
+                $tempResponse = $withoutCreate ? $productsData : $shop->createShopProducts($productsData);
             }
+            $responses[] = $tempResponse;
+            RunnedProduct::create([
+                'sku' => $productSku,
+                'data' => $productsData
+            ]);
         }
 
         return $responses;
