@@ -10,4 +10,8 @@ class RunnedProduct extends Model
     use HasFactory;
 
     protected $fillable = ['data', 'sku'];
+
+    protected $casts = [
+        'data' => 'array',
+    ];
 }
