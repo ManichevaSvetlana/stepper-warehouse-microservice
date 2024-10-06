@@ -5,8 +5,9 @@ namespace App\Nova\Models\Stepper;
 use Alexwenzel\DependencyContainer\DependencyContainer;
 use App\Nova\Resource;
 use Dnwjn\NovaButton\Button;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
+use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\FormData;
@@ -16,6 +17,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Panel;
+use ZiffMedia\NovaSelectPlus\SelectPlus;
 
 class Order extends Resource
 {
@@ -39,8 +41,18 @@ class Order extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'product_name', 'order_site_id', 'product_article', 'contact_value'
+        'id', 'product_name', 'order_site_id', 'product_article', 'contact_value', 'track_number', 'sku'
     ];
+
+    /**
+     * Get the displayable label of the resource.
+     *
+     * @return string
+     */
+    public function title(): string
+    {
+        return $this->order_site_id . ' - ' . $this->product_name . ': #' . $this->id . ' (' . $this->product_article . ')';
+    }
 
     /**
      * Default ordering for index query.
@@ -50,6 +62,13 @@ class Order extends Resource
     public static $sort = [
         'created_at' => 'desc'
     ];
+
+    /**
+     * Indicates whether Nova should check for modifications between viewing and updating a resource.
+     *
+     * @var bool
+     */
+    public static $trafficCop = false;
 
     /**
      * Get the fields displayed by the resource.
@@ -163,11 +182,29 @@ class Order extends Resource
             ]),
 
             Panel::make('Логистические данные', [
+                Boolean::make('Заказано', 'is_ordered')->sortable()->filterable()->dependsOn('is_online_order', function ($field, NovaRequest $request, FormData $formData) {
+                    if ($formData->is_online_order == 1) {
+                        $field->show();
+                    } else {
+                        $field->hide();
+                    }
+                }),
+                Boolean::make('На контроле', 'is_on_control')->sortable()->filterable()->dependsOn('is_online_order', function ($field, NovaRequest $request, FormData $formData) {
+                    if ($formData->is_online_order == 1) {
+                        $field->show();
+                    } else {
+                        $field->hide();
+                    }
+                }),
+                Text::make('Трек-номер', 'track_number')->dependsOn('is_online_order', function ($field, NovaRequest $request, FormData $formData) {
+                    if ($formData->is_online_order == 1) {
+                        $field->show();
+                    } else {
+                        $field->hide();
+                    }
+                }),
                 DependencyContainer::make([
-                    Boolean::make('Заказано', 'is_ordered')->sortable(),
-                    Boolean::make('На контроле', 'is_on_control')->sortable()->filterable(),
                     Text::make('SKU', 'sku')->hideFromIndex(),
-                    Text::make('Трек-номер', 'track_number')->hideFromIndex(),
                     Number::make('Цена в юанях', 'cny_price')->hideFromIndex()->step(0.01),
                     Date::make('Дата поступления на Poizon', 'poizon_date')->hideFromIndex(),
                     Date::make('Дата поступления в Onex', 'onex_date')->sortable(),
@@ -185,7 +222,7 @@ class Order extends Resource
                         'pick_up' => 'Получено'
                     ])
                     ->filterable()
-                    ->displayUsingLabels()->default('not_processed')->dependsOn('is_online_order', function (Select $field, NovaRequest $request, FormData $formData) {
+                    ->displayUsingLabels()->default('not_processed')->dependsOn('is_online_order', function ($field, NovaRequest $request, FormData $formData) {
                         if ($formData->is_online_order == 1) {
                             $field->show();
                         } else {
@@ -193,6 +230,10 @@ class Order extends Resource
                         }
                     })
                 ,
+            ]),
+
+            Panel::make('Менеджеры', [
+                SelectPlus::make('Менеджеры', 'managers', Manager::class),
             ]),
 
             Panel::make('Уведомления и комментарии', [
@@ -209,24 +250,47 @@ class Order extends Resource
                 Textarea::make('Комментарий', 'comment')->hideFromIndex(),
             ]),
 
-            Panel::make('Добавить товар на сайт', [
+            Panel::make('Возврат и Обмен', [
+                BelongsTo::make('Заказ на обмен', 'returnOrder', Order::class)->nullable()->hideFromIndex()->searchable(),
+                Select::make('Статус возврата', 'return_status')->hideFromIndex()->options([
+                    'return' => 'Возврат',
+                    'exchange' => 'Обмен',
+                ])->displayUsingLabels()->filterable(),
+
+
+                Number::make('Сумма возврата', 'return_sum')->step(0.01)->hideFromIndex()->filterable()->dependsOn('return_status', function ($field, NovaRequest $request, FormData $formData) {
+                    if (in_array($formData->return_status, ['return', 'exchange'])) {
+                        $field->show();
+                    } else {
+                        $field->hide();
+                    }
+                }),
+                Boolean::make('Деньги вернули', 'is_paid_back')->filterable()->dependsOn('return_status', function ($field, NovaRequest $request, FormData $formData) {
+                    if (in_array($formData->return_status, ['return', 'exchange'])) {
+                        $field->show();
+                    } else {
+                        $field->hide();
+                    }
+                }),
+
                 DependencyContainer::make([
+                    Textarea::make('Причина возврата', 'return_reason')->hideFromIndex(),
+                    Text::make('Номер счета получателя', 'return_number')->hideFromIndex(),
+                    Text::make('Имя получателя', 'return_name')->hideFromIndex(),
+                    Date::make('Дата возврата', 'return_date')->hideFromIndex(),
+                    Files::make('Возврат: чек', 'return_file'),
+
+
                     Boolean::make('Добавлен на сайт', 'is_transformed_to_stock_order')->hideFromIndex()->canSee(function () {
                         return $this->is_transformed_to_stock_order;
                     })->readonly(),
                     Number::make('Цена для продажи', 'price_for_sale')->hideFromIndex()->step(0.01),
                     Button::make('Добавить товар на сайт')
                         ->link("/api-nova/transform-order-to-stock?order_id={$this->id}", '_self'),
-                ])->dependsOn('status_notification', 'exchange')->canSee(function () {
+                ])->dependsOnIn('return_status', ['return', 'exchange'])->canSee(function () {
                     return !$this->is_transformed_to_stock_order;
                 }),
             ]),
-
-            Date::make('Created', 'created_at')->exceptOnForms(),
-            Date::make('Updated', 'updated_at')->exceptOnForms(),
-
-
-            BelongsToMany::make('Менеджеры', 'managers', Manager::class),
 
         ];
     }

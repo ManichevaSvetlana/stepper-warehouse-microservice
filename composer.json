@@ -11,7 +11,9 @@
         "php": "^8.2",
         "alexwenzel/nova-dependency-container": "^1.12",
         "berika/products-to-shop-uploader": "@dev",
+        "degecko/nova-filters-summary": "^2.0",
         "dnwjn/nova-button": "^4.0",
+        "ebess/advanced-nova-media-library": "^4.2",
         "laravel/framework": "^11.0",
         "laravel/nova": "^4.0",
         "laravel/sanctum": "^4.0",
@@ -19,7 +21,8 @@
         "mesilov/bitrix24-php-sdk": "^0.2.0",
         "php-junior/nova-logs": "^1.1",
         "stepanenko3/nova-command-runner": "^4.3",
-        "stepanenko3/nova-logs-tool": "^2.2"
+        "stepanenko3/nova-logs-tool": "^2.2",
+        "ziffmedia/nova-select-plus": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

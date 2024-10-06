@@ -37,7 +37,7 @@ class StockOrder extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'article', 'sku'
+        'id', 'name', 'article', 'sku', 'track_number'
     ];
 
     /**
@@ -49,6 +49,13 @@ class StockOrder extends Resource
     {
         return $this->name . ' - ' . $this->size . ': #' . $this->id . ' (' . $this->article . ')';
     }
+
+    /**
+     * Indicates whether Nova should check for modifications between viewing and updating a resource.
+     *
+     * @var bool
+     */
+    public static $trafficCop = false;
 
     /**
      * Get the fields displayed by the resource.

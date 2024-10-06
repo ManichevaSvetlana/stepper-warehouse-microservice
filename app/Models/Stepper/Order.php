@@ -5,10 +5,13 @@ namespace App\Models\Stepper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Order extends Model
+class Order extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'order_site_id',
@@ -48,7 +51,15 @@ class Order extends Model
         'is_transformed_to_stock_order',
         'created_at',
         'updated_at',
-        'is_return_possible'
+        'is_return_possible',
+        'return_status',
+        'return_order_id',
+        'return_reason',
+        'is_paid_back',
+        'return_sum',
+        'return_number',
+        'return_name',
+        'return_date'
     ];
 
     /**
@@ -63,6 +74,7 @@ class Order extends Model
         'onex_date' => 'datetime',
         'poizon_date' => 'datetime',
         'flight_date' => 'datetime',
+        'return_date' => 'datetime',
     ];
 
     /**
@@ -79,5 +91,21 @@ class Order extends Model
     public function stockOrder(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(StockOrder::class);
+    }
+
+    /**
+     * Get the return order for the order.
+     */
+    public function returnOrder(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Order::class, 'return_order_id');
+    }
+
+    /**
+     * Get the order return file.
+     */
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('return_file')->singleFile();
     }
 }
