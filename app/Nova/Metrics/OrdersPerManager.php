@@ -17,8 +17,14 @@ class OrdersPerManager extends Partition
      */
     public function calculate(NovaRequest $request)
     {
-        // Используем join для подсчета заказов, относящихся к каждому менеджеру
-        return $this->count($request, Order::query()->join('order_managers', 'orders.id', '=', 'order_managers.order_id'), 'order_managers.manager_id')
+        // Получаем текущий месяц и год
+        $startOfMonth = now()->startOfMonth();
+        $endOfMonth = now()->endOfMonth();
+
+        // Используем join для подсчета заказов, относящихся к каждому менеджеру за текущий месяц
+        return $this->count($request, Order::query()
+            ->join('order_managers', 'orders.id', '=', 'order_managers.order_id')
+            ->whereBetween('orders.created_at', [$startOfMonth, $endOfMonth]), 'order_managers.manager_id')
             ->label(function ($managerId) {
                 // Находим менеджера по его ID и возвращаем его имя
                 $manager = Manager::find($managerId);
