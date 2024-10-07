@@ -15,7 +15,7 @@
         "dnwjn/nova-button": "^4.0",
         "ebess/advanced-nova-media-library": "^4.2",
         "laravel/framework": "^11.0",
-        "laravel/nova": "^4.0",
+        "laravel/nova": "4.35.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "mesilov/bitrix24-php-sdk": "^0.2.0",

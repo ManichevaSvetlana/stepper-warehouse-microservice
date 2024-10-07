@@ -6,11 +6,6 @@ use \Illuminate\Database\Schema\Blueprint;
 
 
 Route::get('/run-command', function () {
-    if (!Schema::hasColumn('orders', 'is_return_possible')) {
-         Schema::table('orders', function (Blueprint $table) {
-              $table->boolean('is_return_possible')->default(false);
-         });
-    }
 });
 
 Route::get('/', function () {

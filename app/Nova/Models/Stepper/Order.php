@@ -83,6 +83,19 @@ class Order extends Resource
                 Boolean::make('Индивидуальный заказ (10-20 дней)', 'is_online_order')->sortable()->filterable(),
             ]),
 
+            Text::make('Дней прошло', function () {
+                $isOnlineOrder = $this->is_online_order;
+                $days = round($this->created_at->diffInDays());
+                $statusDelivery = $this->status_delivery;
+                if(!($days >= 16 && $statusDelivery !== 'pick_up' && $isOnlineOrder)) {
+                    return "<span ></span>";
+                }
+                $style = 'display: inline-block; padding: 6px 8px; border-radius: 50%; color: white;';
+
+                $color = $days >= 20 ? 'red' : 'orange';
+                return "<span style='{$style} background-color: {$color};'>{$days}</span>";
+            })->asHtml()->onlyOnIndex(),
+
             Panel::make('Основная информация о заказе', [
                 Text::make('Номер заказа на сайте', 'order_site_id')->sortable()->onlyOnIndex(), // For index only
                 Date::make('Дата заказа', 'date_of_order')->required()->sortable()->filterable(),
@@ -265,7 +278,7 @@ class Order extends Resource
                         $field->hide();
                     }
                 }),
-                Boolean::make('Деньги вернули', 'is_paid_back')->filterable()->dependsOn('return_status', function ($field, NovaRequest $request, FormData $formData) {
+                Boolean::make('Деньги вернули', 'is_paid_back')->hideFromIndex()->filterable()->dependsOn('return_status', function ($field, NovaRequest $request, FormData $formData) {
                     if (in_array($formData->return_status, ['return', 'exchange'])) {
                         $field->show();
                     } else {
