@@ -3,6 +3,12 @@
 namespace App\Nova\Models\Stepper;
 
 use Alexwenzel\DependencyContainer\DependencyContainer;
+use App\Nova\Metrics\NewOfflineOrders;
+use App\Nova\Metrics\NewOnlineOrders;
+use App\Nova\Metrics\NewOrders;
+use App\Nova\Metrics\OrdersPerDay;
+use App\Nova\Metrics\OrdersPerMonths;
+use App\Nova\Metrics\OrdersPerType;
 use App\Nova\Resource;
 use Dnwjn\NovaButton\Button;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
@@ -316,7 +322,9 @@ class Order extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+
+        ];
     }
 
     /**
