@@ -221,7 +221,7 @@ class Order extends Resource
                     } else {
                         $field->hide();
                     }
-                }),
+                })->sortable(),
                 DependencyContainer::make([
                     Text::make('SKU', 'sku')->hideFromIndex(),
                     Number::make('Цена в юанях', 'cny_price')->hideFromIndex()->step(0.01),
