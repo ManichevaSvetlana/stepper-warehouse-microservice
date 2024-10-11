@@ -19,6 +19,10 @@ class NewOnlineOrders extends Value
     {
         // Логика для диапазонов времени
         switch ($request->range) {
+            case 'THIS_MONTH':
+                $start = now()->startOfMonth();
+                $end = now()->endOfMonth();
+                break;
             case 'LAST_MONTH':
                 $start = now()->subMonth()->startOfMonth();
                 $end = now()->subMonth()->endOfMonth();
@@ -60,11 +64,12 @@ class NewOnlineOrders extends Value
     public function ranges()
     {
         return [
-            30 => '30 дней',               // 30 дней
-            'LAST_MONTH' => 'Прошлый месяц', // Прошлый месяц
+            'THIS_MONTH' => 'Текущий месяц',  // Текущий месяц
+            'LAST_MONTH' => 'Прошлый месяц',  // Прошлый месяц
             'PREVIOUS_MONTH' => 'Позапрошлый месяц', // Позапрошлый месяц
-            'TODAY' => 'Сегодня',           // Сегодня
-            365 => 'Год',                  // Год
+            30 => '30 дней',                  // 30 дней
+            'TODAY' => 'Сегодня',             // Сегодня
+            365 => 'Год',                     // Год
         ];
     }
 
