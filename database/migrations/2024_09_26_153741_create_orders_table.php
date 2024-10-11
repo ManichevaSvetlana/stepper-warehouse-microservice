@@ -49,6 +49,13 @@ return new class extends Migration
             $table->boolean('is_online_order')->default(false);
             $table->boolean('is_return_possible')->default(false);
             $table->boolean('is_transformed_to_stock_order')->default(false);
+
+            $table->string('tag_brand')->nullable();
+            $table->string('tag_size_us')->nullable();
+            $table->string('tag_size_uk')->nullable();
+            $table->string('tag_size_eu')->nullable();
+            $table->string('tag_size_sm')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });

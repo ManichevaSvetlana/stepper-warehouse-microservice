@@ -5,6 +5,8 @@ namespace App\Models\Stepper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Text;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -12,6 +14,25 @@ class Order extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes;
     use InteractsWithMedia;
+
+    /*Select::make('Бренд', 'tag_brand')->hideFromIndex()->options([
+                        'adidas' => 'Adidas',
+                        'nike' => 'Nike',
+                        'puma' => 'Puma',
+                        'reebok' => 'Reebok',
+                        'converse' => 'Converse',
+                        'vans' => 'Vans',
+                        'new_balance' => 'New Balance',
+                        'asics' => 'Asics',
+                        'fila' => 'Fila',
+                        'jordan' => 'Jordan',
+                        'under_armour' => 'Under Armour',
+                        'other' => 'Другое',
+                    ])->displayUsingLabels()->hideFromIndex(),
+                    Text::make('Размер US', 'tag_size_us')->hideFromIndex(),
+                    Text::make('Размер UK', 'tag_size_uk')->hideFromIndex(),
+                    Text::make('Размер EU', 'tag_size_eu')->hideFromIndex(),
+                    Text::make('Размер SM', 'tag_size_sm')->hideFromIndex(),*/
 
     protected $fillable = [
         'order_site_id',
@@ -59,7 +80,13 @@ class Order extends Model implements HasMedia
         'return_sum',
         'return_number',
         'return_name',
-        'return_date'
+        'return_date',
+
+        'tag_brand',
+        'tag_size_us',
+        'tag_size_uk',
+        'tag_size_eu',
+        'tag_size_sm',
     ];
 
     /**

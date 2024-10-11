@@ -255,6 +255,29 @@ class Order extends Resource
                 SelectPlus::make('Менеджеры', 'managers', Manager::class),
             ]),
 
+            Panel::make('Язычок', [
+                DependencyContainer::make([
+                    Select::make('Бренд', 'tag_brand')->hideFromIndex()->options([
+                        'adidas' => 'Adidas',
+                        'nike' => 'Nike',
+                        'puma' => 'Puma',
+                        'reebok' => 'Reebok',
+                        'converse' => 'Converse',
+                        'vans' => 'Vans',
+                        'new_balance' => 'New Balance',
+                        'asics' => 'Asics',
+                        'fila' => 'Fila',
+                        'jordan' => 'Jordan',
+                        'under_armour' => 'Under Armour',
+                        'other' => 'Другое',
+                    ])->displayUsingLabels()->hideFromIndex(),
+                    Number::make('Размер US', 'tag_size_us')->hideFromIndex()->step(0.5),
+                    Number::make('Размер UK', 'tag_size_uk')->hideFromIndex()->step(0.5),
+                    Number::make('Размер EU', 'tag_size_eu')->hideFromIndex()->step(0.5),
+                    Number::make('Размер SM', 'tag_size_sm')->hideFromIndex()->step(0.5),
+                ])->dependsOn('is_online_order', 1),
+            ]),
+
             Panel::make('Уведомления и комментарии', [
                 Select::make('Статус уведомления', 'status_notification')->hideFromIndex()->options([
                     'waiting' => 'Ожидание',
