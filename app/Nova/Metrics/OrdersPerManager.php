@@ -4,11 +4,14 @@ namespace App\Nova\Metrics;
 
 use App\Models\Stepper\Manager;
 use App\Models\Stepper\Order;
+use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Partition;
 
 class OrdersPerManager extends Partition
 {
+    public $name = 'Менеджер - заказы (умноженные на 100)';
+
     /**
      * Calculate the value of the metric.
      *
@@ -17,29 +20,31 @@ class OrdersPerManager extends Partition
      */
     public function calculate(NovaRequest $request)
     {
-        // Получаем текущий месяц и год
         $startOfMonth = now()->startOfMonth();
         $endOfMonth = now()->endOfMonth();
 
-        // Используем join для подсчета заказов, относящихся к каждому менеджеру за текущий месяц
-        return $this->count($request, Order::query()
+        // Выполняем запрос, подсчитывая долю каждого менеджера в заказах
+        $subquery = DB::table('order_managers')
+            ->select('order_id', DB::raw('COUNT(manager_id) as manager_count'))
+            ->groupBy('order_id');
+
+        $query = Order::query()
             ->join('order_managers', 'orders.id', '=', 'order_managers.order_id')
-            ->whereBetween('orders.created_at', [$startOfMonth, $endOfMonth]), 'order_managers.manager_id')
+            ->joinSub($subquery, 'manager_counts', function ($join) {
+                $join->on('orders.id', '=', 'manager_counts.order_id');
+            })
+            ->whereBetween('orders.date_of_order', [$startOfMonth, $endOfMonth])
+            ->selectRaw('order_managers.manager_id, SUM(100 * (1.0 / manager_counts.manager_count)) AS manager_share')
+            ->groupBy('order_managers.manager_id');
+
+        // Получаем результат в формате, удобном для отображения в метрике Partition
+        $results = $query->get()->pluck('manager_share', 'manager_id');
+
+        return $this->result($results->toArray())
             ->label(function ($managerId) {
-                // Находим менеджера по его ID и возвращаем его имя
                 $manager = Manager::find($managerId);
                 return $manager ? $manager->name : 'Неизвестный менеджер';
             });
-    }
-
-    /**
-     * Determine the amount of time the results of the metric should be cached.
-     *
-     * @return \DateTimeInterface|\DateInterval|float|int|null
-     */
-    public function cacheFor()
-    {
-        // return now()->addMinutes(5);
     }
 
     /**
