@@ -20,7 +20,6 @@ class SneakersSoldBySizeAllTime
         // Fetch and normalize sizes
         $sizes = Order::query()
             ->leftJoin('stock_orders', 'orders.stock_order_id', '=', 'stock_orders.id')
-            ->where('orders.is_online_order', true)
             ->select(DB::raw("COALESCE(orders.product_size, stock_orders.size) AS size"))
             ->get()
             ->pluck('size')
